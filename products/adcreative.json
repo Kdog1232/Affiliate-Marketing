@@ -1,0 +1,260 @@
+{
+  "slug": "adcreative",
+  "name": "AdCreative.ai",
+  "tagline": "Create Better Ads With AI",
+  "description": "Generate conversion-focused ad creatives, headlines, product photos, and social posts in minutes with an AI workflow designed for marketers.",
+  "logo": "https://placehold.co/128x128/0f172a/60a5fa?text=AI",
+  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=AdCreative.ai+Dashboard",
+  "affiliateLink": "https://YOURAFFILIATELINK.com",
+  "rating": 4.9,
+  "users": "3M+ marketers and teams",
+  "platforms": [
+    "Meta",
+    "Google",
+    "LinkedIn",
+    "Pinterest",
+    "TikTok"
+  ],
+  "pricing": "Free trial, then paid plans for individuals and teams",
+  "canonicalUrl": "https://example.com/adcreative",
+  "features": [
+    {
+      "icon": "Sparkles",
+      "title": "AI Ad Creatives",
+      "description": "Generate multiple high-converting ad variations from your brand, audience, and offer."
+    },
+    {
+      "icon": "ChartBar",
+      "title": "Conversion Scores",
+      "description": "Prioritize the creatives most likely to perform before spending money on traffic."
+    },
+    {
+      "icon": "Image",
+      "title": "Product Visuals",
+      "description": "Create polished product photos and lifestyle-style assets without a full design team."
+    },
+    {
+      "icon": "PenTool",
+      "title": "Copy Generation",
+      "description": "Write ad headlines, descriptions, hooks, and social captions for every channel."
+    },
+    {
+      "icon": "Layers",
+      "title": "Brand Kits",
+      "description": "Keep fonts, colors, and logos consistent across campaigns and client accounts."
+    },
+    {
+      "icon": "Zap",
+      "title": "Fast Exports",
+      "description": "Download ready-to-launch assets sized for popular ad networks and social platforms."
+    }
+  ],
+  "howItWorks": [
+    {
+      "title": "Add your brand",
+      "description": "Upload a logo, colors, product details, and audience notes once."
+    },
+    {
+      "title": "Choose a campaign goal",
+      "description": "Pick the platform, size, message, and creative style you want to test."
+    },
+    {
+      "title": "Generate variations",
+      "description": "Review AI-generated creatives, copy, and product visuals in seconds."
+    },
+    {
+      "title": "Launch and iterate",
+      "description": "Export winners, monitor performance, and generate the next batch faster."
+    }
+  ],
+  "pros": [
+    "Very fast creative production",
+    "Useful scoring for ad testing",
+    "Great for agencies managing many brands",
+    "Templates for major ad platforms",
+    "Beginner-friendly workflow"
+  ],
+  "cons": [
+    "Best results still need human review",
+    "Advanced users may want deeper design controls",
+    "Pricing can scale with high-volume usage"
+  ],
+  "pricingPlans": [
+    {
+      "name": "Starter",
+      "price": "Free trial",
+      "description": "Explore AI creative generation for one brand.",
+      "features": [
+        "Limited credits",
+        "Core creative generator",
+        "Basic exports"
+      ],
+      "cta": "Start free"
+    },
+    {
+      "name": "Professional",
+      "price": "Paid plan",
+      "description": "For marketers who need regular campaign assets.",
+      "features": [
+        "More monthly credits",
+        "Brand kits",
+        "Conversion scoring",
+        "Priority exports"
+      ],
+      "cta": "Try Professional"
+    },
+    {
+      "name": "Agency",
+      "price": "Custom",
+      "description": "For teams producing creatives across clients.",
+      "features": [
+        "Multi-brand workspace",
+        "Team collaboration",
+        "Higher usage limits",
+        "Client-ready outputs"
+      ],
+      "cta": "View Agency"
+    }
+  ],
+  "audiences": [
+    {
+      "title": "Small Business",
+      "description": "Launch polished ads without hiring a full creative department."
+    },
+    {
+      "title": "Creators",
+      "description": "Turn offers, courses, and products into scroll-stopping social ads."
+    },
+    {
+      "title": "Teachers",
+      "description": "Promote digital products, classes, and workshops with consistent visuals."
+    },
+    {
+      "title": "Developers",
+      "description": "Market SaaS tools and side projects with fast campaign experimentation."
+    },
+    {
+      "title": "Agencies",
+      "description": "Produce more ad concepts for more clients without slowing down delivery."
+    },
+    {
+      "title": "Entrepreneurs",
+      "description": "Validate offers quickly with many creative angles and hooks."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "We generated a week of ad concepts in one afternoon and finally had enough variants to test.",
+      "author": "Maya Chen",
+      "role": "Growth Marketer"
+    },
+    {
+      "quote": "The brand kit workflow keeps every export consistent, even when clients ask for changes fast.",
+      "author": "Jordan Lee",
+      "role": "Agency Founder"
+    },
+    {
+      "quote": "It is the fastest way I have found to create clean ad mockups for new offers.",
+      "author": "Sam Rivera",
+      "role": "Creator"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is AdCreative.ai good for beginners?",
+      "answer": "Yes. The workflow is guided, and you can start by entering your product details, brand assets, and campaign goal."
+    },
+    {
+      "question": "Can I use it for client work?",
+      "answer": "Yes. Agencies can create assets for multiple brands and use brand kits to keep client campaigns consistent."
+    },
+    {
+      "question": "Does the affiliate link cost extra?",
+      "answer": "No. Affiliate links typically do not increase your price, but they may earn this site a commission if you buy."
+    },
+    {
+      "question": "Can I duplicate this page for another product?",
+      "answer": "Yes. Copy this JSON file, rename it to the new slug, and replace the product information, pricing, images, and affiliate link."
+    }
+  ],
+  "reviewCount": 1287,
+  "setupTime": "10 minutes",
+  "bestFor": "Ad testing and fast creative production",
+  "socialProof": [
+    {
+      "metric": "3M+",
+      "label": "Users represented",
+      "description": "Position your product with crowd-friendly proof for Pinterest visitors who skim before clicking."
+    },
+    {
+      "metric": "100+",
+      "label": "Creative formats",
+      "description": "Use image placeholders and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+    },
+    {
+      "metric": "5 min",
+      "label": "First campaign draft",
+      "description": "Most teams can move from prompt to export-ready creative concepts quickly."
+    }
+  ],
+  "comparison": [
+    {
+      "feature": "Creative speed",
+      "product": "Generates many ad concepts in minutes",
+      "competitors": "Manual design tools often require more setup",
+      "winner": "AdCreative.ai"
+    },
+    {
+      "feature": "Conversion guidance",
+      "product": "Includes AI scoring to prioritize ideas",
+      "competitors": "Many tools focus on design only",
+      "winner": "AdCreative.ai"
+    },
+    {
+      "feature": "Design control",
+      "product": "Fast templates with brand-kit consistency",
+      "competitors": "Traditional editors may offer deeper pixel control",
+      "winner": "Competitors"
+    },
+    {
+      "feature": "Best use case",
+      "product": "Rapid paid-social testing and campaign iteration",
+      "competitors": "One-off graphics or highly custom brand systems",
+      "winner": "Depends on workflow"
+    }
+  ],
+  "whyTrust": [
+    {
+      "title": "Affiliate disclosure first",
+      "description": "Buttons may earn a commission, but the review includes both benefits and limitations so readers can decide confidently."
+    },
+    {
+      "title": "Conversion-focused criteria",
+      "description": "The page evaluates speed, ease of use, pricing clarity, output quality, and practical fit for common marketing workflows."
+    },
+    {
+      "title": "Easy to update",
+      "description": "All claims live in JSON so you can refresh pricing, screenshots, FAQs, and affiliate links without rewriting code."
+    }
+  ],
+  "notFor": [
+    {
+      "title": "Pixel-perfect designers",
+      "description": "If you need complete manual control over every layer, a traditional design suite may be a better fit."
+    },
+    {
+      "title": "No ad testing budget",
+      "description": "The biggest value appears when you can test multiple creatives across paid or organic channels."
+    },
+    {
+      "title": "Set-and-forget users",
+      "description": "AI drafts still benefit from human review, brand checks, and performance-based iteration."
+    }
+  ],
+  "review": {
+    "author": "Affiliate Editorial Team",
+    "title": "A strong AI ad creative tool for fast campaign testing",
+    "summary": "AdCreative.ai is best for marketers, creators, and agencies that need more ad variations quickly. It is especially compelling when speed, brand consistency, and testing volume matter more than advanced manual design control.",
+    "datePublished": "2026-07-07"
+  }
+}
