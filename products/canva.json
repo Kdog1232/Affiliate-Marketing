@@ -1,27 +1,25 @@
 {
-  "slug": "adcreative",
-  "name": "AdCreative.ai",
-  "tagline": "Create Better Ads With AI",
-  "description": "Generate conversion-focused ad creatives, headlines, product photos, and social posts in minutes with an AI workflow designed for marketers.",
-  "logo": "https://placehold.co/128x128/0f172a/60a5fa?text=AI",
-  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=AdCreative.ai+Dashboard",
+  "slug": "canva",
+  "name": "Canva",
+  "tagline": "Design platform with AI tools for presentations, social graphics, videos, and brand assets",
+  "description": "Design platform with AI tools for presentations, social graphics, videos, and brand assets.",
+  "logo": "https://placehold.co/128x128/0f172a/60a5fa?text=CA",
+  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Canva+Dashboard",
   "affiliateLink": "https://YOURAFFILIATELINK.com",
   "rating": 4.9,
-  "users": "3M+ marketers and teams",
+  "users": "Teams, creators, and professionals",
   "platforms": [
-    "Meta",
-    "Google",
-    "LinkedIn",
-    "Pinterest",
-    "TikTok"
+    "Web",
+    "Desktop",
+    "Mobile"
   ],
-  "pricing": "Free trial, then paid plans for individuals and teams",
-  "canonicalUrl": "https://example.com/adcreative",
+  "pricing": "Free and paid plans vary by usage and team size",
+  "canonicalUrl": "https://example.com/canva",
   "features": [
     {
       "icon": "Sparkles",
-      "title": "AI Ad Creatives",
-      "description": "Generate multiple high-converting ad variations from your brand, audience, and offer."
+      "title": "Canva AI workflow",
+      "description": "Design platform with AI tools for presentations, social graphics, videos, and brand assets."
     },
     {
       "icon": "ChartBar",
@@ -118,28 +116,16 @@
   ],
   "audiences": [
     {
-      "title": "Small Business",
-      "description": "Launch polished ads without hiring a full creative department."
+      "title": "Design",
+      "description": "Useful for design teams comparing AI software options."
     },
     {
-      "title": "Creators",
-      "description": "Turn offers, courses, and products into scroll-stopping social ads."
+      "title": "Marketing",
+      "description": "Useful for marketing teams comparing AI software options."
     },
     {
-      "title": "Teachers",
-      "description": "Promote digital products, classes, and workshops with consistent visuals."
-    },
-    {
-      "title": "Developers",
-      "description": "Market SaaS tools and side projects with fast campaign experimentation."
-    },
-    {
-      "title": "Agencies",
-      "description": "Produce more ad concepts for more clients without slowing down delivery."
-    },
-    {
-      "title": "Entrepreneurs",
-      "description": "Validate offers quickly with many creative angles and hooks."
+      "title": "Creator Tools",
+      "description": "Useful for creator tools teams comparing AI software options."
     }
   ],
   "testimonials": [
@@ -253,13 +239,13 @@
   ],
   "review": {
     "author": "Affiliate Editorial Team",
-    "title": "A strong AI ad creative tool for fast campaign testing",
-    "summary": "AdCreative.ai is best for marketers, creators, and agencies that need more ad variations quickly. It is especially compelling when speed, brand consistency, and testing volume matter more than advanced manual design control.",
+    "title": "Canva Review",
+    "summary": "Design platform with AI tools for presentations, social graphics, videos, and brand assets.",
     "datePublished": "2026-07-07"
   },
   "categories": [
+    "design",
     "marketing",
-    "business",
-    "design"
+    "creator-tools"
   ]
 }

@@ -11,6 +11,7 @@ export type Product = {
   affiliateLink: string;
   rating: number;
   reviewCount: number;
+  categories?: string[];
   setupTime: string;
   bestFor: string;
   users: string;
@@ -51,4 +52,25 @@ export async function getProduct(slug: string): Promise<Product | null> {
 export async function getProducts() {
   const slugs = await getProductSlugs();
   return Promise.all(slugs.map(async (slug) => getProduct(slug))).then((items) => items.filter(Boolean) as Product[]);
+}
+
+
+export const CATEGORIES = [
+  { slug: 'education', name: 'Education' },
+  { slug: 'business', name: 'Business' },
+  { slug: 'marketing', name: 'Marketing' },
+  { slug: 'development', name: 'Development' },
+  { slug: 'productivity', name: 'Productivity' },
+  { slug: 'finance', name: 'Finance' },
+  { slug: 'design', name: 'Design' },
+  { slug: 'creator-tools', name: 'Creator Tools' },
+] as const;
+
+export function getCategory(slug: string) {
+  return CATEGORIES.find((category) => category.slug === slug) ?? null;
+}
+
+export async function getProductsByCategory(categorySlug: string) {
+  const products = await getProducts();
+  return products.filter((product) => product.categories?.includes(categorySlug));
 }
