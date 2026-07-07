@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { @apply bg-slate-950 text-slate-100 antialiased; }
+.glass { @apply border border-white/10 bg-white/[.06] shadow-2xl shadow-black/20 backdrop-blur-xl; }
+.focus-ring { @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950; }
