@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-geist-sans', display
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com'),
-  title: { default: 'Affiliate Landing Pages', template: '%s | Affiliate Landing Pages' },
-  description: 'Reusable, JSON-driven affiliate landing page templates built with Next.js.',
+  title: { default: 'AI Tool Hub', template: '%s | AI Tool Hub' },
+  description: 'Discover and compare the best AI software for teachers, businesses, creators, developers, marketers, and entrepreneurs.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
