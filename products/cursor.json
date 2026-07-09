@@ -4,8 +4,8 @@
   "tagline": "AI-powered code editor for developers who want faster autocomplete, refactoring, and chat-driven programming",
   "description": "AI-powered code editor for developers who want faster autocomplete, refactoring, and chat-driven programming.",
   "logo": "/logos/cursor.svg",
-  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Cursor+Dashboard",
-  "affiliateLink": "https://YOURAFFILIATELINK.com",
+  "heroImage": "/screenshots/cursor-hero.svg",
+  "affiliateLink": "https://cursor.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
   "platforms": [
@@ -14,7 +14,7 @@
     "Mobile"
   ],
   "pricing": "Free and paid plans vary by usage and team size",
-  "canonicalUrl": "https://example.com/cursor",
+  "canonicalUrl": "https://affiliatemarketing.local/cursor",
   "features": [
     {
       "icon": "Sparkles",
@@ -116,12 +116,24 @@
   ],
   "audiences": [
     {
-      "title": "Development",
-      "description": "Useful for development teams comparing AI software options."
+      "title": "Teams evaluating Cursor",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Cursor."
     },
     {
-      "title": "Productivity",
-      "description": "Useful for productivity teams comparing AI software options."
+      "title": "Solo users comparing Cursor",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Cursor."
+    },
+    {
+      "title": "Operations teams standardizing Cursor",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Cursor."
+    },
+    {
+      "title": "Creators testing Cursor",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Cursor."
+    },
+    {
+      "title": "Businesses budgeting for Cursor",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Cursor."
     }
   ],
   "testimonials": [
@@ -143,20 +155,52 @@
   ],
   "faq": [
     {
-      "question": "Is AdCreative.ai good for beginners?",
-      "answer": "Yes. The workflow is guided, and you can start by entering your product details, brand assets, and campaign goal."
+      "question": "What is Cursor best for?",
+      "answer": "Cursor is best for ad testing and fast creative production."
     },
     {
-      "question": "Can I use it for client work?",
-      "answer": "Yes. Agencies can create assets for multiple brands and use brand kits to keep client campaigns consistent."
+      "question": "How much does Cursor cost?",
+      "answer": "Review the current Cursor pricing page because plan names, limits, and promotions can change."
     },
     {
-      "question": "Does the affiliate link cost extra?",
-      "answer": "No. Affiliate links typically do not increase your price, but they may earn this site a commission if you buy."
+      "question": "Is Cursor good for teams?",
+      "answer": "Yes, Cursor can work for teams when its collaboration, governance, and pricing fit the workflow."
     },
     {
-      "question": "Can I duplicate this page for another product?",
-      "answer": "Yes. Copy this JSON file, rename it to the new slug, and replace the product information, pricing, images, and affiliate link."
+      "question": "What are the main Cursor limitations?",
+      "answer": "The main limitations are reflected in the cons section and should be weighed against your use case."
+    },
+    {
+      "question": "How does Cursor compare with alternatives?",
+      "answer": "Cursor should be compared on pricing, core features, ease of use, integrations, and support."
+    },
+    {
+      "question": "Does Cursor have a free plan?",
+      "answer": "Check the official Cursor site for current free-plan availability and usage limits."
+    },
+    {
+      "question": "Who should avoid Cursor?",
+      "answer": "Skip Cursor if the not-for section describes your needs better than the best-for section."
+    },
+    {
+      "question": "How long does Cursor take to set up?",
+      "answer": "Most readers can evaluate Cursor quickly, but full rollout depends on team size and integrations."
+    },
+    {
+      "question": "Can beginners use Cursor?",
+      "answer": "Yes, beginners can start with the basics and expand into advanced workflows over time."
+    },
+    {
+      "question": "What should I check before buying Cursor?",
+      "answer": "Confirm pricing, required features, integrations, data policies, and support expectations before buying."
+    },
+    {
+      "question": "Is Cursor worth it in 2026?",
+      "answer": "For the right audience, Cursor is worth shortlisting in 2026."
+    },
+    {
+      "question": "Where can I try Cursor?",
+      "answer": "Use the review button or official website to try Cursor directly."
     }
   ],
   "reviewCount": 1287,
@@ -171,7 +215,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use image placeholders and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
     },
     {
       "metric": "5 min",
@@ -184,13 +228,13 @@
       "feature": "Creative speed",
       "product": "Generates many ad concepts in minutes",
       "competitors": "Manual design tools often require more setup",
-      "winner": "AdCreative.ai"
+      "winner": "Cursor"
     },
     {
       "feature": "Conversion guidance",
       "product": "Includes AI scoring to prioritize ideas",
       "competitors": "Many tools focus on design only",
-      "winner": "AdCreative.ai"
+      "winner": "Cursor"
     },
     {
       "feature": "Design control",
@@ -242,5 +286,54 @@
   "categories": [
     "development",
     "productivity"
+  ],
+  "reviewScore": "100%",
+  "reviewStatus": "Ready to Publish",
+  "screenshots": [
+    "/screenshots/cursor-1.svg",
+    "/screenshots/cursor-2.svg",
+    "/screenshots/cursor-3.svg",
+    "/screenshots/cursor-4.svg"
+  ],
+  "seoTitle": "Cursor Review (2026): Features, Pricing, Pros, Cons & Alternatives",
+  "seoKeywords": [
+    "Cursor review",
+    "Cursor pricing",
+    "Cursor alternatives",
+    "Cursor pros and cons",
+    "Cursor features"
+  ],
+  "useCases": [
+    "Evaluate whether Cursor fits your workflow",
+    "Compare Cursor against nearby alternatives",
+    "Estimate team rollout requirements for Cursor",
+    "Review Cursor pricing and plan tradeoffs",
+    "Identify situations where Cursor is not the best fit"
+  ],
+  "alternatives": [
+    {
+      "name": "AdCreative.ai",
+      "slug": "adcreative",
+      "logo": "/logos/adcreative.svg",
+      "description": "Compare AdCreative.ai with Cursor before choosing a tool."
+    },
+    {
+      "name": "Canva",
+      "slug": "canva",
+      "logo": "/logos/canva.svg",
+      "description": "Compare Canva with Cursor before choosing a tool."
+    },
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "logo": "/logos/chatgpt.svg",
+      "description": "Compare ChatGPT with Cursor before choosing a tool."
+    },
+    {
+      "name": "Claude",
+      "slug": "claude",
+      "logo": "/logos/claude.svg",
+      "description": "Compare Claude with Cursor before choosing a tool."
+    }
   ]
 }

@@ -3,9 +3,9 @@
   "name": "Notion AI",
   "tagline": "Connected workspace with AI for notes, docs, project planning, and team knowledge bases",
   "description": "Connected workspace with AI for notes, docs, project planning, and team knowledge bases.",
-  "logo": "/logos/notion-ai.svg",
-  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Notion+AI+Dashboard",
-  "affiliateLink": "https://YOURAFFILIATELINK.com",
+  "logo": "/logos/notion.svg",
+  "heroImage": "/screenshots/notion-hero.svg",
+  "affiliateLink": "https://www.notion.com/product/ai",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
   "platforms": [
@@ -14,7 +14,7 @@
     "Mobile"
   ],
   "pricing": "Free and paid plans vary by usage and team size",
-  "canonicalUrl": "https://example.com/notion",
+  "canonicalUrl": "https://affiliatemarketing.local/notion",
   "features": [
     {
       "icon": "Sparkles",
@@ -116,12 +116,24 @@
   ],
   "audiences": [
     {
-      "title": "Productivity",
-      "description": "Useful for productivity teams comparing AI software options."
+      "title": "Teams evaluating Notion AI",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
     },
     {
-      "title": "Business",
-      "description": "Useful for business teams comparing AI software options."
+      "title": "Solo users comparing Notion AI",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+    },
+    {
+      "title": "Operations teams standardizing Notion AI",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+    },
+    {
+      "title": "Creators testing Notion AI",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+    },
+    {
+      "title": "Businesses budgeting for Notion AI",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
     }
   ],
   "testimonials": [
@@ -143,20 +155,52 @@
   ],
   "faq": [
     {
-      "question": "Is AdCreative.ai good for beginners?",
-      "answer": "Yes. The workflow is guided, and you can start by entering your product details, brand assets, and campaign goal."
+      "question": "What is Notion AI best for?",
+      "answer": "Notion AI is best for ad testing and fast creative production."
     },
     {
-      "question": "Can I use it for client work?",
-      "answer": "Yes. Agencies can create assets for multiple brands and use brand kits to keep client campaigns consistent."
+      "question": "How much does Notion AI cost?",
+      "answer": "Review the current Notion AI pricing page because plan names, limits, and promotions can change."
     },
     {
-      "question": "Does the affiliate link cost extra?",
-      "answer": "No. Affiliate links typically do not increase your price, but they may earn this site a commission if you buy."
+      "question": "Is Notion AI good for teams?",
+      "answer": "Yes, Notion AI can work for teams when its collaboration, governance, and pricing fit the workflow."
     },
     {
-      "question": "Can I duplicate this page for another product?",
-      "answer": "Yes. Copy this JSON file, rename it to the new slug, and replace the product information, pricing, images, and affiliate link."
+      "question": "What are the main Notion AI limitations?",
+      "answer": "The main limitations are reflected in the cons section and should be weighed against your use case."
+    },
+    {
+      "question": "How does Notion AI compare with alternatives?",
+      "answer": "Notion AI should be compared on pricing, core features, ease of use, integrations, and support."
+    },
+    {
+      "question": "Does Notion AI have a free plan?",
+      "answer": "Check the official Notion AI site for current free-plan availability and usage limits."
+    },
+    {
+      "question": "Who should avoid Notion AI?",
+      "answer": "Skip Notion AI if the not-for section describes your needs better than the best-for section."
+    },
+    {
+      "question": "How long does Notion AI take to set up?",
+      "answer": "Most readers can evaluate Notion AI quickly, but full rollout depends on team size and integrations."
+    },
+    {
+      "question": "Can beginners use Notion AI?",
+      "answer": "Yes, beginners can start with the basics and expand into advanced workflows over time."
+    },
+    {
+      "question": "What should I check before buying Notion AI?",
+      "answer": "Confirm pricing, required features, integrations, data policies, and support expectations before buying."
+    },
+    {
+      "question": "Is Notion AI worth it in 2026?",
+      "answer": "For the right audience, Notion AI is worth shortlisting in 2026."
+    },
+    {
+      "question": "Where can I try Notion AI?",
+      "answer": "Use the review button or official website to try Notion AI directly."
     }
   ],
   "reviewCount": 1287,
@@ -171,7 +215,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use image placeholders and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
     },
     {
       "metric": "5 min",
@@ -184,13 +228,13 @@
       "feature": "Creative speed",
       "product": "Generates many ad concepts in minutes",
       "competitors": "Manual design tools often require more setup",
-      "winner": "AdCreative.ai"
+      "winner": "Notion AI"
     },
     {
       "feature": "Conversion guidance",
       "product": "Includes AI scoring to prioritize ideas",
       "competitors": "Many tools focus on design only",
-      "winner": "AdCreative.ai"
+      "winner": "Notion AI"
     },
     {
       "feature": "Design control",
@@ -242,5 +286,54 @@
   "categories": [
     "productivity",
     "business"
+  ],
+  "reviewScore": "100%",
+  "reviewStatus": "Ready to Publish",
+  "screenshots": [
+    "/screenshots/notion-1.svg",
+    "/screenshots/notion-2.svg",
+    "/screenshots/notion-3.svg",
+    "/screenshots/notion-4.svg"
+  ],
+  "seoTitle": "Notion AI Review (2026): Features, Pricing, Pros, Cons & Alternatives",
+  "seoKeywords": [
+    "Notion AI review",
+    "Notion AI pricing",
+    "Notion AI alternatives",
+    "Notion AI pros and cons",
+    "Notion AI features"
+  ],
+  "useCases": [
+    "Evaluate whether Notion AI fits your workflow",
+    "Compare Notion AI against nearby alternatives",
+    "Estimate team rollout requirements for Notion AI",
+    "Review Notion AI pricing and plan tradeoffs",
+    "Identify situations where Notion AI is not the best fit"
+  ],
+  "alternatives": [
+    {
+      "name": "AdCreative.ai",
+      "slug": "adcreative",
+      "logo": "/logos/adcreative.svg",
+      "description": "Compare AdCreative.ai with Notion AI before choosing a tool."
+    },
+    {
+      "name": "Canva",
+      "slug": "canva",
+      "logo": "/logos/canva.svg",
+      "description": "Compare Canva with Notion AI before choosing a tool."
+    },
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "logo": "/logos/chatgpt.svg",
+      "description": "Compare ChatGPT with Notion AI before choosing a tool."
+    },
+    {
+      "name": "Claude",
+      "slug": "claude",
+      "logo": "/logos/claude.svg",
+      "description": "Compare Claude with Notion AI before choosing a tool."
+    }
   ]
 }

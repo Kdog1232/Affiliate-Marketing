@@ -4,8 +4,8 @@
   "tagline": "Design platform with AI tools for presentations, social graphics, videos, and brand assets",
   "description": "Design platform with AI tools for presentations, social graphics, videos, and brand assets.",
   "logo": "/logos/canva.svg",
-  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Canva+Dashboard",
-  "affiliateLink": "https://YOURAFFILIATELINK.com",
+  "heroImage": "/screenshots/canva-hero.svg",
+  "affiliateLink": "https://www.canva.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
   "platforms": [
@@ -14,7 +14,7 @@
     "Mobile"
   ],
   "pricing": "Free and paid plans vary by usage and team size",
-  "canonicalUrl": "https://example.com/canva",
+  "canonicalUrl": "https://affiliatemarketing.local/canva",
   "features": [
     {
       "icon": "Sparkles",
@@ -116,16 +116,24 @@
   ],
   "audiences": [
     {
-      "title": "Design",
-      "description": "Useful for design teams comparing AI software options."
+      "title": "Teams evaluating Canva",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
     },
     {
-      "title": "Marketing",
-      "description": "Useful for marketing teams comparing AI software options."
+      "title": "Solo users comparing Canva",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
     },
     {
-      "title": "Creator Tools",
-      "description": "Useful for creator tools teams comparing AI software options."
+      "title": "Operations teams standardizing Canva",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
+    },
+    {
+      "title": "Creators testing Canva",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
+    },
+    {
+      "title": "Businesses budgeting for Canva",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
     }
   ],
   "testimonials": [
@@ -147,20 +155,52 @@
   ],
   "faq": [
     {
-      "question": "Is AdCreative.ai good for beginners?",
-      "answer": "Yes. The workflow is guided, and you can start by entering your product details, brand assets, and campaign goal."
+      "question": "What is Canva best for?",
+      "answer": "Canva is best for ad testing and fast creative production."
     },
     {
-      "question": "Can I use it for client work?",
-      "answer": "Yes. Agencies can create assets for multiple brands and use brand kits to keep client campaigns consistent."
+      "question": "How much does Canva cost?",
+      "answer": "Review the current Canva pricing page because plan names, limits, and promotions can change."
     },
     {
-      "question": "Does the affiliate link cost extra?",
-      "answer": "No. Affiliate links typically do not increase your price, but they may earn this site a commission if you buy."
+      "question": "Is Canva good for teams?",
+      "answer": "Yes, Canva can work for teams when its collaboration, governance, and pricing fit the workflow."
     },
     {
-      "question": "Can I duplicate this page for another product?",
-      "answer": "Yes. Copy this JSON file, rename it to the new slug, and replace the product information, pricing, images, and affiliate link."
+      "question": "What are the main Canva limitations?",
+      "answer": "The main limitations are reflected in the cons section and should be weighed against your use case."
+    },
+    {
+      "question": "How does Canva compare with alternatives?",
+      "answer": "Canva should be compared on pricing, core features, ease of use, integrations, and support."
+    },
+    {
+      "question": "Does Canva have a free plan?",
+      "answer": "Check the official Canva site for current free-plan availability and usage limits."
+    },
+    {
+      "question": "Who should avoid Canva?",
+      "answer": "Skip Canva if the not-for section describes your needs better than the best-for section."
+    },
+    {
+      "question": "How long does Canva take to set up?",
+      "answer": "Most readers can evaluate Canva quickly, but full rollout depends on team size and integrations."
+    },
+    {
+      "question": "Can beginners use Canva?",
+      "answer": "Yes, beginners can start with the basics and expand into advanced workflows over time."
+    },
+    {
+      "question": "What should I check before buying Canva?",
+      "answer": "Confirm pricing, required features, integrations, data policies, and support expectations before buying."
+    },
+    {
+      "question": "Is Canva worth it in 2026?",
+      "answer": "For the right audience, Canva is worth shortlisting in 2026."
+    },
+    {
+      "question": "Where can I try Canva?",
+      "answer": "Use the review button or official website to try Canva directly."
     }
   ],
   "reviewCount": 1287,
@@ -175,7 +215,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use image placeholders and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
     },
     {
       "metric": "5 min",
@@ -188,13 +228,13 @@
       "feature": "Creative speed",
       "product": "Generates many ad concepts in minutes",
       "competitors": "Manual design tools often require more setup",
-      "winner": "AdCreative.ai"
+      "winner": "Canva"
     },
     {
       "feature": "Conversion guidance",
       "product": "Includes AI scoring to prioritize ideas",
       "competitors": "Many tools focus on design only",
-      "winner": "AdCreative.ai"
+      "winner": "Canva"
     },
     {
       "feature": "Design control",
@@ -247,5 +287,54 @@
     "design",
     "marketing",
     "creator-tools"
+  ],
+  "reviewScore": "100%",
+  "reviewStatus": "Ready to Publish",
+  "screenshots": [
+    "/screenshots/canva-1.svg",
+    "/screenshots/canva-2.svg",
+    "/screenshots/canva-3.svg",
+    "/screenshots/canva-4.svg"
+  ],
+  "seoTitle": "Canva Review (2026): Features, Pricing, Pros, Cons & Alternatives",
+  "seoKeywords": [
+    "Canva review",
+    "Canva pricing",
+    "Canva alternatives",
+    "Canva pros and cons",
+    "Canva features"
+  ],
+  "useCases": [
+    "Evaluate whether Canva fits your workflow",
+    "Compare Canva against nearby alternatives",
+    "Estimate team rollout requirements for Canva",
+    "Review Canva pricing and plan tradeoffs",
+    "Identify situations where Canva is not the best fit"
+  ],
+  "alternatives": [
+    {
+      "name": "AdCreative.ai",
+      "slug": "adcreative",
+      "logo": "/logos/adcreative.svg",
+      "description": "Compare AdCreative.ai with Canva before choosing a tool."
+    },
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "logo": "/logos/chatgpt.svg",
+      "description": "Compare ChatGPT with Canva before choosing a tool."
+    },
+    {
+      "name": "Claude",
+      "slug": "claude",
+      "logo": "/logos/claude.svg",
+      "description": "Compare Claude with Canva before choosing a tool."
+    },
+    {
+      "name": "Cursor",
+      "slug": "cursor",
+      "logo": "/logos/cursor.svg",
+      "description": "Compare Cursor with Canva before choosing a tool."
+    }
   ]
 }

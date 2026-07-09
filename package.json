@@ -5,7 +5,8 @@
     "start": "next start",
     "lint": "eslint .",
     "verify:logos": "node scripts/verify-logos.js",
-    "generate:logo-report": "node scripts/generate-logo-report.js"
+    "generate:logo-report": "node scripts/generate-logo-report.js",
+    "validate:reviews": "node scripts/validate-reviews.js"
   },
   "dependencies": {
     "next": "15.3.6",
