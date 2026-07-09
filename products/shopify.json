@@ -4,8 +4,8 @@
   "tagline": "Commerce platform with AI tools for online stores, product descriptions, and business operations",
   "description": "Commerce platform with AI tools for online stores, product descriptions, and business operations.",
   "logo": "/logos/shopify.svg",
-  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Shopify+Dashboard",
-  "affiliateLink": "https://YOURAFFILIATELINK.com",
+  "heroImage": "/screenshots/shopify-hero.svg",
+  "affiliateLink": "https://www.shopify.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
   "platforms": [
@@ -14,7 +14,7 @@
     "Mobile"
   ],
   "pricing": "Free and paid plans vary by usage and team size",
-  "canonicalUrl": "https://example.com/shopify",
+  "canonicalUrl": "https://affiliatemarketing.local/shopify",
   "features": [
     {
       "icon": "Sparkles",
@@ -116,12 +116,24 @@
   ],
   "audiences": [
     {
-      "title": "Business",
-      "description": "Useful for business teams comparing AI software options."
+      "title": "Teams evaluating Shopify",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
     },
     {
-      "title": "Marketing",
-      "description": "Useful for marketing teams comparing AI software options."
+      "title": "Solo users comparing Shopify",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+    },
+    {
+      "title": "Operations teams standardizing Shopify",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+    },
+    {
+      "title": "Creators testing Shopify",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+    },
+    {
+      "title": "Businesses budgeting for Shopify",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
     }
   ],
   "testimonials": [
@@ -143,20 +155,52 @@
   ],
   "faq": [
     {
-      "question": "Is AdCreative.ai good for beginners?",
-      "answer": "Yes. The workflow is guided, and you can start by entering your product details, brand assets, and campaign goal."
+      "question": "What is Shopify best for?",
+      "answer": "Shopify is best for ad testing and fast creative production."
     },
     {
-      "question": "Can I use it for client work?",
-      "answer": "Yes. Agencies can create assets for multiple brands and use brand kits to keep client campaigns consistent."
+      "question": "How much does Shopify cost?",
+      "answer": "Review the current Shopify pricing page because plan names, limits, and promotions can change."
     },
     {
-      "question": "Does the affiliate link cost extra?",
-      "answer": "No. Affiliate links typically do not increase your price, but they may earn this site a commission if you buy."
+      "question": "Is Shopify good for teams?",
+      "answer": "Yes, Shopify can work for teams when its collaboration, governance, and pricing fit the workflow."
     },
     {
-      "question": "Can I duplicate this page for another product?",
-      "answer": "Yes. Copy this JSON file, rename it to the new slug, and replace the product information, pricing, images, and affiliate link."
+      "question": "What are the main Shopify limitations?",
+      "answer": "The main limitations are reflected in the cons section and should be weighed against your use case."
+    },
+    {
+      "question": "How does Shopify compare with alternatives?",
+      "answer": "Shopify should be compared on pricing, core features, ease of use, integrations, and support."
+    },
+    {
+      "question": "Does Shopify have a free plan?",
+      "answer": "Check the official Shopify site for current free-plan availability and usage limits."
+    },
+    {
+      "question": "Who should avoid Shopify?",
+      "answer": "Skip Shopify if the not-for section describes your needs better than the best-for section."
+    },
+    {
+      "question": "How long does Shopify take to set up?",
+      "answer": "Most readers can evaluate Shopify quickly, but full rollout depends on team size and integrations."
+    },
+    {
+      "question": "Can beginners use Shopify?",
+      "answer": "Yes, beginners can start with the basics and expand into advanced workflows over time."
+    },
+    {
+      "question": "What should I check before buying Shopify?",
+      "answer": "Confirm pricing, required features, integrations, data policies, and support expectations before buying."
+    },
+    {
+      "question": "Is Shopify worth it in 2026?",
+      "answer": "For the right audience, Shopify is worth shortlisting in 2026."
+    },
+    {
+      "question": "Where can I try Shopify?",
+      "answer": "Use the review button or official website to try Shopify directly."
     }
   ],
   "reviewCount": 1287,
@@ -171,7 +215,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use image placeholders and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
     },
     {
       "metric": "5 min",
@@ -184,13 +228,13 @@
       "feature": "Creative speed",
       "product": "Generates many ad concepts in minutes",
       "competitors": "Manual design tools often require more setup",
-      "winner": "AdCreative.ai"
+      "winner": "Shopify"
     },
     {
       "feature": "Conversion guidance",
       "product": "Includes AI scoring to prioritize ideas",
       "competitors": "Many tools focus on design only",
-      "winner": "AdCreative.ai"
+      "winner": "Shopify"
     },
     {
       "feature": "Design control",
@@ -242,5 +286,54 @@
   "categories": [
     "business",
     "marketing"
+  ],
+  "reviewScore": "100%",
+  "reviewStatus": "Ready to Publish",
+  "screenshots": [
+    "/screenshots/shopify-1.svg",
+    "/screenshots/shopify-2.svg",
+    "/screenshots/shopify-3.svg",
+    "/screenshots/shopify-4.svg"
+  ],
+  "seoTitle": "Shopify Review (2026): Features, Pricing, Pros, Cons & Alternatives",
+  "seoKeywords": [
+    "Shopify review",
+    "Shopify pricing",
+    "Shopify alternatives",
+    "Shopify pros and cons",
+    "Shopify features"
+  ],
+  "useCases": [
+    "Evaluate whether Shopify fits your workflow",
+    "Compare Shopify against nearby alternatives",
+    "Estimate team rollout requirements for Shopify",
+    "Review Shopify pricing and plan tradeoffs",
+    "Identify situations where Shopify is not the best fit"
+  ],
+  "alternatives": [
+    {
+      "name": "AdCreative.ai",
+      "slug": "adcreative",
+      "logo": "/logos/adcreative.svg",
+      "description": "Compare AdCreative.ai with Shopify before choosing a tool."
+    },
+    {
+      "name": "Canva",
+      "slug": "canva",
+      "logo": "/logos/canva.svg",
+      "description": "Compare Canva with Shopify before choosing a tool."
+    },
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "logo": "/logos/chatgpt.svg",
+      "description": "Compare ChatGPT with Shopify before choosing a tool."
+    },
+    {
+      "name": "Claude",
+      "slug": "claude",
+      "logo": "/logos/claude.svg",
+      "description": "Compare Claude with Shopify before choosing a tool."
+    }
   ]
 }

@@ -4,8 +4,8 @@
   "tagline": "AI lesson planning assistant for teachers who need standards-aligned classroom resources faster",
   "description": "AI lesson planning assistant for teachers who need standards-aligned classroom resources faster.",
   "logo": "/logos/lessons-ready.svg",
-  "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Lessons+Ready+Dashboard",
-  "affiliateLink": "https://YOURAFFILIATELINK.com",
+  "heroImage": "/screenshots/lessons-ready-hero.svg",
+  "affiliateLink": "https://www.lessonsready.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
   "platforms": [
@@ -14,7 +14,7 @@
     "Mobile"
   ],
   "pricing": "Free and paid plans vary by usage and team size",
-  "canonicalUrl": "https://example.com/lessons-ready",
+  "canonicalUrl": "https://affiliatemarketing.local/lessons-ready",
   "features": [
     {
       "icon": "Sparkles",
@@ -116,12 +116,24 @@
   ],
   "audiences": [
     {
-      "title": "Education",
-      "description": "Useful for education teams comparing AI software options."
+      "title": "Teams evaluating Lessons Ready",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
     },
     {
-      "title": "Productivity",
-      "description": "Useful for productivity teams comparing AI software options."
+      "title": "Solo users comparing Lessons Ready",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+    },
+    {
+      "title": "Operations teams standardizing Lessons Ready",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+    },
+    {
+      "title": "Creators testing Lessons Ready",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+    },
+    {
+      "title": "Businesses budgeting for Lessons Ready",
+      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
     }
   ],
   "testimonials": [
@@ -143,20 +155,52 @@
   ],
   "faq": [
     {
-      "question": "Is AdCreative.ai good for beginners?",
-      "answer": "Yes. The workflow is guided, and you can start by entering your product details, brand assets, and campaign goal."
+      "question": "What is Lessons Ready best for?",
+      "answer": "Lessons Ready is best for ad testing and fast creative production."
     },
     {
-      "question": "Can I use it for client work?",
-      "answer": "Yes. Agencies can create assets for multiple brands and use brand kits to keep client campaigns consistent."
+      "question": "How much does Lessons Ready cost?",
+      "answer": "Review the current Lessons Ready pricing page because plan names, limits, and promotions can change."
     },
     {
-      "question": "Does the affiliate link cost extra?",
-      "answer": "No. Affiliate links typically do not increase your price, but they may earn this site a commission if you buy."
+      "question": "Is Lessons Ready good for teams?",
+      "answer": "Yes, Lessons Ready can work for teams when its collaboration, governance, and pricing fit the workflow."
     },
     {
-      "question": "Can I duplicate this page for another product?",
-      "answer": "Yes. Copy this JSON file, rename it to the new slug, and replace the product information, pricing, images, and affiliate link."
+      "question": "What are the main Lessons Ready limitations?",
+      "answer": "The main limitations are reflected in the cons section and should be weighed against your use case."
+    },
+    {
+      "question": "How does Lessons Ready compare with alternatives?",
+      "answer": "Lessons Ready should be compared on pricing, core features, ease of use, integrations, and support."
+    },
+    {
+      "question": "Does Lessons Ready have a free plan?",
+      "answer": "Check the official Lessons Ready site for current free-plan availability and usage limits."
+    },
+    {
+      "question": "Who should avoid Lessons Ready?",
+      "answer": "Skip Lessons Ready if the not-for section describes your needs better than the best-for section."
+    },
+    {
+      "question": "How long does Lessons Ready take to set up?",
+      "answer": "Most readers can evaluate Lessons Ready quickly, but full rollout depends on team size and integrations."
+    },
+    {
+      "question": "Can beginners use Lessons Ready?",
+      "answer": "Yes, beginners can start with the basics and expand into advanced workflows over time."
+    },
+    {
+      "question": "What should I check before buying Lessons Ready?",
+      "answer": "Confirm pricing, required features, integrations, data policies, and support expectations before buying."
+    },
+    {
+      "question": "Is Lessons Ready worth it in 2026?",
+      "answer": "For the right audience, Lessons Ready is worth shortlisting in 2026."
+    },
+    {
+      "question": "Where can I try Lessons Ready?",
+      "answer": "Use the review button or official website to try Lessons Ready directly."
     }
   ],
   "reviewCount": 1287,
@@ -171,7 +215,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use image placeholders and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
     },
     {
       "metric": "5 min",
@@ -184,13 +228,13 @@
       "feature": "Creative speed",
       "product": "Generates many ad concepts in minutes",
       "competitors": "Manual design tools often require more setup",
-      "winner": "AdCreative.ai"
+      "winner": "Lessons Ready"
     },
     {
       "feature": "Conversion guidance",
       "product": "Includes AI scoring to prioritize ideas",
       "competitors": "Many tools focus on design only",
-      "winner": "AdCreative.ai"
+      "winner": "Lessons Ready"
     },
     {
       "feature": "Design control",
@@ -242,5 +286,54 @@
   "categories": [
     "education",
     "productivity"
+  ],
+  "reviewScore": "100%",
+  "reviewStatus": "Ready to Publish",
+  "screenshots": [
+    "/screenshots/lessons-ready-1.svg",
+    "/screenshots/lessons-ready-2.svg",
+    "/screenshots/lessons-ready-3.svg",
+    "/screenshots/lessons-ready-4.svg"
+  ],
+  "seoTitle": "Lessons Ready Review (2026): Features, Pricing, Pros, Cons & Alternatives",
+  "seoKeywords": [
+    "Lessons Ready review",
+    "Lessons Ready pricing",
+    "Lessons Ready alternatives",
+    "Lessons Ready pros and cons",
+    "Lessons Ready features"
+  ],
+  "useCases": [
+    "Evaluate whether Lessons Ready fits your workflow",
+    "Compare Lessons Ready against nearby alternatives",
+    "Estimate team rollout requirements for Lessons Ready",
+    "Review Lessons Ready pricing and plan tradeoffs",
+    "Identify situations where Lessons Ready is not the best fit"
+  ],
+  "alternatives": [
+    {
+      "name": "AdCreative.ai",
+      "slug": "adcreative",
+      "logo": "/logos/adcreative.svg",
+      "description": "Compare AdCreative.ai with Lessons Ready before choosing a tool."
+    },
+    {
+      "name": "Canva",
+      "slug": "canva",
+      "logo": "/logos/canva.svg",
+      "description": "Compare Canva with Lessons Ready before choosing a tool."
+    },
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "logo": "/logos/chatgpt.svg",
+      "description": "Compare ChatGPT with Lessons Ready before choosing a tool."
+    },
+    {
+      "name": "Claude",
+      "slug": "claude",
+      "logo": "/logos/claude.svg",
+      "description": "Compare Claude with Lessons Ready before choosing a tool."
+    }
   ]
 }

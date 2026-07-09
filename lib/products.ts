@@ -8,6 +8,7 @@ export type Product = {
   description: string;
   logo: string;
   heroImage: string;
+  screenshots?: string[];
   affiliateLink: string;
   rating: number;
   reviewCount: number;
@@ -17,12 +18,15 @@ export type Product = {
   tags?: string[];
   setupTime: string;
   bestFor: string;
+  bestForCards?: { title: string; description: string }[];
   users: string;
   platforms: string[];
   pricing: string;
   categoryBadge?: string;
   seoTitle?: string;
   seoKeywords?: string[];
+  keywords?: string[];
+  metaDescription?: string;
   quickFacts?: { label: string; value: string }[];
   overview?: string[];
   useCases?: string[];
@@ -41,6 +45,9 @@ export type Product = {
   whyTrust: { title: string; description: string }[];
   notFor: { title: string; description: string }[];
   review: { author: string; title: string; summary: string; datePublished: string };
+  verdict?: string;
+  reviewScore?: string;
+  reviewStatus?: 'Ready to Publish' | 'Needs Work';
   faq: { question: string; answer: string }[];
 };
 
