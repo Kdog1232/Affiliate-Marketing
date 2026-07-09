@@ -3,7 +3,7 @@
   "name": "Canva",
   "tagline": "Design platform with AI tools for presentations, social graphics, videos, and brand assets",
   "description": "Design platform with AI tools for presentations, social graphics, videos, and brand assets.",
-  "logo": "https://placehold.co/128x128/0f172a/60a5fa?text=CA",
+  "logo": "/logos/canva.svg",
   "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Canva+Dashboard",
   "affiliateLink": "https://YOURAFFILIATELINK.com",
   "rating": 4.9,

@@ -4,7 +4,7 @@
   "categoryBadge": "AI Assistant",
   "tagline": "A leading AI assistant for writing, coding, research, analysis, brainstorming, and everyday productivity",
   "description": "ChatGPT is an AI assistant from OpenAI for writing, coding, research, document analysis, image understanding, voice conversations, and business productivity.",
-  "logo": "https://placehold.co/128x128/0f172a/ffffff?text=GPT",
+  "logo": "/logos/chatgpt.svg",
   "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=ChatGPT+Application+Screenshot",
   "affiliateLink": "https://YOURAFFILIATELINK.com",
   "rating": 4.9,
@@ -261,31 +261,31 @@
     {
       "name": "Claude",
       "slug": "claude",
-      "logo": "https://placehold.co/96x96/1f2937/fbbf24?text=C",
+      "logo": "/logos/claude.svg",
       "description": "A thoughtful AI assistant known for long-context writing, analysis, and careful responses."
     },
     {
       "name": "Gemini",
       "slug": "gemini",
-      "logo": "https://placehold.co/96x96/1f2937/93c5fd?text=G",
+      "logo": "/logos/gemini.svg",
       "description": "Google's AI assistant for Workspace-connected productivity, search, and multimodal tasks."
     },
     {
       "name": "Perplexity",
       "slug": "perplexity",
-      "logo": "https://placehold.co/96x96/1f2937/5eead4?text=P",
+      "logo": "/logos/perplexity.svg",
       "description": "An answer engine focused on web research, citations, and fast source discovery."
     },
     {
       "name": "Microsoft Copilot",
       "slug": "microsoft-copilot",
-      "logo": "https://placehold.co/96x96/1f2937/a78bfa?text=MC",
+      "logo": "/logos/microsoft-copilot.svg",
       "description": "A strong option for users deeply invested in Microsoft 365 and Windows workflows."
     },
     {
       "name": "Grok",
       "slug": "grok",
-      "logo": "https://placehold.co/96x96/1f2937/f472b6?text=G",
+      "logo": "/logos/grok.svg",
       "description": "An AI assistant connected to the X ecosystem with a conversational personality."
     }
   ],
