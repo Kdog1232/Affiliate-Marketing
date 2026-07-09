@@ -4,7 +4,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "verify:logos": "node scripts/verify-logos.js"
+    "verify:logos": "node scripts/verify-logos.js",
+    "generate:logo-report": "node scripts/generate-logo-report.js"
   },
   "dependencies": {
     "next": "15.3.6",
