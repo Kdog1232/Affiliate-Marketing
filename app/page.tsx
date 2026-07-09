@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, Search, Star, TrendingUp } from 'lucide-react';
-import { CATEGORIES, getProducts, type Product } from '@/lib/products';
+import { CATEGORIES, getCategoryHref, getProducts, type Product } from '@/lib/products';
 import { ProductLogo } from '@/components/ProductLogo';
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default async function Home() {
       <p className="text-sm font-semibold uppercase tracking-[.3em] text-blue-300">Browse Categories</p>
       <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">Find AI tools by use case</h2>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {CATEGORIES.map((category) => <Link key={category.slug} href={`/category/${category.slug}`} className="glass rounded-3xl p-6 transition hover:-translate-y-1 hover:border-blue-300/60"><p className="text-xl font-semibold text-white">{category.name}</p><p className="mt-3 text-sm text-slate-300">Compare tools for {category.name.toLowerCase()} workflows.</p><ArrowRight className="mt-6 h-5 w-5 text-blue-300" /></Link>)}
+        {CATEGORIES.map((category) => <Link key={category.slug} href={getCategoryHref(category)} className="glass rounded-3xl p-6 transition hover:-translate-y-1 hover:border-blue-300/60"><p className="text-xl font-semibold text-white">{category.name}</p><p className="mt-3 text-sm text-slate-300">Compare tools for {category.name.toLowerCase()} workflows.</p><ArrowRight className="mt-6 h-5 w-5 text-blue-300" /></Link>)}
       </div>
     </section>
   </main>;

@@ -72,24 +72,42 @@ export async function getProducts() {
   return Promise.all(slugs.map(async (slug) => getProduct(slug))).then((items) => items.filter(Boolean) as Product[]);
 }
 
+export type Category = {
+  slug: string;
+  name: string;
+  pathSlug?: string;
+  intent?: string;
+};
 
-export const CATEGORIES = [
+export const CATEGORIES: readonly Category[] = [
   { slug: 'assistant', name: 'AI Assistants' },
-  { slug: 'writing', name: 'AI Writing' },
-  { slug: 'coding', name: 'AI Coding' },
-  { slug: 'research', name: 'AI Research' },
+  { slug: 'writing', name: 'AI Writing', pathSlug: 'ai-writing', intent: 'drafting, editing, brainstorming, and publishing content faster' },
+  { slug: 'coding', name: 'AI Coding', pathSlug: 'ai-coding', intent: 'shipping software, debugging, and developer productivity' },
+  { slug: 'research', name: 'AI Research', intent: 'summarizing sources, exploring questions, and speeding up analysis' },
   { slug: 'education', name: 'Education' },
   { slug: 'business', name: 'Business' },
-  { slug: 'marketing', name: 'Marketing' },
+  { slug: 'marketing', name: 'Marketing', intent: 'campaign planning, creative production, and growth workflows' },
   { slug: 'development', name: 'Development' },
-  { slug: 'productivity', name: 'Productivity' },
+  { slug: 'productivity', name: 'Productivity', intent: 'saving time, automating busywork, and organizing knowledge' },
   { slug: 'finance', name: 'Finance' },
-  { slug: 'design', name: 'Design' },
+  { slug: 'design', name: 'Design', intent: 'creating polished visuals, brand assets, and production-ready creative' },
   { slug: 'creator-tools', name: 'Creator Tools' },
-] as const;
+];
 
 export function getCategory(slug: string) {
   return CATEGORIES.find((category) => category.slug === slug) ?? null;
+}
+
+export function getCategoryPathSlug(category: Category) {
+  return category.pathSlug ?? category.slug;
+}
+
+export function getCategoryHref(category: Category) {
+  return `/categories/${getCategoryPathSlug(category)}`;
+}
+
+export function getCategoryByPathSlug(pathSlug: string) {
+  return CATEGORIES.find((category) => getCategoryPathSlug(category) === pathSlug || category.slug === pathSlug) ?? null;
 }
 
 export function getProductCategorySlugs(product: Product) {
@@ -103,6 +121,15 @@ export function getProductCategorySlugs(product: Product) {
 export async function getProductsByCategory(categorySlug: string) {
   const products = await getProducts();
   return products.filter((product) => getProductCategorySlugs(product).includes(categorySlug));
+}
+
+export function sortProducts(products: Product[], sort = 'rating') {
+  return [...products].sort((a, b) => {
+    if (sort === 'reviews') return b.reviewCount - a.reviewCount || b.rating - a.rating || a.name.localeCompare(b.name);
+    if (sort === 'name') return a.name.localeCompare(b.name);
+    if (sort === 'newest') return Date.parse(b.review.datePublished) - Date.parse(a.review.datePublished) || a.name.localeCompare(b.name);
+    return b.rating - a.rating || b.reviewCount - a.reviewCount || a.name.localeCompare(b.name);
+  });
 }
 
 function getSharedCount(source: string[], candidate: string[]) {
