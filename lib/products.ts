@@ -25,7 +25,11 @@ export type Product = {
   seoKeywords?: string[];
   quickFacts?: { label: string; value: string }[];
   overview?: string[];
-  useCases?: string[];
+  screenshots?: { title: string; image: string; caption: string }[];
+  useCases?: ({ title: string; description: string } | string)[];
+  testingProcess?: { title: string; description: string }[];
+  relatedComparisons?: string[];
+  relatedArticles?: string[];
   alternatives?: { name: string; slug: string; logo: string; description: string }[];
   comparisonMatrix?: { columns: string[]; rows: { feature: string; values: string[] }[] };
   canonicalUrl?: string;
