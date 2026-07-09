@@ -3,7 +3,7 @@
   "name": "Notion AI",
   "tagline": "Connected workspace with AI for notes, docs, project planning, and team knowledge bases",
   "description": "Connected workspace with AI for notes, docs, project planning, and team knowledge bases.",
-  "logo": "https://placehold.co/128x128/0f172a/60a5fa?text=NO",
+  "logo": "/logos/notion-ai.svg",
   "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Notion+AI+Dashboard",
   "affiliateLink": "https://YOURAFFILIATELINK.com",
   "rating": 4.9,

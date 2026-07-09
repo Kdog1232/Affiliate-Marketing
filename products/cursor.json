@@ -3,7 +3,7 @@
   "name": "Cursor",
   "tagline": "AI-powered code editor for developers who want faster autocomplete, refactoring, and chat-driven programming",
   "description": "AI-powered code editor for developers who want faster autocomplete, refactoring, and chat-driven programming.",
-  "logo": "https://placehold.co/128x128/0f172a/60a5fa?text=CU",
+  "logo": "/logos/cursor.svg",
   "heroImage": "https://placehold.co/1600x1000/0f172a/93c5fd?text=Cursor+Dashboard",
   "affiliateLink": "https://YOURAFFILIATELINK.com",
   "rating": 4.9,
