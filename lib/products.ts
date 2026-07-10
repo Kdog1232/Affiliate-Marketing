@@ -61,7 +61,15 @@ export async function getProductSlugs() {
 export async function getProduct(slug: string): Promise<Product | null> {
   try {
     const file = await fs.readFile(path.join(productsDirectory, `${slug}.json`), 'utf8');
-    return JSON.parse(file) as Product;
+    const product = JSON.parse(file) as Product;
+    const publishedFile = path.join(process.cwd(), 'content', 'published', 'reviews', `${slug}.json`);
+    try {
+      const { applyPublishedReview } = await import('./published-content');
+      const published = JSON.parse(await fs.readFile(publishedFile, 'utf8'));
+      return applyPublishedReview(product, published);
+    } catch {
+      return product;
+    }
   } catch {
     return null;
   }

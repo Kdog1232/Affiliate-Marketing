@@ -6,7 +6,13 @@
     "lint": "eslint .",
     "verify:logos": "node scripts/verify-logos.js",
     "generate:logo-report": "node scripts/generate-logo-report.js",
-    "validate:reviews": "node scripts/validate-reviews.js"
+    "validate:reviews": "node scripts/validate-reviews.js",
+    "generate:review": "node scripts/content-cli.js generate:review",
+    "generate:all-reviews": "node scripts/content-cli.js generate:all-reviews",
+    "generate:buying-guides": "node scripts/content-cli.js generate:buying-guides",
+    "generate:tutorials": "node scripts/content-cli.js generate:tutorials",
+    "generate:alternatives": "node scripts/content-cli.js generate:alternatives",
+    "generate:all": "node scripts/content-cli.js generate:all"
   },
   "dependencies": {
     "next": "15.3.6",
