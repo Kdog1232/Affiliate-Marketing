@@ -13,69 +13,70 @@
     "Desktop",
     "Mobile"
   ],
-  "pricing": "Free and paid plans vary by usage and team size",
+  "pricing": {
+    "summary": "Free and paid plans vary by usage and team size",
+    "freePlan": "Check current availability",
+    "startingPrice": "See current pricing",
+    "billing": "Monthly or annual options vary by plan",
+    "notes": [
+      "Shopify pricing depends on plan selection and usage needs."
+    ]
+  },
   "canonicalUrl": "https://affiliatemarketing.local/shopify",
   "features": [
     {
       "icon": "Sparkles",
-      "title": "Shopify AI workflow",
-      "description": "Commerce platform with AI tools for online stores, product descriptions, and business operations."
-    },
-    {
-      "icon": "ChartBar",
-      "title": "Conversion Scores",
-      "description": "Prioritize the creatives most likely to perform before spending money on traffic."
-    },
-    {
-      "icon": "Image",
-      "title": "Product Visuals",
-      "description": "Create polished product photos and lifestyle-style assets without a full design team."
-    },
-    {
-      "icon": "PenTool",
-      "title": "Copy Generation",
-      "description": "Write ad headlines, descriptions, hooks, and social captions for every channel."
+      "title": "Store Builder",
+      "description": "Themes, product pages, collections, and checkout for online sales."
     },
     {
       "icon": "Layers",
-      "title": "Brand Kits",
-      "description": "Keep fonts, colors, and logos consistent across campaigns and client accounts."
+      "title": "Payments",
+      "description": "Integrated payments, tax settings, discounts, and order management."
     },
     {
       "icon": "Zap",
-      "title": "Fast Exports",
-      "description": "Download ready-to-launch assets sized for popular ad networks and social platforms."
+      "title": "App Ecosystem",
+      "description": "Large marketplace for subscriptions, reviews, shipping, analytics, and marketing."
+    },
+    {
+      "icon": "Image",
+      "title": "Inventory Tools",
+      "description": "Tracks products, variants, stock, fulfillment, and channels."
+    },
+    {
+      "icon": "PenTool",
+      "title": "AI Commerce Tools",
+      "description": "AI assists with product descriptions, store content, and merchandising tasks."
     }
   ],
   "howItWorks": [
     {
-      "title": "Add your brand",
-      "description": "Upload a logo, colors, product details, and audience notes once."
+      "title": "Store Builder",
+      "description": "Themes, product pages, collections, and checkout for online sales."
     },
     {
-      "title": "Choose a campaign goal",
-      "description": "Pick the platform, size, message, and creative style you want to test."
+      "title": "Payments",
+      "description": "Integrated payments, tax settings, discounts, and order management."
     },
     {
-      "title": "Generate variations",
-      "description": "Review AI-generated creatives, copy, and product visuals in seconds."
+      "title": "App Ecosystem",
+      "description": "Large marketplace for subscriptions, reviews, shipping, analytics, and marketing."
     },
     {
-      "title": "Launch and iterate",
-      "description": "Export winners, monitor performance, and generate the next batch faster."
+      "title": "Inventory Tools",
+      "description": "Tracks products, variants, stock, fulfillment, and channels."
     }
   ],
   "pros": [
-    "Very fast creative production",
-    "Useful scoring for ad testing",
-    "Great for agencies managing many brands",
-    "Templates for major ad platforms",
-    "Beginner-friendly workflow"
+    "Complete ecommerce stack from storefront to checkout",
+    "Large app ecosystem for marketing, shipping, and operations",
+    "Scales from small stores to high-volume commerce"
   ],
   "cons": [
-    "Best results still need human review",
-    "Advanced users may want deeper design controls",
-    "Pricing can scale with high-volume usage"
+    "Monthly apps can increase total cost",
+    "Deep customization may require theme or developer expertise",
+    "Not intended for general-purpose design or writing workflows"
   ],
   "pricingPlans": [
     {
@@ -205,7 +206,13 @@
   ],
   "reviewCount": 1287,
   "setupTime": "10 minutes",
-  "bestFor": "Ad testing and fast creative production",
+  "bestFor": [
+    "Online stores",
+    "Product catalogs",
+    "Checkout and payments",
+    "Retail operations",
+    "Omnichannel selling"
+  ],
   "socialProof": [
     {
       "metric": "3M+",
@@ -335,5 +342,52 @@
       "logo": "/logos/claude.svg",
       "description": "Compare Claude with Shopify before choosing a tool."
     }
-  ]
+  ],
+  "category": "Ecommerce",
+  "summary": "Shopify is an ecommerce platform for building online stores, managing products, processing payments, and scaling retail operations.",
+  "idealUsers": [
+    "Merchants launching an ecommerce store",
+    "Brands scaling product sales",
+    "Retailers connecting online and in-person commerce"
+  ],
+  "strengths": [
+    "Complete ecommerce stack from storefront to checkout",
+    "Large app ecosystem for marketing, shipping, and operations",
+    "Scales from small stores to high-volume commerce"
+  ],
+  "weaknesses": [
+    "Monthly apps can increase total cost",
+    "Deep customization may require theme or developer expertise",
+    "Not intended for general-purpose design or writing workflows"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Store Builder",
+      "description": "Themes, product pages, collections, and checkout for online sales."
+    },
+    {
+      "title": "Payments",
+      "description": "Integrated payments, tax settings, discounts, and order management."
+    },
+    {
+      "title": "App Ecosystem",
+      "description": "Large marketplace for subscriptions, reviews, shipping, analytics, and marketing."
+    },
+    {
+      "title": "Inventory Tools",
+      "description": "Tracks products, variants, stock, fulfillment, and channels."
+    },
+    {
+      "title": "AI Commerce Tools",
+      "description": "AI assists with product descriptions, store content, and merchandising tasks."
+    }
+  ],
+  "ratings": {
+    "easeOfUse": 4.6,
+    "features": 4.8,
+    "value": 4.4,
+    "support": 4.6,
+    "integrations": 4.9,
+    "aiQuality": 4.2
+  }
 }

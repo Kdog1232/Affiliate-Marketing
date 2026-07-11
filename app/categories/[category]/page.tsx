@@ -5,6 +5,7 @@ import { ArrowRight, ChevronRight, Star, Table2 } from 'lucide-react';
 import { CategoryNav } from '@/components/category-nav';
 import { ProductLogo } from '@/components/ProductLogo';
 import { CATEGORIES, getCategoryByPathSlug, getCategoryHref, getCategoryPathSlug, getProductsByCategory, sortProducts, type Product } from '@/lib/products';
+import { getPricingText, listBestFor } from '@/lib/comparisons';
 
 type Props = { params: Promise<{ category: string }>; searchParams?: Promise<{ sort?: string }> };
 
@@ -95,7 +96,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[760px] text-left text-sm">
             <thead className="text-blue-200"><tr><th className="py-3 pr-4">Tool</th><th className="py-3 pr-4">Rating</th><th className="py-3 pr-4">Reviews</th><th className="py-3 pr-4">Best for</th><th className="py-3 pr-4">Pricing</th><th className="py-3 pr-4">Review</th></tr></thead>
-            <tbody className="divide-y divide-white/10 text-slate-300">{products.map((product) => <tr key={product.slug}><td className="py-4 pr-4 font-semibold text-white">{product.name}</td><td className="py-4 pr-4">{product.rating}/5</td><td className="py-4 pr-4">{product.reviewCount.toLocaleString()}</td><td className="py-4 pr-4">{product.bestFor}</td><td className="py-4 pr-4">{product.pricing}</td><td className="py-4 pr-4"><Link href={`/${product.slug}`} className="font-semibold text-blue-200 hover:text-white">Read review</Link></td></tr>)}</tbody>
+            <tbody className="divide-y divide-white/10 text-slate-300">{products.map((product) => <tr key={product.slug}><td className="py-4 pr-4 font-semibold text-white">{product.name}</td><td className="py-4 pr-4">{product.rating}/5</td><td className="py-4 pr-4">{product.reviewCount.toLocaleString()}</td><td className="py-4 pr-4">{listBestFor(product).join(', ')}</td><td className="py-4 pr-4">{getPricingText(product)}</td><td className="py-4 pr-4"><Link href={`/${product.slug}`} className="font-semibold text-blue-200 hover:text-white">Read review</Link></td></tr>)}</tbody>
           </table>
         </div>
       </section>
