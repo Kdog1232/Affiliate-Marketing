@@ -1,6 +1,8 @@
 import type { Product } from '@/lib/products';
 import type { ReviewSectionKey } from './types';
 
+export const PROMPT_VERSION = 'publishing-engine-v1';
+export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
   { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms'] },
   { key: 'pros', title: 'Pros', sourceFields: ['pros', 'features', 'rating'] },
@@ -12,12 +14,8 @@ export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFiel
   { key: 'faq', title: 'FAQ', sourceFields: ['faq', 'pricing', 'features'] },
   { key: 'verdict', title: 'Final Verdict', sourceFields: ['rating', 'review', 'pros', 'cons', 'bestFor'] },
 ];
-
-export function systemPrompt() { return ['You are an experienced software review editor.', 'Write polished, factual, SEO-friendly review copy.', 'Never mention AI assistance, content generation, prompts, or internal workflow.', 'Do not invent facts. Use only the provided product JSON.', 'Return strict JSON matching the requested shape.'].join('\n'); }
-export function sectionPrompt(product: Product, section: ReviewSectionKey) {
-  const spec = REVIEW_SECTIONS.find((item) => item.key === section);
-  if (!spec) throw new Error(`Unknown section: ${section}`);
-  return { instructions: `Generate only the ${spec.title} section. Keep it publication-ready and fact-bound.`, expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) };
-}
+export function systemPrompt() { return ['You are an experienced software review editor building fact-bound affiliate review assets.', 'Write product-specific copy that references only supplied facts: category, strengths, pricing, audience, platforms, alternatives, and comparison context.', 'Never invent facts, prices, integrations, screenshots, awards, benchmarks, or unsupported claims.', 'Do not mention AI assistance, content generation, prompts, or internal workflow.', 'Return strict JSON matching the requested shape.'].join('\n'); }
+export function fullReviewPrompt(input: unknown) { return { instructions: ['Generate every content asset in one response.', 'Explain only the provided facts; if a fact is missing, reflect it in missingContent instead of guessing.', 'Keep review sections compatible with existing React renderers.', 'FAQ questions must be product-specific, not generic.', 'Buying guide, alternatives, comparison, and tutorial fields are reusable snippets, not full pages.', 'Score quality internally from 0-100.'].join(' '), expectedJson: { review: { overview: ['string'], pros: ['string'], cons: ['string'], whoShouldBuy: ['string'], whoShouldAvoid: ['string'], pricingSummary: 'string', featureHighlights: ['string'], verdict: 'string', faq: [{ question: 'string', answer: 'string' }] }, buyingGuide: [{ category: 'string', whyMadeTheList: 'string', bestUseCase: 'string', whoShouldSkip: 'string', topCompetitor: 'string', quickSummary: 'string' }], alternatives: [{ slug: 'string', name: 'string', bestFor: 'string', biggestStrength: 'string', biggestWeakness: 'string', whySomeoneWouldSwitch: 'string' }], comparison: [{ competitorSlug: 'string', competitorName: 'string', mainDifference: 'string', whenProductWins: 'string', whenCompetitorWins: 'string', recommendation: 'string' }], tutorial: { title: 'string', steps: ['string'], summary: 'string' }, seo: { title: 'string', metaDescription: 'string', openGraphDescription: 'string', twitterDescription: 'string', searchSnippet: 'string', shortSummary: 'string', longSummary: 'string', scores: { uniqueness: 0, keywordCoverage: 0, contentCompleteness: 0 } }, quality: { specificity: 0, readability: 0, productRelevance: 0, seoCoverage: 0, contentDepth: 0, internalLinking: 0, overall: 0, recommendations: ['string'] }, missingContent: { missing: ['string'], recommendations: ['string'] } }, factPack: input, promptVersion: PROMPT_VERSION } }
+export function sectionPrompt(product: Product, section: ReviewSectionKey) { const spec = REVIEW_SECTIONS.find((item) => item.key === section); if (!spec) throw new Error(`Unknown section: ${section}`); return { instructions: `Generate only the ${spec.title} section. Keep it publication-ready and fact-bound.`, expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) }; }
 function expectedShape(section: ReviewSectionKey) { if (section === 'faq') return '{ "content": [{ "question": "...", "answer": "..." }] }'; if (['overview','pros','cons','whoShouldBuy','whoShouldAvoid','useCases'].includes(section)) return '{ "content": ["..."] }'; return '{ "content": "..." }'; }
 function pick(product: Product, fields: string[]) { return Object.fromEntries(fields.map((field) => [field, (product as unknown as Record<string, unknown>)[field]])); }
