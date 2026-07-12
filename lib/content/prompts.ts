@@ -1,7 +1,7 @@
 import type { Product } from '@/lib/products';
 import type { ReviewSectionKey } from './types';
 
-export const PROMPT_VERSION = 'fact-bound-product-reviews-v2';
+export const PROMPT_VERSION = 'fact-bound-expert-review-extraction-v3';
 export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
   { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases'] },
@@ -30,19 +30,23 @@ export function systemPrompt() {
   return [
     'You are an experienced software review editor building fact-bound affiliate review assets.',
     ...FACT_BOUND_RULES,
-    'Before returning JSON, self-audit every claim against the supplied facts and remove unsupported claims.',
-    'Do not mention AI assistance, content generation, prompts, or internal workflow.',
-    'Return strict JSON matching the requested shape.',
+    'Before returning the final extraction payload, self-audit every claim against the supplied facts and remove unsupported claims.',
+    'Do not mention AI assistance, content generation, prompts, internal workflow, or the intermediate review drafting step.',
+    'Return strict JSON matching the requested shape so the application can store the extracted sections.',
   ].join('\n');
 }
 
 export function fullReviewPrompt(input: unknown) {
   return {
     instructions: [
-      'Generate every content asset in one response using only the supplied factPack.',
+      'Generate the review content in two explicit steps using only the supplied factPack.',
       ...FACT_BOUND_RULES,
+      'Step 1: First write an internal 2,500-word expert product review from the product facts. This draft is scratch work only: do not output it, do not format it as JSON, do not use a reusable template, and write it naturally with editorial judgment.',
+      'Step 1 review requirements: cover overview, pros, cons, features, pricing, use cases, FAQs, and verdict in connected expert prose; include product-specific context; avoid generic filler; keep every claim grounded in the supplied facts.',
+      'Step 2: Extract Overview, Pros, Cons, Features, Pricing, Use Cases, FAQs, and Verdict from that internal review into the expected JSON fields for storage.',
+      'Map Features to review.featureHighlights, Pricing to review.pricingSummary, FAQs to review.faq, and Verdict to review.verdict.',
       'Overview must summarize what the product is, who it serves, primary strengths, and primary use cases without copied wording.',
-      'Feature highlights/use cases must be derived from actual product features and useCases; generate 5-10 workflows when enough facts exist.',
+      'Features and use cases must be derived from actual product features and useCases; generate 5-10 workflows when enough facts exist.',
       'Pros must come from supplied strengths, reviews, ratings, or feature facts; cons must be realistic tradeoffs from supplied cons, notFor, or missing capabilities.',
       'Pricing must mention free plans, paid plans, and enterprise availability only when supplied in pricing or pricingPlans.',
       'FAQ questions must be product-specific and should not be identical across products.',
@@ -56,6 +60,6 @@ export function fullReviewPrompt(input: unknown) {
   };
 }
 
-export function sectionPrompt(product: Product, section: ReviewSectionKey) { const spec = REVIEW_SECTIONS.find((item) => item.key === section); if (!spec) throw new Error(`Unknown section: ${section}`); return { instructions: [`Generate only the ${spec.title} section.`, ...FACT_BOUND_RULES, 'Keep it publication-ready and fact-bound.', 'If the provided fields are insufficient, return the closest supported content rather than guessing.'].join(' '), expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) }; }
+export function sectionPrompt(product: Product, section: ReviewSectionKey) { const spec = REVIEW_SECTIONS.find((item) => item.key === section); if (!spec) throw new Error(`Unknown section: ${section}`); return { instructions: [`Generate only the ${spec.title} section from an internal natural expert review pass.`, ...FACT_BOUND_RULES, 'First draft the relevant review passage naturally as scratch work, without JSON or templates, then extract only the requested section into the expected JSON shape.', 'Keep it publication-ready and fact-bound.', 'If the provided fields are insufficient, return the closest supported content rather than guessing.'].join(' '), expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) }; }
 function expectedShape(section: ReviewSectionKey) { if (section === 'faq') return '{ "content": [{ "question": "...", "answer": "..." }] }'; if (['overview','pros','cons','whoShouldBuy','whoShouldAvoid','useCases'].includes(section)) return '{ "content": ["..."] }'; return '{ "content": "..." }'; }
 function pick(product: Product, fields: string[]) { return Object.fromEntries(fields.map((field) => [field, (product as unknown as Record<string, unknown>)[field]])); }
