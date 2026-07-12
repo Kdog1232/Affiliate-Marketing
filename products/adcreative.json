@@ -88,7 +88,7 @@
       "features": [
         "Limited credits",
         "Core creative generator",
-        "Basic exports"
+        "Ad Creative Generation starter access"
       ],
       "cta": "Start free"
     },
@@ -98,9 +98,9 @@
       "description": "For marketers who need regular campaign assets.",
       "features": [
         "More monthly credits",
-        "Brand kits",
-        "Conversion scoring",
-        "Priority exports"
+        "Ad Creative Generation workflow support",
+        "Creative Variants usage support",
+        "Brand Controls output support"
       ],
       "cta": "Try Professional"
     },
@@ -120,23 +120,23 @@
   "audiences": [
     {
       "title": "Teams evaluating AdCreative.ai",
-      "description": "A practical fit check for readers who need product-specific detail before choosing AdCreative.ai."
+      "description": "AdCreative.ai is worth evaluating when Ad creatives is a priority.ai."
     },
     {
       "title": "Solo users comparing AdCreative.ai",
-      "description": "A practical fit check for readers who need product-specific detail before choosing AdCreative.ai."
+      "description": "AdCreative.ai is worth evaluating when Campaign variants is a priority.ai."
     },
     {
       "title": "Operations teams standardizing AdCreative.ai",
-      "description": "A practical fit check for readers who need product-specific detail before choosing AdCreative.ai."
+      "description": "AdCreative.ai is worth evaluating when Paid social assets is a priority.ai."
     },
     {
       "title": "Creators testing AdCreative.ai",
-      "description": "A practical fit check for readers who need product-specific detail before choosing AdCreative.ai."
+      "description": "AdCreative.ai is worth evaluating when Performance marketing is a priority.ai."
     },
     {
       "title": "Businesses budgeting for AdCreative.ai",
-      "description": "A practical fit check for readers who need product-specific detail before choosing AdCreative.ai."
+      "description": "AdCreative.ai is worth evaluating when Brand-consistent ad production is a priority.ai."
     }
   ],
   "testimonials": [
@@ -199,7 +199,7 @@
     },
     {
       "question": "Is AdCreative.ai worth it in 2026?",
-      "answer": "For the right audience, AdCreative.ai is worth shortlisting in 2026."
+      "answer": "AdCreative.ai is worth shortlisting when its documented strengths, pricing, and limitations match your workflow."
     },
     {
       "question": "Where can I try AdCreative.ai?",
@@ -224,7 +224,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "AdCreative.ai supports Ad Creative Generation, Creative Variants, Brand Controls workflows for its target users."
     },
     {
       "metric": "5 min",
@@ -297,7 +297,7 @@
     "business",
     "design"
   ],
-  "reviewScore": "100%",
+  "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/adcreative-1.svg",

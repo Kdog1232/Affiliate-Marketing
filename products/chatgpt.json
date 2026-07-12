@@ -173,23 +173,23 @@
   "audiences": [
     {
       "title": "Teams evaluating ChatGPT",
-      "description": "A practical fit check for readers who need product-specific detail before choosing ChatGPT."
+      "description": "ChatGPT is worth evaluating when Writing drafts is a priority."
     },
     {
       "title": "Solo users comparing ChatGPT",
-      "description": "A practical fit check for readers who need product-specific detail before choosing ChatGPT."
+      "description": "ChatGPT is worth evaluating when Brainstorming ideas is a priority."
     },
     {
       "title": "Operations teams standardizing ChatGPT",
-      "description": "A practical fit check for readers who need product-specific detail before choosing ChatGPT."
+      "description": "ChatGPT is worth evaluating when Data and document analysis is a priority."
     },
     {
       "title": "Creators testing ChatGPT",
-      "description": "A practical fit check for readers who need product-specific detail before choosing ChatGPT."
+      "description": "ChatGPT is worth evaluating when General research support is a priority."
     },
     {
       "title": "Businesses budgeting for ChatGPT",
-      "description": "A practical fit check for readers who need product-specific detail before choosing ChatGPT."
+      "description": "ChatGPT is worth evaluating when Everyday productivity is a priority."
     }
   ],
   "notFor": [
@@ -373,7 +373,7 @@
     },
     {
       "question": "Is ChatGPT worth it in 2026?",
-      "answer": "For the right audience, ChatGPT is worth shortlisting in 2026."
+      "answer": "ChatGPT is worth shortlisting when its documented strengths, pricing, and limitations match your workflow."
     },
     {
       "question": "Where can I try ChatGPT?",
@@ -413,7 +413,7 @@
     "multimodal",
     "openai"
   ],
-  "reviewScore": "100%",
+  "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/chatgpt-1.svg",

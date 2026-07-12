@@ -86,7 +86,7 @@
       "features": [
         "Limited credits",
         "Core creative generator",
-        "Basic exports"
+        "Docs and Wikis starter access"
       ],
       "cta": "Start free"
     },
@@ -96,9 +96,9 @@
       "description": "For marketers who need regular campaign assets.",
       "features": [
         "More monthly credits",
-        "Brand kits",
-        "Conversion scoring",
-        "Priority exports"
+        "Docs and Wikis workflow support",
+        "Databases usage support",
+        "Notion AI output support"
       ],
       "cta": "Try Professional"
     },
@@ -118,23 +118,23 @@
   "audiences": [
     {
       "title": "Teams evaluating Notion AI",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+      "description": "Notion AI is worth evaluating when Team wikis is a priority."
     },
     {
       "title": "Solo users comparing Notion AI",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+      "description": "Notion AI is worth evaluating when Project documentation is a priority."
     },
     {
       "title": "Operations teams standardizing Notion AI",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+      "description": "Notion AI is worth evaluating when Databases is a priority."
     },
     {
       "title": "Creators testing Notion AI",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+      "description": "Notion AI is worth evaluating when Notes and docs is a priority."
     },
     {
       "title": "Businesses budgeting for Notion AI",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Notion AI."
+      "description": "Notion AI is worth evaluating when Knowledge management is a priority."
     }
   ],
   "testimonials": [
@@ -197,7 +197,7 @@
     },
     {
       "question": "Is Notion AI worth it in 2026?",
-      "answer": "For the right audience, Notion AI is worth shortlisting in 2026."
+      "answer": "Notion AI is worth shortlisting when its documented strengths, pricing, and limitations match your workflow."
     },
     {
       "question": "Where can I try Notion AI?",
@@ -222,7 +222,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Notion AI supports Docs and Wikis, Databases, Notion AI workflows for its target users."
     },
     {
       "metric": "5 min",
@@ -294,7 +294,7 @@
     "productivity",
     "business"
   ],
-  "reviewScore": "100%",
+  "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/notion-1.svg",

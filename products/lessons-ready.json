@@ -86,7 +86,7 @@
       "features": [
         "Limited credits",
         "Core creative generator",
-        "Basic exports"
+        "Lesson Plans starter access"
       ],
       "cta": "Start free"
     },
@@ -96,9 +96,9 @@
       "description": "For marketers who need regular campaign assets.",
       "features": [
         "More monthly credits",
-        "Brand kits",
-        "Conversion scoring",
-        "Priority exports"
+        "Lesson Plans workflow support",
+        "Worksheets usage support",
+        "Differentiation output support"
       ],
       "cta": "Try Professional"
     },
@@ -118,23 +118,23 @@
   "audiences": [
     {
       "title": "Teams evaluating Lessons Ready",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+      "description": "Lessons Ready is worth evaluating when Lesson planning is a priority."
     },
     {
       "title": "Solo users comparing Lessons Ready",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+      "description": "Lessons Ready is worth evaluating when Worksheets is a priority."
     },
     {
       "title": "Operations teams standardizing Lessons Ready",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+      "description": "Lessons Ready is worth evaluating when Classroom materials is a priority."
     },
     {
       "title": "Creators testing Lessons Ready",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+      "description": "Lessons Ready is worth evaluating when Teacher productivity is a priority."
     },
     {
       "title": "Businesses budgeting for Lessons Ready",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Lessons Ready."
+      "description": "Lessons Ready is worth evaluating when Education content is a priority."
     }
   ],
   "testimonials": [
@@ -197,7 +197,7 @@
     },
     {
       "question": "Is Lessons Ready worth it in 2026?",
-      "answer": "For the right audience, Lessons Ready is worth shortlisting in 2026."
+      "answer": "Lessons Ready is worth shortlisting when its documented strengths, pricing, and limitations match your workflow."
     },
     {
       "question": "Where can I try Lessons Ready?",
@@ -222,7 +222,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Lessons Ready supports Lesson Plans, Worksheets, Differentiation workflows for its target users."
     },
     {
       "metric": "5 min",
@@ -294,7 +294,7 @@
     "education",
     "productivity"
   ],
-  "reviewScore": "100%",
+  "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/lessons-ready-1.svg",
