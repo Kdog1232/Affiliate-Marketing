@@ -9,7 +9,25 @@ export type MissingContentReport = { missing: string[]; recommendations: string[
 export type BuyingGuideSnippet = { category: string; whyMadeTheList: string; bestUseCase: string; whoShouldSkip: string; topCompetitor?: string; quickSummary: string };
 export type ComparisonSummary = { competitorSlug: string; competitorName: string; mainDifference: string; whenProductWins: string; whenCompetitorWins: string; recommendation: string };
 export type AlternativeSummary = { slug: string; name: string; bestFor: string; biggestStrength: string; biggestWeakness: string; whySomeoneWouldSwitch: string };
-export type GeneratedContentAssets = { buyingGuide?: BuyingGuideSnippet[]; alternatives?: AlternativeSummary[]; comparison?: ComparisonSummary[]; tutorial?: { title: string; steps: string[]; summary: string }; quality?: QualityScore; missingContent?: MissingContentReport };
+export type UtilizationCoverageItem = { used: number; total: number; notes?: string[] };
+export type KnowledgeGraphUtilizationReport = {
+  features: UtilizationCoverageItem;
+  pros: UtilizationCoverageItem;
+  cons: UtilizationCoverageItem;
+  reviewerIntelligence: UtilizationCoverageItem;
+  workflows: UtilizationCoverageItem;
+  alternatives: UtilizationCoverageItem;
+  pricingGuidance: UtilizationCoverageItem;
+  buyerAdvice: UtilizationCoverageItem;
+  strengths: UtilizationCoverageItem;
+  weaknesses: UtilizationCoverageItem;
+  pricingTradeoffs: UtilizationCoverageItem;
+  examples: UtilizationCoverageItem;
+  overallCoverage: number;
+  omittedItems: string[];
+  regenerationRecommended: boolean;
+};
+export type GeneratedContentAssets = { buyingGuide?: BuyingGuideSnippet[]; alternatives?: AlternativeSummary[]; comparison?: ComparisonSummary[]; tutorial?: { title: string; steps: string[]; summary: string }; quality?: QualityScore; missingContent?: MissingContentReport; utilizationReport?: KnowledgeGraphUtilizationReport };
 export type GenerationMetadata = { promptVersion: string; generatedDate: string; model: string; provider: string; providerVersion: string; cacheHash: string; sourceHash: string; cached: boolean };
 export type ReviewDraft = { type: 'review'; slug: string; productSlug: string; status: 'draft' | 'needs_review' | 'approved' | 'published'; generatedAt: string; updatedAt: string; model: string; seo: SeoAsset; sections: Record<ReviewSectionKey, GeneratedSection>; productSnapshot: Pick<Product, 'slug' | 'name' | 'rating' | 'pricing' | 'categories' | 'platforms' | 'affiliateLink' | 'logo' | 'features'>; assets?: GeneratedContentAssets; quality?: QualityScore; missingContent?: MissingContentReport; metadata?: GenerationMetadata; humanReview?: { reviewedBy?: string; reviewedAt?: string; notes?: string } };
 export type ContentIndexItem = { productSlug: string; productName: string; status: 'Missing Data' | 'Needs Review' | 'Draft' | 'Published' | 'Needs Regeneration'; draftPath?: string; publishedPath?: string; generatedDate?: string; model?: string; seoScore: number; qualityScore?: number; missingCount: number };
