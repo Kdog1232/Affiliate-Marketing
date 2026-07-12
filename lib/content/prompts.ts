@@ -4,15 +4,15 @@ import type { ReviewSectionKey } from './types';
 export const PROMPT_VERSION = 'fact-bound-expert-review-extraction-v3';
 export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
-  { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases'] },
-  { key: 'pros', title: 'Pros', sourceFields: ['pros', 'features', 'rating', 'strengths'] },
-  { key: 'cons', title: 'Cons', sourceFields: ['cons', 'notFor', 'weaknesses'] },
-  { key: 'pricingSummary', title: 'Pricing Summary', sourceFields: ['pricing', 'pricingPlans'] },
-  { key: 'whoShouldBuy', title: 'Who Should Buy', sourceFields: ['audiences', 'bestFor', 'idealUsers', 'useCases'] },
-  { key: 'whoShouldAvoid', title: 'Who Should Avoid', sourceFields: ['notFor', 'cons', 'weaknesses'] },
-  { key: 'useCases', title: 'Use Cases', sourceFields: ['useCases', 'features', 'bestFor'] },
-  { key: 'faq', title: 'FAQ', sourceFields: ['faq', 'pricing', 'pricingPlans', 'features', 'platforms', 'bestFor', 'cons'] },
-  { key: 'verdict', title: 'Final Verdict', sourceFields: ['rating', 'review', 'pros', 'cons', 'bestFor', 'pricing', 'pricingPlans'] },
+  { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases', 'knowledgeGraph'] },
+  { key: 'pros', title: 'Pros', sourceFields: ['pros', 'features', 'rating', 'strengths', 'knowledgeGraph'] },
+  { key: 'cons', title: 'Cons', sourceFields: ['cons', 'notFor', 'weaknesses', 'knowledgeGraph'] },
+  { key: 'pricingSummary', title: 'Pricing Summary', sourceFields: ['pricing', 'pricingPlans', 'knowledgeGraph'] },
+  { key: 'whoShouldBuy', title: 'Who Should Buy', sourceFields: ['audiences', 'bestFor', 'idealUsers', 'useCases', 'knowledgeGraph'] },
+  { key: 'whoShouldAvoid', title: 'Who Should Avoid', sourceFields: ['notFor', 'cons', 'weaknesses', 'knowledgeGraph'] },
+  { key: 'useCases', title: 'Use Cases', sourceFields: ['useCases', 'features', 'bestFor', 'knowledgeGraph'] },
+  { key: 'faq', title: 'FAQ', sourceFields: ['faq', 'pricing', 'pricingPlans', 'features', 'platforms', 'bestFor', 'cons', 'knowledgeGraph'] },
+  { key: 'verdict', title: 'Final Verdict', sourceFields: ['rating', 'review', 'pros', 'cons', 'bestFor', 'pricing', 'pricingPlans', 'knowledgeGraph'] },
 ];
 
 const FACT_BOUND_RULES = [
@@ -61,5 +61,5 @@ export function fullReviewPrompt(input: unknown) {
 }
 
 export function sectionPrompt(product: Product, section: ReviewSectionKey) { const spec = REVIEW_SECTIONS.find((item) => item.key === section); if (!spec) throw new Error(`Unknown section: ${section}`); return { instructions: [`Generate only the ${spec.title} section from an internal natural expert review pass.`, ...FACT_BOUND_RULES, 'First draft the relevant review passage naturally as scratch work, without JSON or templates, then extract only the requested section into the expected JSON shape.', 'Keep it publication-ready and fact-bound.', 'If the provided fields are insufficient, return the closest supported content rather than guessing.'].join(' '), expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) }; }
-function expectedShape(section: ReviewSectionKey) { if (section === 'faq') return '{ "content": [{ "question": "...", "answer": "..." }] }'; if (['overview','pros','cons','whoShouldBuy','whoShouldAvoid','useCases'].includes(section)) return '{ "content": ["..."] }'; return '{ "content": "..." }'; }
+function expectedShape(section: ReviewSectionKey) { if (section === 'faq') return '{ "content": [{ "question": "...", "answer": "..." }] }'; if (['overview','pros','cons','whoShouldBuy','whoShouldAvoid','useCases', 'knowledgeGraph'].includes(section)) return '{ "content": ["..."] }'; return '{ "content": "..." }'; }
 function pick(product: Product, fields: string[]) { return Object.fromEntries(fields.map((field) => [field, (product as unknown as Record<string, unknown>)[field]])); }

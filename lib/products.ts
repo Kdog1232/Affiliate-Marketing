@@ -1,6 +1,82 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
+
+export type KnowledgeGraphFeature = {
+  name: string;
+  whatItDoes: string;
+  whyItMatters: string;
+  bestFor?: string[];
+  example?: string;
+  evidence?: string;
+  tradeoff?: string;
+};
+
+export type KnowledgeGraphPro = {
+  title: string;
+  evidence: string;
+  whoBenefits?: string[];
+  tradeoff?: string;
+};
+
+export type KnowledgeGraphCon = {
+  title: string;
+  evidence: string;
+  whoIsAffected?: string[];
+  mitigation?: string;
+};
+
+export type KnowledgeGraphPricingPlan = {
+  plan: string;
+  price?: string;
+  bestFor: string;
+  upgradeReason?: string;
+  skipIf?: string;
+  evidence?: string;
+};
+
+export type KnowledgeGraphAlternative = {
+  product: string;
+  slug?: string;
+  betterAt?: string[];
+  worseAt?: string[];
+  whenToChoose: string;
+};
+
+export type KnowledgeGraphUseCase = {
+  title: string;
+  workflow: string;
+  industry?: string;
+  timeSaved?: string;
+  difficulty?: 'Beginner' | 'Intermediate' | 'Advanced' | string;
+};
+
+export type ReviewerIntelligence = {
+  biggestPurchaseReason?: string;
+  biggestDisappointment?: string;
+  competitiveAdvantage?: string;
+  biggestWeakness?: string;
+  learningCurve?: string;
+  roi?: string;
+  bestIndustry?: string;
+  mostUnderratedFeature?: string;
+  overhypedFeature?: string;
+  editorialAngle?: string;
+};
+
+export type ProductKnowledgeGraph = {
+  version: 2;
+  facts: {
+    features?: KnowledgeGraphFeature[];
+    pros?: KnowledgeGraphPro[];
+    cons?: KnowledgeGraphCon[];
+    pricing?: KnowledgeGraphPricingPlan[];
+    alternatives?: KnowledgeGraphAlternative[];
+    useCases?: KnowledgeGraphUseCase[];
+  };
+  interpretation?: ReviewerIntelligence;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -56,6 +132,7 @@ export type Product = {
   reviewScore?: string;
   reviewStatus?: 'Ready to Publish' | 'Needs Work';
   faq: { question: string; answer: string }[];
+  knowledgeGraph?: ProductKnowledgeGraph;
 };
 
 const productsDirectory = path.join(process.cwd(), 'products');
