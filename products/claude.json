@@ -401,5 +401,252 @@
     "support": 4.4,
     "integrations": 4.3,
     "aiQuality": 4.8
+  },
+  "knowledgeGraph": {
+    "version": 2,
+    "facts": {
+      "features": [
+        {
+          "name": "Long Context",
+          "whatItDoes": "Reviews lengthy documents, transcripts, research packets, and multi-file context in one workflow.",
+          "whyItMatters": "Users can ask better follow-up questions without repeatedly restating the background.",
+          "bestFor": [
+            "researchers",
+            "lawyers",
+            "analysts",
+            "consultants"
+          ],
+          "example": "A consultant can upload meeting notes, client research, and a draft recommendation, then ask Claude to identify missing assumptions before a client presentation.",
+          "tradeoff": "Very large or sensitive document workflows still require checking plan limits and data policies."
+        },
+        {
+          "name": "Writing Quality",
+          "whatItDoes": "Turns rough notes into polished memos, briefs, summaries, and editorial drafts.",
+          "whyItMatters": "The output usually needs less rewriting for tone and structure than generic short-form assistant responses.",
+          "bestFor": [
+            "writers",
+            "executives",
+            "marketers",
+            "consultants"
+          ],
+          "example": "An operations leader can turn scattered policy notes into a clear internal announcement.",
+          "tradeoff": "Facts, citations, and current details still need independent verification."
+        },
+        {
+          "name": "Analysis",
+          "whatItDoes": "Compares sources, extracts themes, and organizes complex information into structured findings.",
+          "whyItMatters": "It gives reviewers a starting framework before they make final human judgments.",
+          "bestFor": [
+            "researchers",
+            "analysts",
+            "strategy teams"
+          ],
+          "example": "A researcher can compare several reports and ask Claude to group recurring risks, disagreements, and open questions."
+        },
+        {
+          "name": "Coding Support",
+          "whatItDoes": "Explains code, suggests implementation changes, and helps debug technical details.",
+          "whyItMatters": "It is useful when a developer needs reasoning and explanation rather than only autocomplete.",
+          "bestFor": [
+            "developers",
+            "technical founders",
+            "product managers"
+          ],
+          "example": "A developer can paste a failing function and ask Claude to explain the likely bug before editing the codebase.",
+          "tradeoff": "Dedicated IDE agents may be better for repository-wide edits and terminal-driven automation."
+        },
+        {
+          "name": "Team Workspace",
+          "whatItDoes": "Project-style workflows keep instructions, files, and ongoing context together for teams.",
+          "whyItMatters": "Recurring work can continue without rebuilding the same context every session.",
+          "bestFor": [
+            "business teams",
+            "operations leaders",
+            "consultants"
+          ],
+          "example": "A legal operations team can keep vendor agreements and review instructions together while preparing issues for counsel."
+        }
+      ],
+      "pros": [
+        {
+          "title": "Excellent long-context document handling",
+          "evidence": "Claude is positioned around lengthy documents, transcripts, research packets, and business context rather than quick one-off answers.",
+          "whoBenefits": [
+            "researchers",
+            "lawyers",
+            "analysts",
+            "consultants"
+          ],
+          "tradeoff": "Users still need to verify source-sensitive conclusions."
+        },
+        {
+          "title": "Natural writing style for professional communication",
+          "evidence": "The product facts emphasize polished memos, summaries, briefs, editorial drafts, and careful business communication.",
+          "whoBenefits": [
+            "writers",
+            "executives",
+            "consultants"
+          ],
+          "tradeoff": "Brand voice and factual claims still benefit from editor review."
+        },
+        {
+          "title": "Careful explanations and structured reasoning",
+          "evidence": "Claude is described as useful for comparing sources, extracting themes, organizing complex information, and explaining code.",
+          "whoBenefits": [
+            "developers",
+            "analysts",
+            "business teams"
+          ],
+          "tradeoff": "It should not replace expert review for legal, medical, financial, or production-critical decisions."
+        }
+      ],
+      "cons": [
+        {
+          "title": "Fewer broad workflow integrations than some ecosystems",
+          "evidence": "The review notes that broader assistants may be better for app ecosystems, web-first search, or media workflows.",
+          "whoIsAffected": [
+            "teams standardized on a larger productivity ecosystem"
+          ],
+          "mitigation": "Compare Claude against the tools already embedded in your daily stack before rollout."
+        },
+        {
+          "title": "Specialized media generation is not the main reason to buy",
+          "evidence": "The product facts explicitly avoid positioning Claude as a built-in image generation or graphic design tool.",
+          "whoIsAffected": [
+            "design teams",
+            "ad creative teams",
+            "social media producers"
+          ],
+          "mitigation": "Pair Claude with a dedicated image or design product when visual asset creation is central."
+        },
+        {
+          "title": "Pricing, limits, and model access require verification",
+          "evidence": "The pricing facts state that plan names, usage limits, model access, and regional prices can change.",
+          "whoIsAffected": [
+            "heavy daily users",
+            "teams budgeting seats"
+          ],
+          "mitigation": "Check current pricing and limits before recommending a paid plan."
+        }
+      ],
+      "pricing": [
+        {
+          "plan": "Free",
+          "price": "Free",
+          "bestFor": "Occasional users testing Claude for basic chat and document analysis within limits.",
+          "upgradeReason": "Upgrade when usage limits interrupt real work or advanced models become necessary.",
+          "skipIf": "You already need sustained daily usage or team controls."
+        },
+        {
+          "plan": "Pro",
+          "price": "Paid monthly or annual plan",
+          "bestFor": "Professionals using Claude regularly for writing, document analysis, coding questions, and research synthesis.",
+          "upgradeReason": "Worth considering once free usage limits become restrictive.",
+          "skipIf": "You only need occasional experimentation."
+        },
+        {
+          "plan": "Team",
+          "price": "Paid per-user team plan",
+          "bestFor": "Teams that need shared workspace features and collaboration around recurring Claude workflows.",
+          "upgradeReason": "Upgrade when multiple people need shared context, administration, and team-oriented usage.",
+          "skipIf": "Only one person will use Claude."
+        },
+        {
+          "plan": "Enterprise",
+          "price": "Custom",
+          "bestFor": "Organizations that need larger-scale deployment, security, administration, and support discussions.",
+          "upgradeReason": "Consider when procurement, governance, and support requirements exceed Team-plan needs.",
+          "skipIf": "You do not need enterprise controls or custom commercial terms."
+        }
+      ],
+      "alternatives": [
+        {
+          "product": "ChatGPT",
+          "slug": "chatgpt",
+          "betterAt": [
+            "broader multimodal workflows",
+            "image generation",
+            "voice and ecosystem breadth"
+          ],
+          "worseAt": [
+            "Claude-style long-context writing and careful document review workflows in this fact set"
+          ],
+          "whenToChoose": "Choose ChatGPT if the workflow depends on broad tools, multimodal creation, or a larger assistant ecosystem."
+        },
+        {
+          "product": "Perplexity",
+          "slug": "perplexity",
+          "betterAt": [
+            "cited web research",
+            "answer-engine workflows"
+          ],
+          "worseAt": [
+            "long-form drafting and project-style document workflows"
+          ],
+          "whenToChoose": "Choose Perplexity when current web research with citations is more important than drafting and document synthesis."
+        },
+        {
+          "product": "Microsoft Copilot",
+          "slug": "microsoft-copilot",
+          "betterAt": [
+            "Microsoft 365 adjacency",
+            "office productivity workflows"
+          ],
+          "worseAt": [
+            "standalone long-form writing workflows outside that ecosystem"
+          ],
+          "whenToChoose": "Choose Copilot when Microsoft 365 integration is the main buying criterion."
+        }
+      ],
+      "useCases": [
+        {
+          "title": "Contract Review",
+          "workflow": "Upload multiple vendor agreements into a Claude project and ask it to identify conflicting indemnity clauses, renewal terms, and unusual obligations before legal review.",
+          "industry": "Legal",
+          "timeSaved": "Several hours of first-pass review",
+          "difficulty": "Advanced"
+        },
+        {
+          "title": "Executive Brief Drafting",
+          "workflow": "Provide meeting notes, goals, and a rough recommendation, then ask Claude to produce a concise memo with assumptions, risks, and next steps.",
+          "industry": "Business operations",
+          "timeSaved": "One to two drafting cycles",
+          "difficulty": "Intermediate"
+        },
+        {
+          "title": "Research Synthesis",
+          "workflow": "Upload reports and transcripts, ask Claude to group recurring themes, contradictions, and open questions, then use the output as an analyst outline.",
+          "industry": "Research",
+          "timeSaved": "Several hours on dense source packets",
+          "difficulty": "Intermediate"
+        },
+        {
+          "title": "Code Explanation",
+          "workflow": "Paste an unfamiliar function, error message, or pull request excerpt and ask Claude to explain behavior, likely failure points, and safer next edits.",
+          "industry": "Software development",
+          "timeSaved": "Faster onboarding to unfamiliar code",
+          "difficulty": "Intermediate"
+        },
+        {
+          "title": "Policy Drafting",
+          "workflow": "Collect existing policy snippets and stakeholder notes, then ask Claude to turn them into a structured draft with sections for scope, responsibilities, and exceptions.",
+          "industry": "Operations",
+          "timeSaved": "One initial draft pass",
+          "difficulty": "Beginner"
+        }
+      ]
+    },
+    "interpretation": {
+      "biggestPurchaseReason": "Claude is most compelling when the buyer has long documents, scattered source material, or high-stakes writing that needs careful synthesis.",
+      "biggestDisappointment": "Users expecting native image generation, deep spreadsheet automation, or IDE-level coding automation may find Claude less specialized than dedicated tools.",
+      "competitiveAdvantage": "Its strongest editorial angle is long-context professional writing and analysis rather than novelty features.",
+      "biggestWeakness": "Pricing and usage limits are plan-dependent and must be checked before recommending a paid workflow.",
+      "learningCurve": "Easy to start, but advanced value comes from organizing files, instructions, and recurring context into project-style workflows.",
+      "roi": "Highest ROI appears when Claude replaces repeated first-pass drafting, summarization, and document triage rather than occasional chat use.",
+      "bestIndustry": "Professional services, research, legal operations, software teams, and business operations.",
+      "mostUnderratedFeature": "Team Workspace because persistent context makes recurring work more useful than isolated chats.",
+      "overhypedFeature": "Coding support can be valuable, but it should not be treated as a full replacement for an IDE-native coding agent.",
+      "editorialAngle": "Review Claude as a serious document and writing assistant for professionals, not as a generic chatbot."
+    }
   }
 }
