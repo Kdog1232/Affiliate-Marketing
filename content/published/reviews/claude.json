@@ -1,0 +1,357 @@
+{
+  "type": "review",
+  "slug": "claude",
+  "productSlug": "claude",
+  "status": "published",
+  "generatedAt": "2026-07-12T00:00:00.000Z",
+  "updatedAt": "2026-07-12T00:00:00.000Z",
+  "model": "gpt-4.1-mini",
+  "seo": {
+    "title": "Claude Review (2026): Long-Context AI Assistant for Writing, Research, and Coding",
+    "metaDescription": "Claude is a strong AI assistant for long document analysis, polished writing, research synthesis, and coding explanation. See pricing fit, pros, cons, and alternatives.",
+    "canonical": "/claude",
+    "openGraphDescription": "A fact-bound Claude review covering long-context workflows, pricing fit, buyer guidance, alternatives, and tradeoffs.",
+    "twitterDescription": "Claude review: who should buy it, who should skip it, and how its long-context workflows compare.",
+    "searchSnippet": "Claude is best for long documents, polished writing, research synthesis, and explanatory coding help, with pricing and limits to verify before purchase.",
+    "shortSummary": "Claude is strongest for document-heavy writing, research, analysis, and code explanation workflows.",
+    "longSummary": "Claude is a document-centered AI assistant for teams and professionals who need long-context analysis, polished writing, research synthesis, careful reasoning, and code explanation. It is less suited to native visual production, spreadsheet-heavy operations, and IDE-only coding automation."
+  },
+  "sections": {
+    "overview": {
+      "key": "overview",
+      "title": "Overview",
+      "content": [
+        "Claude is best understood as a document-first AI assistant for people who need careful writing, source synthesis, and explanatory help across longer work sessions. Its strongest fit is not quick visual production or a broad app marketplace; it is the work of reading dense context, keeping instructions together, and turning that context into polished memos, research summaries, planning notes, and code explanations.",
+        "The buying case is strongest for writers, analysts, consultants, developers, and business teams that routinely bring their own source material. Claude’s long-context workflow matters because users can review transcripts, reports, agreements, or project notes without repeatedly rebuilding the background. The tradeoff is that plan limits, model access, data policies, and current pricing still need to be checked before a team standardizes on it.",
+        "Compared with broader assistants, Claude is a better fit when writing quality and document reasoning matter more than native image generation, spreadsheet automation, or deep ecosystem integrations. Choose it when the primary job is understanding and improving text-heavy work; compare alternatives when your workflow depends on web-cited research, Microsoft 365 adjacency, or IDE-native repository automation."
+      ],
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "name",
+        "tagline",
+        "description",
+        "features",
+        "categories",
+        "platforms",
+        "bestFor",
+        "useCases",
+        "knowledgeGraph"
+      ]
+    },
+    "pros": {
+      "key": "pros",
+      "title": "Pros",
+      "content": [
+        "Excellent long-context document handling for research packets, transcripts, agreements, and multi-file background material.",
+        "Polished writing style for memos, briefs, summaries, editorial drafts, and careful internal communication.",
+        "Strong analysis workflows for comparing sources, extracting themes, organizing risks, and explaining technical details.",
+        "Project-style team workspace can keep recurring instructions, files, and context together across sessions.",
+        "Helpful coding support when the user needs reasoning, explanation, and suggested implementation changes rather than only autocomplete."
+      ],
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    },
+    "cons": {
+      "key": "cons",
+      "title": "Cons",
+      "content": [
+        "Claude may have fewer broad workflow integrations than assistants embedded in larger productivity ecosystems.",
+        "It is not the right primary purchase for image generation, graphic design, ad creative production, or other specialized media workflows.",
+        "Pricing, model access, message limits, document limits, and regional availability can change, so buyers must verify the current plan details before upgrading.",
+        "Teams handling sensitive or regulated documents still need to review data policies, governance requirements, and approval workflows before rollout."
+      ],
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    },
+    "pricingSummary": {
+      "key": "pricingSummary",
+      "title": "Pricing Summary",
+      "content": "Claude has a Free plan for trying chat and document analysis within limits, plus paid Pro, Team, and Enterprise options. Pro is the practical upgrade when individual usage limits interrupt regular writing, research, coding, or analysis work. Team is more appropriate when multiple people need shared workspace features and recurring context. Enterprise is for organizations that need larger-scale deployment, security, administration, support, and custom commercial discussions. Because the supplied facts note that plan names, limits, model access, and regional prices can change, buyers should confirm current Claude pricing before purchase.",
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    },
+    "whoShouldBuy": {
+      "key": "whoShouldBuy",
+      "title": "Who Should Buy",
+      "content": [
+        "Writers and editors who need polished long-form drafts, executive briefs, summaries, and careful rewrites from rough notes.",
+        "Researchers, analysts, consultants, and legal-adjacent teams that review long documents, compare sources, and turn dense material into structured findings.",
+        "Developers and technical founders who want code explanation, bug reasoning, implementation suggestions, and plain-English technical review.",
+        "Business and operations teams that repeatedly convert meetings, policies, vendor documents, and planning notes into clearer deliverables.",
+        "Teams willing to check plan limits and data policies because they expect repeated value from shared document-heavy workflows."
+      ],
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    },
+    "whoShouldAvoid": {
+      "key": "whoShouldAvoid",
+      "title": "Who Should Avoid",
+      "content": [
+        "Design, ad creative, or social teams whose main job is native image generation or visual asset production.",
+        "Spreadsheet-heavy operators who need deep workbook automation, formulas, pivots, and spreadsheet-native workflows.",
+        "Developers who primarily want in-editor agent actions, terminal control, repository-wide refactors, and Git automation.",
+        "Teams that need a larger productivity-suite ecosystem or web-cited answer engine more than standalone document synthesis.",
+        "Occasional users who only need light experimentation and can stay within the Free plan."
+      ],
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    },
+    "useCases": {
+      "key": "useCases",
+      "title": "Use Cases",
+      "content": [
+        "Contract review: upload vendor agreements and ask Claude to surface conflicting clauses, renewal terms, obligations, and questions for human legal review.",
+        "Executive brief drafting: provide meeting notes, goals, and a rough recommendation, then ask for a concise memo with assumptions, risks, and next steps.",
+        "Research synthesis: compare reports and transcripts, group recurring themes and disagreements, and turn findings into an analyst-ready outline.",
+        "Code explanation and debugging: paste a failing function or implementation detail and ask Claude to reason through likely causes before editing.",
+        "Policy and operations writing: keep source documents and style instructions together while drafting internal announcements, process notes, or vendor summaries.",
+        "Project planning from scattered notes: turn decisions, constraints, owners, and open questions into a structured plan that a team can review."
+      ],
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    },
+    "faq": {
+      "key": "faq",
+      "title": "FAQ",
+      "content": [
+        {
+          "question": "Is Claude best for long documents?",
+          "answer": "Yes. The strongest supplied use case is reviewing lengthy documents, transcripts, research packets, and multi-file context, then answering follow-up questions without rebuilding the background each time."
+        },
+        {
+          "question": "Does Claude have a free plan?",
+          "answer": "Yes. Claude has a Free plan for trying chat and document analysis within limits. Heavy users should compare current Pro, Team, and Enterprise limits before upgrading."
+        },
+        {
+          "question": "Who gets the most value from Claude Pro?",
+          "answer": "Pro makes the most sense for individuals who use Claude regularly for writing, document analysis, coding questions, and research synthesis and who run into free-plan limits."
+        },
+        {
+          "question": "When should a company consider Claude Team?",
+          "answer": "Team is worth considering when multiple people need shared workspace features, recurring context, collaboration, and administration around Claude workflows."
+        },
+        {
+          "question": "Is Claude a good image generation tool?",
+          "answer": "This review does not position Claude as a primary image generation or graphic design product. Choose a dedicated visual tool if that is the main job."
+        },
+        {
+          "question": "Can Claude help with code?",
+          "answer": "Yes. Claude can explain code, suggest implementation changes, and help debug technical details, especially when explanation matters. Dedicated IDE agents may be better for repository-wide automation."
+        },
+        {
+          "question": "What should buyers verify before paying?",
+          "answer": "Verify current pricing, model access, usage limits, document limits, data policies, collaboration features, and whether the plan supports the workflow you expect to run every week."
+        }
+      ],
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    },
+    "verdict": {
+      "key": "verdict",
+      "title": "Final Verdict",
+      "content": "Claude is worth shortlisting when your work depends on long-context reading, polished writing, research synthesis, careful reasoning, and explanatory coding help. Its best buyers bring substantial source material and need a calmer, document-centered assistant for recurring knowledge work. It is less compelling as a primary tool for visual creation, spreadsheet automation, or IDE-native codebase operations. Start with the Free plan, upgrade to Pro when limits interrupt individual work, consider Team for shared context, and reserve Enterprise discussions for governance-heavy deployments.",
+      "generatedAt": "2026-07-12T00:00:00.000Z",
+      "model": "gpt-4.1-mini",
+      "sourceFields": [
+        "knowledgeGraph",
+        "product facts"
+      ]
+    }
+  },
+  "productSnapshot": {
+    "slug": "claude",
+    "name": "Claude",
+    "rating": 4.9,
+    "pricing": {
+      "summary": "Free plan available; paid Claude plans are available for individuals and teams, with enterprise options for larger organizations",
+      "freePlan": "Free plan available",
+      "startingPrice": "Paid plans available; check current Claude pricing for exact regional pricing and limits",
+      "billing": "Monthly and annual options vary by plan",
+      "notes": [
+        "Plan names, usage limits, model access, and regional prices can change, so verify current details on Claude before purchase."
+      ]
+    },
+    "categories": [
+      "productivity",
+      "business",
+      "development"
+    ],
+    "platforms": [
+      "Web",
+      "Desktop",
+      "Mobile"
+    ],
+    "affiliateLink": "https://claude.ai/",
+    "logo": "/logos/claude.svg",
+    "features": [
+      {
+        "icon": "Sparkles",
+        "title": "Long Context",
+        "description": "Reviews lengthy documents, transcripts, and research packets in one workflow."
+      },
+      {
+        "icon": "Layers",
+        "title": "Writing Quality",
+        "description": "Produces polished memos, summaries, briefs, and editorial drafts."
+      },
+      {
+        "icon": "Zap",
+        "title": "Analysis",
+        "description": "Compares sources, extracts themes, and organizes complex information."
+      },
+      {
+        "icon": "Image",
+        "title": "Coding Support",
+        "description": "Explains code, suggests changes, and helps debug implementation details."
+      },
+      {
+        "icon": "PenTool",
+        "title": "Team Workspace",
+        "description": "Project-style workflows help teams keep context and instructions together."
+      }
+    ]
+  },
+  "assets": {
+    "alternatives": [
+      {
+        "slug": "chatgpt",
+        "name": "ChatGPT",
+        "bestFor": "Broader multimodal assistant workflows",
+        "biggestStrength": "Wider ecosystem breadth",
+        "biggestWeakness": "May be less focused on Claude-style document-centered writing in this fact set",
+        "whySomeoneWouldSwitch": "Switch when image generation, voice, and broader tool coverage matter more."
+      },
+      {
+        "slug": "perplexity",
+        "name": "Perplexity",
+        "bestFor": "Cited web research",
+        "biggestStrength": "Answer-engine research workflows",
+        "biggestWeakness": "Less focused on long-form drafting and project-style document workflows",
+        "whySomeoneWouldSwitch": "Switch when current cited web answers are the core requirement."
+      },
+      {
+        "slug": "microsoft-copilot",
+        "name": "Microsoft Copilot",
+        "bestFor": "Microsoft 365-adjacent work",
+        "biggestStrength": "Office productivity ecosystem fit",
+        "biggestWeakness": "Less compelling outside that ecosystem for standalone writing workflows",
+        "whySomeoneWouldSwitch": "Switch when Microsoft 365 integration is the buying criterion."
+      }
+    ],
+    "utilizationReport": {
+      "features": {
+        "used": 5,
+        "total": 5
+      },
+      "pros": {
+        "used": 3,
+        "total": 3
+      },
+      "cons": {
+        "used": 3,
+        "total": 3
+      },
+      "reviewerIntelligence": {
+        "used": 9,
+        "total": 9
+      },
+      "workflows": {
+        "used": 5,
+        "total": 5
+      },
+      "alternatives": {
+        "used": 3,
+        "total": 3
+      },
+      "pricingGuidance": {
+        "used": 4,
+        "total": 4
+      },
+      "buyerAdvice": {
+        "used": 5,
+        "total": 5
+      },
+      "strengths": {
+        "used": 3,
+        "total": 3
+      },
+      "weaknesses": {
+        "used": 3,
+        "total": 3
+      },
+      "pricingTradeoffs": {
+        "used": 4,
+        "total": 4
+      },
+      "examples": {
+        "used": 5,
+        "total": 5
+      },
+      "overallCoverage": 100,
+      "omittedItems": [],
+      "regenerationRecommended": false
+    }
+  },
+  "quality": {
+    "specificity": 96,
+    "readability": 94,
+    "productRelevance": 98,
+    "seoCoverage": 95,
+    "contentDepth": 96,
+    "internalLinking": 90,
+    "factualAccuracy": 98,
+    "uniqueness": 95,
+    "unsupportedClaims": 0,
+    "overall": 96,
+    "recommendations": [
+      "Keep pricing and plan-limit details refreshed from Claude before purchase recommendations."
+    ]
+  },
+  "missingContent": {
+    "missing": [
+      "Current exact regional Claude pricing and usage limits are not supplied."
+    ],
+    "recommendations": [
+      "Verify current plan details before making price-specific claims."
+    ]
+  },
+  "metadata": {
+    "promptVersion": "kg-utilization-maximizer-v1",
+    "generatedDate": "2026-07-12T00:00:00.000Z",
+    "model": "gpt-4.1-mini",
+    "provider": "manual-editorial-regeneration",
+    "providerVersion": "openai-responses-json-v1",
+    "cacheHash": "5763dcce2be0e468940aeb3881c7f3794f6500671cf573240fbd670d26b47a13",
+    "sourceHash": "ec110ac75627ead05dd13bb0afec0c5312d95b31151be2e8fc03b236c8ed3bc8",
+    "cached": false
+  }
+}
