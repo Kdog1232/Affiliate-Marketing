@@ -10,7 +10,7 @@ export async function buildProductFactPack(product: Product) {
       slug: product.slug, name: product.name, tagline: product.tagline, description: product.description, rating: product.rating, reviewCount: product.reviewCount,
       categories: product.categories, primaryCategory: product.primaryCategory, secondaryCategories: product.secondaryCategories, tags: product.tags,
       pricing: product.pricing, pricingPlans: product.pricingPlans, platforms: product.platforms, setupTime: product.setupTime, bestFor: product.bestFor, users: product.users,
-      features: product.features, pros: product.pros, cons: product.cons, audiences: product.audiences, notFor: product.notFor, useCases: product.useCases, faq: product.faq,
+      features: product.features, keyFeatures: product.keyFeatures, pros: product.pros, cons: product.cons, strengths: product.strengths, weaknesses: product.weaknesses, audiences: product.audiences, idealUsers: product.idealUsers, notFor: product.notFor, useCases: product.useCases, workflows: product.workflows ?? product.howItWorks, reviewerIntelligence: product.reviewerIntelligence, pricingRecommendations: product.pricingRecommendations, buyerGuidance: product.buyerGuidance, pricingTradeoffs: product.pricingTradeoffs, examples: product.examples, commonMistakes: product.commonMistakes, hiddenStrengths: product.hiddenStrengths, bestFirstTask: product.bestFirstTask, faq: product.faq,
       screenshots: product.screenshots, heroImage: product.heroImage, seoTitle: product.seoTitle, metaDescription: product.metaDescription, seoKeywords: product.seoKeywords ?? product.keywords,
     },
     alternatives,

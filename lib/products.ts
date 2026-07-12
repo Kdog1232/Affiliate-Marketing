@@ -23,7 +23,16 @@ export type Product = {
   idealUsers?: string[];
   strengths?: string[];
   weaknesses?: string[];
-  keyFeatures?: { title: string; description: string }[];
+  keyFeatures?: { title: string; description: string; whatItDoes?: string; whyItMatters?: string; example?: string; whoBenefits?: string; tradeoff?: string }[];
+  reviewerIntelligence?: Record<string, string>;
+  workflows?: { title: string; description: string; whoUses?: string; whyItSavesTime?: string; outcome?: string }[];
+  pricingRecommendations?: string[];
+  buyerGuidance?: string[];
+  pricingTradeoffs?: string[];
+  examples?: string[];
+  commonMistakes?: string[];
+  hiddenStrengths?: string[];
+  bestFirstTask?: string;
   ratings?: { easeOfUse: number; features: number; value: number; support: number; integrations: number; aiQuality: number };
   bestForCards?: { title: string; description: string }[];
   users: string;
@@ -40,7 +49,7 @@ export type Product = {
   alternatives?: { name: string; slug: string; logo: string; description: string }[];
   comparisonMatrix?: { columns: string[]; rows: { feature: string; values: string[] }[] };
   canonicalUrl?: string;
-  features: { icon: string; title: string; description: string }[];
+  features: { icon: string; title: string; description: string; whatItDoes?: string; whyItMatters?: string; example?: string; whoBenefits?: string; tradeoff?: string }[];
   howItWorks: { title: string; description: string }[];
   pros: string[];
   cons: string[];
