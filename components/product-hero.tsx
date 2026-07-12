@@ -2,13 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Clock, DollarSign, Star, Target } from 'lucide-react';
 import type { Product } from '@/lib/products';
+import { getPricingText, listBestFor } from '@/lib/comparisons';
 import { AffiliateButton } from './affiliate-button';
 
 export function ProductHero({ product }: { product: Product }) {
   const quickFacts = [
     { label: 'Setup time', value: product.setupTime, icon: Clock },
-    { label: 'Best for', value: product.bestFor, icon: Target },
-    { label: 'Pricing', value: product.pricing, icon: DollarSign },
+    { label: 'Best for', value: listBestFor(product).join(', '), icon: Target },
+    { label: 'Pricing', value: getPricingText(product), icon: DollarSign },
     { label: 'Rating', value: `${product.rating}/5`, icon: Star },
   ];
 

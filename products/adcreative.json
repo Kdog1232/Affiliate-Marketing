@@ -15,69 +15,70 @@
     "Pinterest",
     "TikTok"
   ],
-  "pricing": "Free trial, then paid plans for individuals and teams",
+  "pricing": {
+    "summary": "Free trial, then paid plans for individuals and teams",
+    "freePlan": "Check current availability",
+    "startingPrice": "See current pricing",
+    "billing": "Monthly or annual options vary by plan",
+    "notes": [
+      "AdCreative.ai pricing depends on plan selection and usage needs."
+    ]
+  },
   "canonicalUrl": "https://affiliatemarketing.local/adcreative",
   "features": [
     {
       "icon": "Sparkles",
-      "title": "AI Ad Creatives",
-      "description": "Generate multiple high-converting ad variations from your brand, audience, and offer."
-    },
-    {
-      "icon": "ChartBar",
-      "title": "Conversion Scores",
-      "description": "Prioritize the creatives most likely to perform before spending money on traffic."
-    },
-    {
-      "icon": "Image",
-      "title": "Product Visuals",
-      "description": "Create polished product photos and lifestyle-style assets without a full design team."
-    },
-    {
-      "icon": "PenTool",
-      "title": "Copy Generation",
-      "description": "Write ad headlines, descriptions, hooks, and social captions for every channel."
+      "title": "Ad Creative Generation",
+      "description": "Produces static ad concepts and campaign visuals from brand inputs."
     },
     {
       "icon": "Layers",
-      "title": "Brand Kits",
-      "description": "Keep fonts, colors, and logos consistent across campaigns and client accounts."
+      "title": "Creative Variants",
+      "description": "Generates multiple sizes, messages, and visual options for testing."
     },
     {
       "icon": "Zap",
-      "title": "Fast Exports",
-      "description": "Download ready-to-launch assets sized for popular ad networks and social platforms."
+      "title": "Brand Controls",
+      "description": "Uses logos, colors, and brand details to keep output consistent."
+    },
+    {
+      "icon": "Image",
+      "title": "Copy Assistance",
+      "description": "Drafts headlines, ad text, and hooks for campaign concepts."
+    },
+    {
+      "icon": "PenTool",
+      "title": "Performance Focus",
+      "description": "Organizes output around paid media use cases and conversion goals."
     }
   ],
   "howItWorks": [
     {
-      "title": "Add your brand",
-      "description": "Upload a logo, colors, product details, and audience notes once."
+      "title": "Ad Creative Generation",
+      "description": "Produces static ad concepts and campaign visuals from brand inputs."
     },
     {
-      "title": "Choose a campaign goal",
-      "description": "Pick the platform, size, message, and creative style you want to test."
+      "title": "Creative Variants",
+      "description": "Generates multiple sizes, messages, and visual options for testing."
     },
     {
-      "title": "Generate variations",
-      "description": "Review AI-generated creatives, copy, and product visuals in seconds."
+      "title": "Brand Controls",
+      "description": "Uses logos, colors, and brand details to keep output consistent."
     },
     {
-      "title": "Launch and iterate",
-      "description": "Export winners, monitor performance, and generate the next batch faster."
+      "title": "Copy Assistance",
+      "description": "Drafts headlines, ad text, and hooks for campaign concepts."
     }
   ],
   "pros": [
-    "Very fast creative production",
-    "Useful scoring for ad testing",
-    "Great for agencies managing many brands",
-    "Templates for major ad platforms",
-    "Beginner-friendly workflow"
+    "Purpose-built for paid ad creative generation",
+    "Creates many branded variants quickly",
+    "Helpful for campaign iteration and creative testing"
   ],
   "cons": [
-    "Best results still need human review",
-    "Advanced users may want deeper design controls",
-    "Pricing can scale with high-volume usage"
+    "Less useful for non-ad design projects",
+    "Generated assets need brand and compliance review",
+    "Not a full marketing automation or analytics suite"
   ],
   "pricingPlans": [
     {
@@ -207,7 +208,13 @@
   ],
   "reviewCount": 1287,
   "setupTime": "10 minutes",
-  "bestFor": "Ad testing and fast creative production",
+  "bestFor": [
+    "Ad creatives",
+    "Campaign variants",
+    "Paid social assets",
+    "Performance marketing",
+    "Brand-consistent ad production"
+  ],
   "socialProof": [
     {
       "metric": "3M+",
@@ -338,5 +345,52 @@
       "logo": "/logos/cursor.svg",
       "description": "Compare Cursor with AdCreative.ai before choosing a tool."
     }
-  ]
+  ],
+  "category": "Marketing",
+  "summary": "AdCreative.ai focuses on generating ad creatives, campaign visuals, and performance-oriented marketing assets for paid media teams.",
+  "idealUsers": [
+    "Performance marketers testing creative angles",
+    "Agencies producing ads for multiple clients",
+    "Small teams needing many campaign variants"
+  ],
+  "strengths": [
+    "Purpose-built for paid ad creative generation",
+    "Creates many branded variants quickly",
+    "Helpful for campaign iteration and creative testing"
+  ],
+  "weaknesses": [
+    "Less useful for non-ad design projects",
+    "Generated assets need brand and compliance review",
+    "Not a full marketing automation or analytics suite"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Ad Creative Generation",
+      "description": "Produces static ad concepts and campaign visuals from brand inputs."
+    },
+    {
+      "title": "Creative Variants",
+      "description": "Generates multiple sizes, messages, and visual options for testing."
+    },
+    {
+      "title": "Brand Controls",
+      "description": "Uses logos, colors, and brand details to keep output consistent."
+    },
+    {
+      "title": "Copy Assistance",
+      "description": "Drafts headlines, ad text, and hooks for campaign concepts."
+    },
+    {
+      "title": "Performance Focus",
+      "description": "Organizes output around paid media use cases and conversion goals."
+    }
+  ],
+  "ratings": {
+    "easeOfUse": 4.6,
+    "features": 4.5,
+    "value": 4.3,
+    "support": 4.2,
+    "integrations": 4.2,
+    "aiQuality": 4.4
+  }
 }

@@ -13,69 +13,70 @@
     "Desktop",
     "Mobile"
   ],
-  "pricing": "Free and paid plans vary by usage and team size",
+  "pricing": {
+    "summary": "Free and paid plans vary by usage and team size",
+    "freePlan": "Check current availability",
+    "startingPrice": "See current pricing",
+    "billing": "Monthly or annual options vary by plan",
+    "notes": [
+      "Cursor pricing depends on plan selection and usage needs."
+    ]
+  },
   "canonicalUrl": "https://affiliatemarketing.local/cursor",
   "features": [
     {
       "icon": "Sparkles",
-      "title": "Cursor AI workflow",
-      "description": "AI-powered code editor for developers who want faster autocomplete, refactoring, and chat-driven programming."
-    },
-    {
-      "icon": "ChartBar",
-      "title": "Conversion Scores",
-      "description": "Prioritize the creatives most likely to perform before spending money on traffic."
-    },
-    {
-      "icon": "Image",
-      "title": "Product Visuals",
-      "description": "Create polished product photos and lifestyle-style assets without a full design team."
-    },
-    {
-      "icon": "PenTool",
-      "title": "Copy Generation",
-      "description": "Write ad headlines, descriptions, hooks, and social captions for every channel."
+      "title": "Codebase Chat",
+      "description": "Answers questions using repository context and selected files."
     },
     {
       "icon": "Layers",
-      "title": "Brand Kits",
-      "description": "Keep fonts, colors, and logos consistent across campaigns and client accounts."
+      "title": "Inline Edits",
+      "description": "Applies AI changes directly in the editor with developer review."
     },
     {
       "icon": "Zap",
-      "title": "Fast Exports",
-      "description": "Download ready-to-launch assets sized for popular ad networks and social platforms."
+      "title": "Multi-file Refactors",
+      "description": "Helps update related files across a project."
+    },
+    {
+      "icon": "Image",
+      "title": "Debugging Assistance",
+      "description": "Explains errors, traces logic, and proposes fixes."
+    },
+    {
+      "icon": "PenTool",
+      "title": "Developer Workflow",
+      "description": "Designed around keyboard-driven coding rather than generic chat."
     }
   ],
   "howItWorks": [
     {
-      "title": "Add your brand",
-      "description": "Upload a logo, colors, product details, and audience notes once."
+      "title": "Codebase Chat",
+      "description": "Answers questions using repository context and selected files."
     },
     {
-      "title": "Choose a campaign goal",
-      "description": "Pick the platform, size, message, and creative style you want to test."
+      "title": "Inline Edits",
+      "description": "Applies AI changes directly in the editor with developer review."
     },
     {
-      "title": "Generate variations",
-      "description": "Review AI-generated creatives, copy, and product visuals in seconds."
+      "title": "Multi-file Refactors",
+      "description": "Helps update related files across a project."
     },
     {
-      "title": "Launch and iterate",
-      "description": "Export winners, monitor performance, and generate the next batch faster."
+      "title": "Debugging Assistance",
+      "description": "Explains errors, traces logic, and proposes fixes."
     }
   ],
   "pros": [
-    "Very fast creative production",
-    "Useful scoring for ad testing",
-    "Great for agencies managing many brands",
-    "Templates for major ad platforms",
-    "Beginner-friendly workflow"
+    "Deep editor-native AI workflow",
+    "Repository context makes suggestions more relevant",
+    "Fast iteration for refactors, explanations, and code generation"
   ],
   "cons": [
-    "Best results still need human review",
-    "Advanced users may want deeper design controls",
-    "Pricing can scale with high-volume usage"
+    "Most valuable for users comfortable with code",
+    "Requires review to avoid incorrect generated changes",
+    "Team adoption may need security and workflow policies"
   ],
   "pricingPlans": [
     {
@@ -205,7 +206,13 @@
   ],
   "reviewCount": 1287,
   "setupTime": "10 minutes",
-  "bestFor": "Ad testing and fast creative production",
+  "bestFor": [
+    "AI pair programming",
+    "Repository-aware coding",
+    "Refactoring",
+    "Debugging help",
+    "Developer productivity"
+  ],
   "socialProof": [
     {
       "metric": "3M+",
@@ -335,5 +342,52 @@
       "logo": "/logos/claude.svg",
       "description": "Compare Claude with Cursor before choosing a tool."
     }
-  ]
+  ],
+  "category": "AI Coding",
+  "summary": "Cursor is an AI-first code editor that helps developers understand repositories, edit files, generate code, and iterate without leaving the IDE.",
+  "idealUsers": [
+    "Developers working in large codebases",
+    "Startups shipping product quickly",
+    "Engineers who want AI inside the editor"
+  ],
+  "strengths": [
+    "Deep editor-native AI workflow",
+    "Repository context makes suggestions more relevant",
+    "Fast iteration for refactors, explanations, and code generation"
+  ],
+  "weaknesses": [
+    "Most valuable for users comfortable with code",
+    "Requires review to avoid incorrect generated changes",
+    "Team adoption may need security and workflow policies"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Codebase Chat",
+      "description": "Answers questions using repository context and selected files."
+    },
+    {
+      "title": "Inline Edits",
+      "description": "Applies AI changes directly in the editor with developer review."
+    },
+    {
+      "title": "Multi-file Refactors",
+      "description": "Helps update related files across a project."
+    },
+    {
+      "title": "Debugging Assistance",
+      "description": "Explains errors, traces logic, and proposes fixes."
+    },
+    {
+      "title": "Developer Workflow",
+      "description": "Designed around keyboard-driven coding rather than generic chat."
+    }
+  ],
+  "ratings": {
+    "easeOfUse": 4.5,
+    "features": 4.8,
+    "value": 4.6,
+    "support": 4.3,
+    "integrations": 4.7,
+    "aiQuality": 4.7
+  }
 }

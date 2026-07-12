@@ -6,6 +6,8 @@ export type Product = {
   name: string;
   tagline: string;
   description: string;
+  category?: string;
+  summary?: string;
   logo: string;
   heroImage: string;
   screenshots?: string[];
@@ -17,11 +19,16 @@ export type Product = {
   secondaryCategories?: string[];
   tags?: string[];
   setupTime: string;
-  bestFor: string;
+  bestFor: string | string[];
+  idealUsers?: string[];
+  strengths?: string[];
+  weaknesses?: string[];
+  keyFeatures?: { title: string; description: string }[];
+  ratings?: { easeOfUse: number; features: number; value: number; support: number; integrations: number; aiQuality: number };
   bestForCards?: { title: string; description: string }[];
   users: string;
   platforms: string[];
-  pricing: string;
+  pricing: string | { summary: string; freePlan?: string; startingPrice?: string; billing?: string; notes?: string[] };
   categoryBadge?: string;
   seoTitle?: string;
   seoKeywords?: string[];

@@ -1,92 +1,25 @@
 import { CATEGORIES, getCategory, getCategoryHref, getProductCategorySlugs, type Product } from './products';
 
 export type ComparisonPair = { toolA: Product; toolB: Product; slug: string; score: number };
+export type RatingKey = keyof NonNullable<Product['ratings']>;
 
-export function getComparisonSlug(toolA: Product, toolB: Product) {
-  return `${toolA.slug}-vs-${toolB.slug}`;
-}
+export const RATING_LABELS: Record<RatingKey, string> = { easeOfUse: 'Ease of Use', features: 'Features', value: 'Value', support: 'Support', integrations: 'Integrations', aiQuality: 'AI Quality' };
 
-export function parseComparisonSlug(slug: string) {
-  const [toolA, toolB] = slug.split('-vs-');
-  if (!toolA || !toolB) return null;
-  return { toolA, toolB };
-}
-
-function sharedCount(a: string[], b: string[]) {
-  const bSet = new Set(b);
-  return a.filter((item) => bSet.has(item)).length;
-}
-
-export function getComparisonCandidateScore(toolA: Product, toolB: Product) {
-  const categoryScore = sharedCount(getProductCategorySlugs(toolA), getProductCategorySlugs(toolB)) * 3;
-  const tagScore = sharedCount(toolA.tags ?? [], toolB.tags ?? []);
-  const primaryCategoryScore = toolA.primaryCategory && toolA.primaryCategory === toolB.primaryCategory ? 6 : 0;
-  return categoryScore + tagScore + primaryCategoryScore;
-}
-
-export function getComparisonPairs(products: Product[]) {
-  const pairs: ComparisonPair[] = [];
-  products.forEach((toolA, index) => {
-    products.slice(index + 1).forEach((toolB) => {
-      const score = getComparisonCandidateScore(toolA, toolB);
-      if (score > 0) pairs.push({ toolA, toolB, slug: getComparisonSlug(toolA, toolB), score });
-    });
-  });
-  return pairs.sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug));
-}
-
-export function getRelatedComparisonProducts(product: Product, products: Product[], limit = 5) {
-  return products
-    .filter((candidate) => candidate.slug !== product.slug)
-    .map((candidate) => ({ product: candidate, score: getComparisonCandidateScore(product, candidate) }))
-    .filter((item) => item.score > 0)
-    .sort((a, b) => b.score - a.score || b.product.rating - a.product.rating || a.product.name.localeCompare(b.product.name))
-    .slice(0, limit)
-    .map((item) => item.product);
-}
-
-export function findComparisonPair(products: Product[], comparisonSlug: string) {
-  const parsed = parseComparisonSlug(comparisonSlug);
-  if (!parsed) return null;
-  const toolA = products.find((product) => product.slug === parsed.toolA);
-  const toolB = products.find((product) => product.slug === parsed.toolB);
-  if (!toolA || !toolB || getComparisonCandidateScore(toolA, toolB) <= 0) return null;
-  return { toolA, toolB, slug: comparisonSlug, score: getComparisonCandidateScore(toolA, toolB) };
-}
-
-export function getFreePlan(product: Product) {
-  return product.quickFacts?.find((fact) => fact.label.toLowerCase() === 'free plan')?.value ?? (product.pricing.toLowerCase().includes('free') ? 'Yes' : 'Check current plans');
-}
-
-export function hasFeature(product: Product, terms: string[]) {
-  const haystack = [product.pricing, product.description, product.tagline, product.bestFor, ...product.features.map((feature) => `${feature.title} ${feature.description}`), ...(product.tags ?? [])].join(' ').toLowerCase();
-  return terms.some((term) => haystack.includes(term));
-}
-
-export function getScorecard(product: Product) {
-  const ease = hasFeature(product, ['easy', 'beginner', 'natural', 'template']) ? 'High' : 'Moderate';
-  return [
-    { label: 'Overall Rating', value: `${product.rating} / 5` },
-    { label: 'Ease of Use', value: ease },
-    { label: 'Features', value: `${product.features.length} highlighted features` },
-    { label: 'AI Quality', value: hasFeature(product, ['ai', 'llm', 'gpt', 'model', 'assistant']) ? 'Strong' : 'N/A or workflow-specific' },
-    { label: 'Pricing', value: product.pricing },
-    { label: 'Free Plan', value: getFreePlan(product) },
-    { label: 'API', value: hasFeature(product, ['api', 'developer']) ? 'Yes / developer-friendly' : 'Not a primary focus' },
-    { label: 'Integrations', value: hasFeature(product, ['integration', 'plugin', 'ecosystem', 'workflow']) ? 'Strong' : 'Check required apps' },
-    { label: 'Best For', value: product.bestFor },
-    { label: 'Value', value: product.rating >= 4.7 || product.pricing.toLowerCase().includes('free') ? 'Excellent' : 'Good' },
-    { label: 'Support', value: product.pricingPlans.some((plan) => plan.name.toLowerCase().includes('enterprise')) ? 'Team / enterprise options' : 'Standard support' },
-    { label: 'Platforms', value: product.platforms.join(', ') },
-  ];
-}
-
-export function getPrimaryCategoryHref(product: Product) {
-  const category = getCategory(product.primaryCategory ?? getProductCategorySlugs(product)[0] ?? CATEGORIES[0].slug);
-  return category ? getCategoryHref(category) : '/categories';
-}
-
-export function getWinner(toolA: Product, toolB: Product) {
-  if (toolA.rating === toolB.rating) return toolA.reviewCount >= toolB.reviewCount ? toolA : toolB;
-  return toolA.rating > toolB.rating ? toolA : toolB;
-}
+export function getComparisonSlug(toolA: Product, toolB: Product) { return `${toolA.slug}-vs-${toolB.slug}`; }
+export function parseComparisonSlug(slug: string) { const [toolA, toolB] = slug.split('-vs-'); if (!toolA || !toolB) return null; return { toolA, toolB }; }
+function sharedCount(a: string[], b: string[]) { const bSet = new Set(b); return a.filter((item) => bSet.has(item)).length; }
+export function listBestFor(product: Product) { return Array.isArray(product.bestFor) ? product.bestFor : product.bestFor.split(/,| and /).map((item) => item.trim()).filter(Boolean); }
+export function getProductSummary(product: Product) { return product.summary ?? product.description; }
+export function getPricingText(product: Product) { return typeof product.pricing === 'string' ? product.pricing : product.pricing.summary; }
+export function getComparisonCandidateScore(toolA: Product, toolB: Product) { const categoryScore = sharedCount(getProductCategorySlugs(toolA), getProductCategorySlugs(toolB)) * 3; const tagScore = sharedCount(toolA.tags ?? [], toolB.tags ?? []); const primaryCategoryScore = toolA.primaryCategory && toolA.primaryCategory === toolB.primaryCategory ? 6 : 0; return categoryScore + tagScore + primaryCategoryScore; }
+export function getComparisonPairs(products: Product[]) { const pairs: ComparisonPair[] = []; products.forEach((toolA, index) => { products.slice(index + 1).forEach((toolB) => { const score = getComparisonCandidateScore(toolA, toolB); if (score > 0) pairs.push({ toolA, toolB, slug: getComparisonSlug(toolA, toolB), score }); }); }); return pairs.sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug)); }
+export function getRelatedComparisonProducts(product: Product, products: Product[], limit = 5) { return products.filter((candidate) => candidate.slug !== product.slug).map((candidate) => ({ product: candidate, score: getComparisonCandidateScore(product, candidate) })).filter((item) => item.score > 0).sort((a, b) => b.score - a.score || b.product.rating - a.product.rating || a.product.name.localeCompare(b.product.name)).slice(0, limit).map((item) => item.product); }
+export function findComparisonPair(products: Product[], comparisonSlug: string) { const parsed = parseComparisonSlug(comparisonSlug); if (!parsed) return null; const toolA = products.find((product) => product.slug === parsed.toolA); const toolB = products.find((product) => product.slug === parsed.toolB); if (!toolA || !toolB || getComparisonCandidateScore(toolA, toolB) <= 0) return null; return { toolA, toolB, slug: comparisonSlug, score: getComparisonCandidateScore(toolA, toolB) }; }
+export function getFreePlan(product: Product) { return product.quickFacts?.find((fact) => fact.label.toLowerCase() === 'free plan')?.value ?? (getPricingText(product).toLowerCase().includes('free') ? 'Yes' : 'Check current plans'); }
+export function getScoreValue(product: Product, key: RatingKey) { return product.ratings?.[key] ?? product.rating; }
+export function getScoreRows(toolA: Product, toolB: Product) { return (Object.keys(RATING_LABELS) as RatingKey[]).map((key) => ({ key, label: RATING_LABELS[key], a: getScoreValue(toolA, key), b: getScoreValue(toolB, key) })); }
+export function getFeatureRows(toolA: Product, toolB: Product) { const rows = new Map<string, { feature: string; a: string; b: string }>(); const add = (feature: string, product: 'a' | 'b', value: string) => { const row = rows.get(feature) ?? { feature, a: 'No', b: 'No' }; row[product] = value; rows.set(feature, row); }; toolA.keyFeatures?.forEach((f) => add(f.title, 'a', f.description)); toolB.keyFeatures?.forEach((f) => add(f.title, 'b', f.description)); return [...rows.values()].filter((row) => row.a !== row.b); }
+export function getWinner(toolA: Product, toolB: Product) { if (toolA.rating === toolB.rating) return toolA.reviewCount >= toolB.reviewCount ? toolA : toolB; return toolA.rating > toolB.rating ? toolA : toolB; }
+export function getWinnerCards(toolA: Product, toolB: Product) { const choose = (key: RatingKey) => getScoreValue(toolA, key) >= getScoreValue(toolB, key) ? toolA : toolB; return [{ title: 'Best Overall', product: getWinner(toolA, toolB), reason: 'Highest combined rating and review signal.' }, { title: 'Best Value', product: choose('value'), reason: 'Stronger value score for the money.' }, { title: 'Best Beginner Tool', product: choose('easeOfUse'), reason: 'Higher ease-of-use score.' }, { title: 'Best AI Features', product: choose('aiQuality'), reason: 'Stronger AI quality rating.' }, { title: 'Best Business Tool', product: choose('features'), reason: 'Deeper feature coverage.' }, { title: 'Best Enterprise Tool', product: choose('integrations'), reason: 'Better integrations score.' }]; }
+export function getPrimaryCategoryHref(product: Product) { const category = getCategory(product.primaryCategory ?? getProductCategorySlugs(product)[0] ?? CATEGORIES[0].slug); return category ? getCategoryHref(category) : '/categories'; }
+export function getRecommendationButtons(toolA: Product, toolB: Product) { const intents = ['Design Graphics','Build Websites','Write Content','Generate Images','Code','Marketing']; const text = (p: Product) => [p.name,p.category,p.summary,...listBestFor(p),...(p.tags??[])].join(' ').toLowerCase(); return intents.map((intent) => { const q = intent.toLowerCase().split(' '); const score = (p: Product) => q.filter((word) => text(p).includes(word.replace('websites','website').replace('graphics','graphic'))).length; return { intent, product: score(toolA) >= score(toolB) ? toolA : toolB }; }); }

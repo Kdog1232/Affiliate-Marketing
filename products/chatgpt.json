@@ -15,10 +15,24 @@
     "iOS",
     "Android"
   ],
-  "pricing": "Free / Plus / Pro / Team / Enterprise",
+  "pricing": {
+    "summary": "Free / Plus / Pro / Team / Enterprise",
+    "freePlan": "Check current availability",
+    "startingPrice": "See current pricing",
+    "billing": "Monthly or annual options vary by plan",
+    "notes": [
+      "ChatGPT pricing depends on plan selection and usage needs."
+    ]
+  },
   "canonicalUrl": "https://affiliatemarketing.local/chatgpt",
   "setupTime": "5 Minutes",
-  "bestFor": "Writing, coding, research, business, and education",
+  "bestFor": [
+    "Writing drafts",
+    "Brainstorming ideas",
+    "Data and document analysis",
+    "General research support",
+    "Everyday productivity"
+  ],
   "reviewCount": 4286,
   "categories": [
     "assistant",
@@ -64,80 +78,40 @@
   ],
   "features": [
     {
-      "icon": "MessageCircle",
-      "title": "Natural conversations",
-      "description": "Ask questions, refine answers, and build on context without learning complex commands."
+      "icon": "Sparkles",
+      "title": "Conversational Assistant",
+      "description": "Handles multi-turn writing, planning, summarization, and ideation."
     },
     {
-      "icon": "Code",
-      "title": "Code generation",
-      "description": "Generate functions, explain errors, review snippets, and compare technical approaches."
+      "icon": "Layers",
+      "title": "File Analysis",
+      "description": "Works with uploaded documents, spreadsheets, and research materials."
     },
     {
-      "icon": "FileText",
-      "title": "Document analysis",
-      "description": "Summarize, restructure, and extract insights from uploaded documents and long text."
+      "icon": "Zap",
+      "title": "Image Understanding",
+      "description": "Can interpret images and assist with visual reasoning tasks."
     },
     {
       "icon": "Image",
-      "title": "Image understanding",
-      "description": "Interpret screenshots, diagrams, charts, photos, and other visual materials."
+      "title": "Coding Help",
+      "description": "Explains code, drafts functions, debugs issues, and supports technical planning."
     },
     {
-      "icon": "Mic",
-      "title": "Voice conversations",
-      "description": "Talk through ideas, practice explanations, or get hands-free assistance."
-    },
-    {
-      "icon": "Search",
-      "title": "Deep Research",
-      "description": "Use deeper research workflows for more thorough answers and source-aware summaries."
-    },
-    {
-      "icon": "Bot",
-      "title": "Custom GPTs",
-      "description": "Create specialized assistants for repeat workflows, brands, teams, or knowledge areas."
-    },
-    {
-      "icon": "Upload",
-      "title": "File uploads",
-      "description": "Work with PDFs, spreadsheets, notes, briefs, and other files in a single conversation."
-    },
-    {
-      "icon": "ChartBar",
-      "title": "Data analysis",
-      "description": "Explore datasets, generate charts, identify patterns, and explain findings."
-    },
-    {
-      "icon": "Plug",
-      "title": "API ecosystem",
-      "description": "Developers can build AI features into apps using OpenAI's platform and models."
-    },
-    {
-      "icon": "Brain",
-      "title": "Prompt memory",
-      "description": "Personalization can help ChatGPT adapt to preferences and recurring instructions."
-    },
-    {
-      "icon": "FolderKanban",
-      "title": "Project organization",
-      "description": "Keep related chats, files, and context together for ongoing workstreams."
+      "icon": "PenTool",
+      "title": "Custom Workflows",
+      "description": "Reusable instructions and tailored assistants can standardize repeated tasks."
     }
   ],
   "pros": [
-    "Excellent all-around assistant for writing, coding, research, and planning",
-    "Very easy to start using, even for non-technical users",
-    "Strong multimodal support for text, files, images, and voice",
-    "Useful paid tiers for power users and teams",
-    "Large ecosystem of Custom GPTs, workflows, and API integrations",
-    "Helpful for both quick tasks and deeper project-based work"
+    "Extremely flexible across writing, analysis, coding, and planning",
+    "Strong reasoning and conversational follow-up",
+    "Broad ecosystem with files, images, voice, and custom workflows"
   ],
   "cons": [
-    "Important outputs still require human fact-checking",
-    "Best advanced features may require a paid plan",
-    "Not always the best dedicated search tool for current-event research",
-    "Teams with strict data requirements should review privacy and admin settings",
-    "Highly specialized tasks may be better served by vertical AI tools"
+    "Outputs still need fact-checking for high-stakes work",
+    "Broad toolset can require prompt discipline",
+    "Team governance depends on plan selection"
   ],
   "pricingPlans": [
     {
@@ -446,5 +420,70 @@
     "/screenshots/chatgpt-2.svg",
     "/screenshots/chatgpt-3.svg",
     "/screenshots/chatgpt-4.svg"
+  ],
+  "category": "AI Assistant",
+  "summary": "ChatGPT is a general-purpose AI assistant for writing, brainstorming, analysis, coding help, research workflows, and multimodal productivity.",
+  "idealUsers": [
+    "Professionals who need a flexible AI assistant",
+    "Writers and marketers drafting content",
+    "Teams exploring AI across many workflows"
+  ],
+  "strengths": [
+    "Extremely flexible across writing, analysis, coding, and planning",
+    "Strong reasoning and conversational follow-up",
+    "Broad ecosystem with files, images, voice, and custom workflows"
+  ],
+  "weaknesses": [
+    "Outputs still need fact-checking for high-stakes work",
+    "Broad toolset can require prompt discipline",
+    "Team governance depends on plan selection"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Conversational Assistant",
+      "description": "Handles multi-turn writing, planning, summarization, and ideation."
+    },
+    {
+      "title": "File Analysis",
+      "description": "Works with uploaded documents, spreadsheets, and research materials."
+    },
+    {
+      "title": "Image Understanding",
+      "description": "Can interpret images and assist with visual reasoning tasks."
+    },
+    {
+      "title": "Coding Help",
+      "description": "Explains code, drafts functions, debugs issues, and supports technical planning."
+    },
+    {
+      "title": "Custom Workflows",
+      "description": "Reusable instructions and tailored assistants can standardize repeated tasks."
+    }
+  ],
+  "ratings": {
+    "easeOfUse": 4.8,
+    "features": 4.9,
+    "value": 4.7,
+    "support": 4.4,
+    "integrations": 4.7,
+    "aiQuality": 4.9
+  },
+  "howItWorks": [
+    {
+      "title": "Conversational Assistant",
+      "description": "Handles multi-turn writing, planning, summarization, and ideation."
+    },
+    {
+      "title": "File Analysis",
+      "description": "Works with uploaded documents, spreadsheets, and research materials."
+    },
+    {
+      "title": "Image Understanding",
+      "description": "Can interpret images and assist with visual reasoning tasks."
+    },
+    {
+      "title": "Coding Help",
+      "description": "Explains code, drafts functions, debugs issues, and supports technical planning."
+    }
   ]
 }
