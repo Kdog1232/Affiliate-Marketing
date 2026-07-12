@@ -1,7 +1,7 @@
 import type { Product } from '@/lib/products';
 import type { ReviewSectionKey } from './types';
 
-export const PROMPT_VERSION = 'editorial-review-pipeline-v3';
+export const PROMPT_VERSION = 'fact-bound-expert-review-extraction-v3';
 export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
   { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases'] },
@@ -47,27 +47,29 @@ export function systemPrompt() {
   return [
     'You are an experienced software review editor creating publication-quality, fact-bound buying advice.',
     ...FACT_BOUND_RULES,
-    ...EDITORIAL_PIPELINE,
-    ...EDITORIAL_STYLE_RULES,
-    'Return strict JSON matching the requested shape and nothing else.',
+    'Before returning the final extraction payload, self-audit every claim against the supplied facts and remove unsupported claims.',
+    'Do not mention AI assistance, content generation, prompts, internal workflow, or the intermediate review drafting step.',
+    'Return strict JSON matching the requested shape so the application can store the extracted sections.',
   ].join('\n');
 }
 
 export function fullReviewPrompt(input: unknown) {
   return {
     instructions: [
-      'Generate review assets through the required editorial pipeline, then return only the final JSON.',
+      'Generate the review content in two explicit steps using only the supplied factPack.',
       ...FACT_BOUND_RULES,
-      ...EDITORIAL_PIPELINE,
-      ...EDITORIAL_STYLE_RULES,
-      'overview should read like a concise extraction from the finished article: what the product is, why it exists, who benefits, where it fits, and the main caveats.',
-      'featureHighlights must be explanatory workflow snippets, not labels. Each item should include what the capability does, why it matters, and the buyer or workflow that benefits.',
-      'pros and cons must be specific tradeoffs extracted from the article, not generic adjectives.',
-      'pricingSummary must explain value, plan-fit, and when a cheaper or premium option makes sense using only supplied pricing facts.',
-      'faq answers must provide practical buying guidance and avoid duplicating questions across products.',
-      'comparison snippets must explain when this product wins and when the named competitor wins, without ranking beyond supplied facts.',
-      'Set quality.overall to 95+ only when the JSON is specific, educational, balanced, product-relevant, and free of unsupported claims. Lower it for generic wording, copied-sounding sections, feature lists, repetition, or weak buying advice.',
-      'List missing facts or source needs in missingContent instead of guessing.',
+      'Step 1: First write an internal 2,500-word expert product review from the product facts. This draft is scratch work only: do not output it, do not format it as JSON, do not use a reusable template, and write it naturally with editorial judgment.',
+      'Step 1 review requirements: cover overview, pros, cons, features, pricing, use cases, FAQs, and verdict in connected expert prose; include product-specific context; avoid generic filler; keep every claim grounded in the supplied facts.',
+      'Step 2: Extract Overview, Pros, Cons, Features, Pricing, Use Cases, FAQs, and Verdict from that internal review into the expected JSON fields for storage.',
+      'Map Features to review.featureHighlights, Pricing to review.pricingSummary, FAQs to review.faq, and Verdict to review.verdict.',
+      'Overview must summarize what the product is, who it serves, primary strengths, and primary use cases without copied wording.',
+      'Features and use cases must be derived from actual product features and useCases; generate 5-10 workflows when enough facts exist.',
+      'Pros must come from supplied strengths, reviews, ratings, or feature facts; cons must be realistic tradeoffs from supplied cons, notFor, or missing capabilities.',
+      'Pricing must mention free plans, paid plans, and enterprise availability only when supplied in pricing or pricingPlans.',
+      'FAQ questions must be product-specific and should not be identical across products.',
+      'Set quality.overall to 95+ only when the draft is factually grounded, specific, unique, SEO complete, product relevant, and free of unsupported claims.',
+      'Subtract quality points for generic wording, hallucinated features, copied sections, repeated FAQs, repeated pros/cons, and unsupported claims.',
+      'List any missing or unsupported source needs in missingContent instead of guessing.',
     ].join(' '),
     expectedJson: { review: { overview: ['string'], pros: ['string'], cons: ['string'], whoShouldBuy: ['string'], whoShouldAvoid: ['string'], pricingSummary: 'string', featureHighlights: ['string'], verdict: 'string', faq: [{ question: 'string', answer: 'string' }] }, buyingGuide: [{ category: 'string', whyMadeTheList: 'string', bestUseCase: 'string', whoShouldSkip: 'string', topCompetitor: 'string', quickSummary: 'string' }], alternatives: [{ slug: 'string', name: 'string', bestFor: 'string', biggestStrength: 'string', biggestWeakness: 'string', whySomeoneWouldSwitch: 'string' }], comparison: [{ competitorSlug: 'string', competitorName: 'string', mainDifference: 'string', whenProductWins: 'string', whenCompetitorWins: 'string', recommendation: 'string' }], tutorial: { title: 'string', steps: ['string'], summary: 'string' }, seo: { title: 'string', metaDescription: 'string', openGraphDescription: 'string', twitterDescription: 'string', searchSnippet: 'string', shortSummary: 'string', longSummary: 'string', scores: { uniqueness: 0, keywordCoverage: 0, contentCompleteness: 0 } }, quality: { specificity: 0, readability: 0, productRelevance: 0, seoCoverage: 0, contentDepth: 0, internalLinking: 0, factualAccuracy: 0, uniqueness: 0, unsupportedClaims: 0, overall: 0, recommendations: ['string'] }, missingContent: { missing: ['string'], recommendations: ['string'] } },
     factPack: input,
@@ -75,6 +77,6 @@ export function fullReviewPrompt(input: unknown) {
   };
 }
 
-export function sectionPrompt(product: Product, section: ReviewSectionKey) { const spec = REVIEW_SECTIONS.find((item) => item.key === section); if (!spec) throw new Error(`Unknown section: ${section}`); return { instructions: [`Regenerate only the ${spec.title} section by first considering how it would be extracted from a full editorial review.`, ...FACT_BOUND_RULES, ...EDITORIAL_STYLE_RULES, 'Keep it publication-ready, specific, balanced, and fact-bound.', 'If provided fields are insufficient, return the closest supported content and note missing source needs in the wording rather than guessing.'].join(' '), expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) }; }
+export function sectionPrompt(product: Product, section: ReviewSectionKey) { const spec = REVIEW_SECTIONS.find((item) => item.key === section); if (!spec) throw new Error(`Unknown section: ${section}`); return { instructions: [`Generate only the ${spec.title} section from an internal natural expert review pass.`, ...FACT_BOUND_RULES, 'First draft the relevant review passage naturally as scratch work, without JSON or templates, then extract only the requested section into the expected JSON shape.', 'Keep it publication-ready and fact-bound.', 'If the provided fields are insufficient, return the closest supported content rather than guessing.'].join(' '), expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) }; }
 function expectedShape(section: ReviewSectionKey) { if (section === 'faq') return '{ "content": [{ "question": "...", "answer": "..." }] }'; if (['overview','pros','cons','whoShouldBuy','whoShouldAvoid','useCases'].includes(section)) return '{ "content": ["..."] }'; return '{ "content": "..." }'; }
 function pick(product: Product, fields: string[]) { return Object.fromEntries(fields.map((field) => [field, (product as unknown as Record<string, unknown>)[field]])); }
