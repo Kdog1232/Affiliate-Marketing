@@ -86,7 +86,7 @@
       "features": [
         "Limited credits",
         "Core creative generator",
-        "Basic exports"
+        "Store Builder starter access"
       ],
       "cta": "Start free"
     },
@@ -96,9 +96,9 @@
       "description": "For marketers who need regular campaign assets.",
       "features": [
         "More monthly credits",
-        "Brand kits",
-        "Conversion scoring",
-        "Priority exports"
+        "Store Builder workflow support",
+        "Payments usage support",
+        "App Ecosystem output support"
       ],
       "cta": "Try Professional"
     },
@@ -118,23 +118,23 @@
   "audiences": [
     {
       "title": "Teams evaluating Shopify",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+      "description": "Shopify is worth evaluating when Online stores is a priority."
     },
     {
       "title": "Solo users comparing Shopify",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+      "description": "Shopify is worth evaluating when Product catalogs is a priority."
     },
     {
       "title": "Operations teams standardizing Shopify",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+      "description": "Shopify is worth evaluating when Checkout and payments is a priority."
     },
     {
       "title": "Creators testing Shopify",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+      "description": "Shopify is worth evaluating when Retail operations is a priority."
     },
     {
       "title": "Businesses budgeting for Shopify",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Shopify."
+      "description": "Shopify is worth evaluating when Omnichannel selling is a priority."
     }
   ],
   "testimonials": [
@@ -197,7 +197,7 @@
     },
     {
       "question": "Is Shopify worth it in 2026?",
-      "answer": "For the right audience, Shopify is worth shortlisting in 2026."
+      "answer": "Shopify is worth shortlisting when its documented strengths, pricing, and limitations match your workflow."
     },
     {
       "question": "Where can I try Shopify?",
@@ -222,7 +222,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Shopify supports Store Builder, Payments, App Ecosystem workflows for its target users."
     },
     {
       "metric": "5 min",
@@ -294,7 +294,7 @@
     "business",
     "marketing"
   ],
-  "reviewScore": "100%",
+  "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/shopify-1.svg",

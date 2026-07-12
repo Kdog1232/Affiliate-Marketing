@@ -86,7 +86,7 @@
       "features": [
         "Limited credits",
         "Core creative generator",
-        "Basic exports"
+        "Managed WordPress starter access"
       ],
       "cta": "Start free"
     },
@@ -96,9 +96,9 @@
       "description": "For marketers who need regular campaign assets.",
       "features": [
         "More monthly credits",
-        "Brand kits",
-        "Conversion scoring",
-        "Priority exports"
+        "Managed WordPress workflow support",
+        "AI Website Builder usage support",
+        "Hosting Included output support"
       ],
       "cta": "Try Professional"
     },
@@ -118,23 +118,23 @@
   "audiences": [
     {
       "title": "Teams evaluating Hostinger",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Hostinger."
+      "description": "Hostinger is worth evaluating when Website hosting is a priority."
     },
     {
       "title": "Solo users comparing Hostinger",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Hostinger."
+      "description": "Hostinger is worth evaluating when WordPress sites is a priority."
     },
     {
       "title": "Operations teams standardizing Hostinger",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Hostinger."
+      "description": "Hostinger is worth evaluating when AI website builder is a priority."
     },
     {
       "title": "Creators testing Hostinger",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Hostinger."
+      "description": "Hostinger is worth evaluating when Domains and email is a priority."
     },
     {
       "title": "Businesses budgeting for Hostinger",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Hostinger."
+      "description": "Hostinger is worth evaluating when Small business websites is a priority."
     }
   ],
   "testimonials": [
@@ -197,7 +197,7 @@
     },
     {
       "question": "Is Hostinger worth it in 2026?",
-      "answer": "For the right audience, Hostinger is worth shortlisting in 2026."
+      "answer": "Hostinger is worth shortlisting when its documented strengths, pricing, and limitations match your workflow."
     },
     {
       "question": "Where can I try Hostinger?",
@@ -222,7 +222,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Hostinger supports Managed WordPress, AI Website Builder, Hosting Included workflows for its target users."
     },
     {
       "metric": "5 min",
@@ -295,7 +295,7 @@
     "creator-tools",
     "marketing"
   ],
-  "reviewScore": "100%",
+  "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/hostinger-1.svg",

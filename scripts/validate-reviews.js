@@ -6,6 +6,8 @@ const root = process.cwd();
 const productsDir = path.join(root, 'products');
 const docsPath = path.join(root, 'docs', 'review-completeness.md');
 const PLACEHOLDER_RE = /lorem ipsum|\bTODO\b|YOURAFFILIATELINK|replaceable|placeholder|placehold\.co|example\.com|copy this json|duplicate this page/i;
+const TEMPLATE_BLEED_TERMS = ['Brand Kits', 'Conversion Scores', 'Conversion Scoring', 'Product Visuals', 'Creative Exports'];
+const GENERIC_REVIEW_PHRASES = ['human review recommended', 'compare on pricing, core features, ease of use', 'for the right audience', 'practical fit check'];
 
 const files = fs.readdirSync(productsDir).filter(f => f.endsWith('.json')).sort();
 const products = files.map(file => ({ file, path: path.join(productsDir, file), data: JSON.parse(fs.readFileSync(path.join(productsDir, file), 'utf8')) }));
@@ -66,9 +68,23 @@ for (const item of products) {
   const emptyArrays = [];
   (function findEmpty(v, loc = '$') { if (Array.isArray(v) && v.length === 0) emptyArrays.push(loc); else if (v && typeof v === 'object') Object.entries(v).forEach(([k,val]) => findEmpty(val, loc === '$' ? k : `${loc}.${k}`)); })(p);
   if (emptyArrays.length) quality.push({ label: 'Empty arrays', locations: emptyArrays });
+
+  const featureNames = new Set((p.features || []).map(feature => String(feature.title || '').toLowerCase()));
+  const planNames = new Set((p.pricingPlans || []).map(plan => String(plan.name || '').toLowerCase()));
+  for (const term of TEMPLATE_BLEED_TERMS) {
+    const termRe = new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+    const supported = featureNames.has(term.toLowerCase()) || planNames.has(term.toLowerCase());
+    const locs = locationsForMatches(strings, termRe);
+    if (!supported && locs.length) quality.push({ label: `Unsupported template feature: ${term}`, locations: locs });
+  }
+  for (const phrase of GENERIC_REVIEW_PHRASES) {
+    const phraseRe = new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+    const locs = locationsForMatches(strings, phraseRe);
+    if (locs.length) quality.push({ label: `Generic review wording: ${phrase}`, locations: locs });
+  }
   for (const other of productNames.filter(n => n !== p.name)) {
     const re = new RegExp(other.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-    const locs = locationsForMatches(strings, re).filter(loc => !loc.startsWith('alternatives['));
+    const locs = locationsForMatches(strings, re).filter(loc => !loc.startsWith('alternatives[') && !loc.startsWith('faq[') && !loc.startsWith('comparison['));
     if (locs.length > 1) quality.push({ label: `Contains references to ${other}`, locations: locs });
   }
 

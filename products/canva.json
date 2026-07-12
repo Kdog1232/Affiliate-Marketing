@@ -86,7 +86,7 @@
       "features": [
         "Limited credits",
         "Core creative generator",
-        "Basic exports"
+        "Presentation Design starter access"
       ],
       "cta": "Start free"
     },
@@ -96,9 +96,9 @@
       "description": "For marketers who need regular campaign assets.",
       "features": [
         "More monthly credits",
-        "Brand kits",
-        "Conversion scoring",
-        "Priority exports"
+        "Presentation Design workflow support",
+        "Social Graphics usage support",
+        "Brand Kits output support"
       ],
       "cta": "Try Professional"
     },
@@ -118,23 +118,23 @@
   "audiences": [
     {
       "title": "Teams evaluating Canva",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
+      "description": "Canva is worth evaluating when Social media graphics is a priority."
     },
     {
       "title": "Solo users comparing Canva",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
+      "description": "Canva is worth evaluating when Presentations is a priority."
     },
     {
       "title": "Operations teams standardizing Canva",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
+      "description": "Canva is worth evaluating when Marketing assets is a priority."
     },
     {
       "title": "Creators testing Canva",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
+      "description": "Canva is worth evaluating when Brand kits is a priority."
     },
     {
       "title": "Businesses budgeting for Canva",
-      "description": "A practical fit check for readers who need product-specific detail before choosing Canva."
+      "description": "Canva is worth evaluating when Small business design is a priority."
     }
   ],
   "testimonials": [
@@ -197,7 +197,7 @@
     },
     {
       "question": "Is Canva worth it in 2026?",
-      "answer": "For the right audience, Canva is worth shortlisting in 2026."
+      "answer": "Canva is worth shortlisting when its documented strengths, pricing, and limitations match your workflow."
     },
     {
       "question": "Where can I try Canva?",
@@ -222,7 +222,7 @@
     {
       "metric": "100+",
       "label": "Creative formats",
-      "description": "Use product visuals and copy blocks that can be swapped for pins, ads, and landing-page visuals."
+      "description": "Canva supports Presentation Design, Social Graphics, Brand Kits workflows for its target users."
     },
     {
       "metric": "5 min",
@@ -295,7 +295,7 @@
     "marketing",
     "creator-tools"
   ],
-  "reviewScore": "100%",
+  "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/canva-1.svg",

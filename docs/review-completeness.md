@@ -1,15 +1,15 @@
 # Review Completeness
 
-Generated: 2026-07-09T15:42:35.952Z
+Generated: 2026-07-12T21:51:11.143Z
 
 | Product | Score | Status | Missing checks | Quality warnings |
 |---|---:|---|---|---|
-| AdCreative.ai | 100% | Ready to Publish | None | None |
-| Canva | 100% | Ready to Publish | None | None |
-| ChatGPT | 100% | Ready to Publish | None | None |
-| Claude | 100% | Ready to Publish | None | None |
-| Cursor | 100% | Ready to Publish | None | None |
-| Hostinger | 100% | Ready to Publish | None | None |
-| Lessons Ready | 100% | Ready to Publish | None | None |
-| Notion AI | 100% | Ready to Publish | None | None |
-| Shopify | 100% | Ready to Publish | None | None |
+| AdCreative.ai | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| Canva | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| ChatGPT | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| Claude | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| Cursor | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| Hostinger | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| Lessons Ready | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| Notion AI | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
+| Shopify | 90% | Ready to Publish | Features (6+), Pros (5+) | None |
