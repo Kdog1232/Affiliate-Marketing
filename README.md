@@ -27,3 +27,9 @@ npm install
 npm run dev
 npm run build
 ```
+
+`npm run build` only compiles the Next.js application for production. Screenshot generation is intentionally separate so Vercel deployments are not blocked by Playwright, browser downloads, or local server timing issues.
+
+Use `npm run screenshots` when you want to refresh generated screenshots locally. The command builds the app for local preview, starts Next.js on `127.0.0.1:3000`, waits for the site to respond, captures pages with Playwright, validates the generated files, and exits. Install the browser once with `npx playwright install chromium` before running it.
+
+Use `npm run publish` for the editorial publishing flow. It generates reviews, attempts screenshots as a non-blocking enhancement, and then runs the production build even if screenshot capture fails.
