@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Clock, DollarSign, Star, Target } from 'lucide-react';
 import type { Product } from '@/lib/products';
 import { getPricingText, listBestFor } from '@/lib/comparisons';
 import { AffiliateButton } from './affiliate-button';
+import { ScreenshotImage } from './ScreenshotImage';
 
 export function ProductHero({ product }: { product: Product }) {
   const quickFacts = [
@@ -36,7 +36,7 @@ export function ProductHero({ product }: { product: Product }) {
         </div>
       </div>
       <div className="glass relative rounded-[2rem] p-3">
-        <Image priority src={product.heroImage} alt={`${product.name} replaceable dashboard screenshot placeholder`} width={1600} height={1000} sizes="(min-width: 1024px) 46vw, 100vw" className="rounded-[1.5rem]" />
+        <ScreenshotImage priority src={product.heroImage} alt={`${product.name} replaceable dashboard screenshot placeholder`} width={1600} height={1000} sizes="(min-width: 1024px) 46vw, 100vw" className="rounded-[1.5rem]" />
       </div>
     </section>
   );
