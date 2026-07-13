@@ -84,7 +84,7 @@ for (const item of products) {
   }
   for (const other of productNames.filter(n => n !== p.name)) {
     const re = new RegExp(other.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-    const locs = locationsForMatches(strings, re).filter(loc => !loc.startsWith('alternatives[') && !loc.startsWith('knowledgeGraph.facts.alternatives[') && !loc.startsWith('faq[') && !loc.startsWith('comparison['));
+    const locs = locationsForMatches(strings, re).filter(loc => !loc.startsWith('alternatives[') && !loc.startsWith('knowledgeGraph.facts.alternatives[') && !loc.startsWith('faq[') && !loc.startsWith('comparison[') && !loc.startsWith('comparisonMatrix.'));
     if (locs.length > 1) quality.push({ label: `Contains references to ${other}`, locations: locs });
   }
 

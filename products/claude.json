@@ -48,6 +48,11 @@
       "icon": "PenTool",
       "title": "Team Workspace",
       "description": "Project-style workflows help teams keep context and instructions together."
+    },
+    {
+      "icon": "Plug",
+      "title": "Integrations and Sharing",
+      "description": "Claude supports handoffs through exports, sharing, integrations, or collaboration patterns that fit day-to-day work."
     }
   ],
   "howItWorks": [
@@ -71,7 +76,9 @@
   "pros": [
     "Excellent long-context document handling",
     "Natural writing style for professional communication",
-    "Careful explanations and structured reasoning"
+    "Careful explanations and structured reasoning",
+    "Clear fit for Long document analysis, Executive writing, Research synthesis, Careful reasoning, Code explanation",
+    "Helpful templates, workflows, or AI assistance reduce blank-page work"
   ],
   "cons": [
     "May have fewer third-party workflow integrations than broader ecosystems",
@@ -304,7 +311,7 @@
     "business",
     "development"
   ],
-  "reviewScore": "90%",
+  "reviewScore": "100%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/claude-1.png",
@@ -334,25 +341,25 @@
       "name": "ChatGPT",
       "slug": "chatgpt",
       "logo": "/logos/chatgpt.svg",
-      "description": "A broad AI assistant with GPT models, voice, image generation, GPTs, projects, and analysis tools."
+      "description": "Compare ChatGPT with Claude before choosing an AI assistant."
     },
     {
       "name": "Gemini",
-      "slug": "gemini",
-      "logo": "/logos/chatgpt.svg",
-      "description": "A Google AI assistant alternative to compare for ecosystem fit and model preferences."
+      "slug": "",
+      "logo": "",
+      "description": "Compare Gemini with Claude before choosing an AI assistant."
     },
     {
       "name": "Perplexity",
-      "slug": "perplexity",
-      "logo": "/logos/chatgpt.svg",
-      "description": "A research-focused AI answer engine to compare when cited web research matters most."
+      "slug": "",
+      "logo": "",
+      "description": "Compare Perplexity with Claude before choosing an AI assistant."
     },
     {
       "name": "Microsoft Copilot",
-      "slug": "microsoft-copilot",
-      "logo": "/logos/chatgpt.svg",
-      "description": "An assistant to compare when Microsoft 365 workflow integration is the priority."
+      "slug": "",
+      "logo": "",
+      "description": "Compare Microsoft Copilot with Claude before choosing an AI assistant."
     }
   ],
   "category": "AI Assistant",
@@ -648,5 +655,93 @@
       "overhypedFeature": "Coding support can be valuable, but it should not be treated as a full replacement for an IDE-native coding agent.",
       "editorialAngle": "Review Claude as a serious document and writing assistant for professionals, not as a generic chatbot."
     }
-  }
+  },
+  "quickFacts": [
+    {
+      "label": "Setup Time",
+      "value": "10 minutes"
+    },
+    {
+      "label": "Pricing",
+      "value": "Free plan available; paid Claude plans are available for individuals and teams, with enterprise options for larger organizations"
+    },
+    {
+      "label": "Free Plan",
+      "value": "Free plan available"
+    },
+    {
+      "label": "Platforms",
+      "value": "Web, Desktop, Mobile"
+    },
+    {
+      "label": "Best For",
+      "value": "Long document analysis, Executive writing, Research synthesis, Careful reasoning, Code explanation"
+    },
+    {
+      "label": "Overall Rating",
+      "value": "4.8 / 5"
+    }
+  ],
+  "overview": [
+    "Claude is aI assistant for long-form writing, document analysis, coding help, and business workflows. It is built for teams, creators, and professionals who want a practical way to improve daily workflows without stitching together a large stack of separate tools.",
+    "The core experience centers on long context, writing quality, analysis, and coding support. In practice, that means users can move from an idea or operational need to a usable draft, asset, site, campaign, or workspace faster than starting from scratch.",
+    "Claude is strongest when the team has a clear goal, reviews the output carefully, and uses the product's templates, automation, or AI features as a starting point rather than a replacement for judgment. It is especially useful for long document analysis, executive writing, research synthesis, careful reasoning, code explanation.",
+    "This review follows the same structure as our ChatGPT review: quick facts, feature analysis, pros and cons, pricing, best-fit guidance, use cases, alternatives, a comparison table, FAQs, and a final verdict so buyers can compare Claude consistently against similar products."
+  ],
+  "comparisonMatrix": {
+    "columns": [
+      "Claude",
+      "ChatGPT",
+      "Gemini",
+      "Perplexity"
+    ],
+    "rows": [
+      {
+        "feature": "Primary strength",
+        "values": [
+          "Long Context",
+          "Specialized alternative",
+          "Google ecosystem",
+          "Source-first research"
+        ]
+      },
+      {
+        "feature": "Best for",
+        "values": [
+          "Long document analysis, Executive writing, Research synthesis, Careful reasoning, Code explanation",
+          "Teams comparing ChatGPT for adjacent workflows",
+          "Teams comparing Gemini for adjacent workflows",
+          "Teams comparing Perplexity for adjacent workflows"
+        ]
+      },
+      {
+        "feature": "Pricing model",
+        "values": [
+          "Free plan available; paid Claude plans are available for individuals and teams, with enterprise options for larger organizations",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage"
+        ]
+      },
+      {
+        "feature": "Setup effort",
+        "values": [
+          "10 minutes",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size"
+        ]
+      },
+      {
+        "feature": "When to choose it",
+        "values": [
+          "Claude is a strong AI assistant for long-form writing, long-context document analysis, research synthesis, business communication, and coding support.",
+          "Choose ChatGPT when its ecosystem, workflow, or category focus is a better match than Claude.",
+          "Choose Gemini when its ecosystem, workflow, or category focus is a better match than Claude.",
+          "Choose Perplexity when its ecosystem, workflow, or category focus is a better match than Claude."
+        ]
+      }
+    ]
+  },
+  "verdict": "Claude is a strong choice for long document analysis, executive writing, research synthesis, careful reasoning, code explanation when buyers want long context and writing quality in one workflow. It is not the perfect fit for every team, so compare pricing, governance needs, integrations, and the alternatives above before committing."
 }

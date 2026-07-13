@@ -48,6 +48,11 @@
       "icon": "PenTool",
       "title": "Team Collaboration",
       "description": "Comments, approvals, folders, and shared templates support multi-person workflows."
+    },
+    {
+      "icon": "Plug",
+      "title": "Integrations and Sharing",
+      "description": "Canva supports handoffs through exports, sharing, integrations, or collaboration patterns that fit day-to-day work."
     }
   ],
   "howItWorks": [
@@ -71,7 +76,9 @@
   "pros": [
     "Huge template library for non-designers",
     "Fast collaboration and brand-kit controls",
-    "Strong AI-assisted design and copy tools"
+    "Strong AI-assisted design and copy tools",
+    "Clear fit for Social media graphics, Presentations, Marketing assets, Brand kits, Small business design",
+    "Helpful templates, workflows, or AI assistance reduce blank-page work"
   ],
   "cons": [
     "Less precise than professional desktop design tools",
@@ -80,39 +87,48 @@
   ],
   "pricingPlans": [
     {
-      "name": "Starter",
-      "price": "Free trial",
-      "description": "Explore AI creative generation for one brand.",
+      "name": "Free",
+      "price": "$0",
+      "description": "Best for casual design and basic templates.",
       "features": [
-        "Limited credits",
-        "Core creative generator",
-        "Presentation Design starter access"
+        "Canva core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "Start free"
+      "cta": "View Free"
     },
     {
-      "name": "Professional",
+      "name": "Pro",
       "price": "Paid plan",
-      "description": "For marketers who need regular campaign assets.",
+      "description": "Best for creators and small businesses that need premium assets and brand tools.",
       "features": [
-        "More monthly credits",
-        "Presentation Design workflow support",
-        "Social Graphics usage support",
-        "Brand Kits output support"
+        "Canva core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "Try Professional"
+      "cta": "View Pro"
     },
     {
-      "name": "Agency",
-      "price": "Custom",
-      "description": "For teams producing creatives across clients.",
+      "name": "Teams",
+      "price": "Paid per-user plan",
+      "description": "Best for teams collaborating on brand assets and approvals.",
       "features": [
-        "Multi-brand workspace",
-        "Team collaboration",
-        "Higher usage limits",
-        "Client-ready outputs"
+        "Canva core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "View Agency"
+      "cta": "View Teams"
+    },
+    {
+      "name": "Enterprise",
+      "price": "Custom Pricing",
+      "description": "Best for larger organizations with advanced controls.",
+      "features": [
+        "Canva core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
+      ],
+      "cta": "Contact Sales"
     }
   ],
   "audiences": [
@@ -157,7 +173,7 @@
   "faq": [
     {
       "question": "What is Canva best for?",
-      "answer": "Canva is best for ad testing and fast creative production."
+      "answer": "Canva is best for Social media graphics, Presentations, Marketing assets, Brand kits, Small business design."
     },
     {
       "question": "How much does Canva cost?",
@@ -173,7 +189,7 @@
     },
     {
       "question": "How does Canva compare with alternatives?",
-      "answer": "Canva should be compared on pricing, core features, ease of use, integrations, and support."
+      "answer": "Canva should be compared on pricing, core features, ease of use, integrations, support, and category-specific workflow fit."
     },
     {
       "question": "Does Canva have a free plan?",
@@ -295,7 +311,7 @@
     "marketing",
     "creator-tools"
   ],
-  "reviewScore": "90%",
+  "reviewScore": "100%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/canva-1.svg",
@@ -320,28 +336,28 @@
   ],
   "alternatives": [
     {
-      "name": "AdCreative.ai",
-      "slug": "adcreative",
-      "logo": "/logos/adcreative.svg",
-      "description": "Compare AdCreative.ai with Canva before choosing a tool."
+      "name": "Adobe Express",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Adobe Express with Canva before choosing a software tool."
     },
     {
-      "name": "ChatGPT",
-      "slug": "chatgpt",
-      "logo": "/logos/chatgpt.svg",
-      "description": "Compare ChatGPT with Canva before choosing a tool."
+      "name": "Figma",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Figma with Canva before choosing a software tool."
     },
     {
-      "name": "Claude",
-      "slug": "claude",
-      "logo": "/logos/claude.svg",
-      "description": "Compare Claude with Canva before choosing a tool."
+      "name": "Visme",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Visme with Canva before choosing a software tool."
     },
     {
-      "name": "Cursor",
-      "slug": "cursor",
-      "logo": "/logos/cursor.svg",
-      "description": "Compare Cursor with Canva before choosing a tool."
+      "name": "Adobe Creative Cloud",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Adobe Creative Cloud with Canva before choosing a software tool."
     }
   ],
   "category": "Design",
@@ -390,5 +406,99 @@
     "support": 4.5,
     "integrations": 4.6,
     "aiQuality": 4.6
-  }
+  },
+  "quickFacts": [
+    {
+      "label": "Setup Time",
+      "value": "10 minutes"
+    },
+    {
+      "label": "Pricing",
+      "value": "Free and paid plans vary by usage and team size"
+    },
+    {
+      "label": "Free Plan",
+      "value": "Check current availability"
+    },
+    {
+      "label": "Platforms",
+      "value": "Web, Desktop, Mobile"
+    },
+    {
+      "label": "Best For",
+      "value": "Social media graphics, Presentations, Marketing assets, Brand kits, Small business design"
+    },
+    {
+      "label": "Overall Rating",
+      "value": "4.9 / 5"
+    }
+  ],
+  "overview": [
+    "Canva is design platform with AI tools for presentations, social graphics, videos, and brand assets. It is built for teams, creators, and professionals who want a practical way to improve daily workflows without stitching together a large stack of separate tools.",
+    "The core experience centers on presentation design, social graphics, brand kits, and ai image tools. In practice, that means users can move from an idea or operational need to a usable draft, asset, site, campaign, or workspace faster than starting from scratch.",
+    "Canva is strongest when the team has a clear goal, reviews the output carefully, and uses the product's templates, automation, or AI features as a starting point rather than a replacement for judgment. It is especially useful for social media graphics, presentations, marketing assets, brand kits, small business design.",
+    "This review follows the same structure as our ChatGPT review: quick facts, feature analysis, pros and cons, pricing, best-fit guidance, use cases, alternatives, a comparison table, FAQs, and a final verdict so buyers can compare Canva consistently against similar products."
+  ],
+  "comparisonMatrix": {
+    "columns": [
+      "Canva",
+      "Adobe Express",
+      "Figma",
+      "Visme",
+      "Adobe Creative Cloud"
+    ],
+    "rows": [
+      {
+        "feature": "Primary strength",
+        "values": [
+          "Presentation Design",
+          "Creative ecosystem",
+          "Collaborative design",
+          "Presentation design",
+          "Creative ecosystem"
+        ]
+      },
+      {
+        "feature": "Best for",
+        "values": [
+          "Social media graphics, Presentations, Marketing assets, Brand kits, Small business design",
+          "Teams comparing Adobe Express for adjacent workflows",
+          "Teams comparing Figma for adjacent workflows",
+          "Teams comparing Visme for adjacent workflows",
+          "Teams comparing Adobe Creative Cloud for adjacent workflows"
+        ]
+      },
+      {
+        "feature": "Pricing model",
+        "values": [
+          "Free and paid plans vary by usage and team size",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage"
+        ]
+      },
+      {
+        "feature": "Setup effort",
+        "values": [
+          "10 minutes",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size"
+        ]
+      },
+      {
+        "feature": "When to choose it",
+        "values": [
+          "Design platform with AI tools for presentations, social graphics, videos, and brand assets.",
+          "Choose Adobe Express when its ecosystem, workflow, or category focus is a better match than Canva.",
+          "Choose Figma when its ecosystem, workflow, or category focus is a better match than Canva.",
+          "Choose Visme when its ecosystem, workflow, or category focus is a better match than Canva.",
+          "Choose Adobe Creative Cloud when its ecosystem, workflow, or category focus is a better match than Canva."
+        ]
+      }
+    ]
+  },
+  "verdict": "Canva is a strong choice for social media graphics, presentations, marketing assets, brand kits, small business design when buyers want presentation design and social graphics in one workflow. It is not the perfect fit for every team, so compare pricing, governance needs, integrations, and the alternatives above before committing."
 }

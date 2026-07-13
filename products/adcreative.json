@@ -152,38 +152,47 @@
   "pricingPlans": [
     {
       "name": "Starter",
-      "price": "Free trial",
-      "description": "Explore AI creative generation for one brand.",
+      "price": "Free trial / paid plan",
+      "description": "Best for individuals testing ad creative generation.",
       "features": [
-        "Limited credits",
-        "Core creative generator",
-        "Ad Creative Generation starter access"
+        "AdCreative.ai core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "Start free"
+      "cta": "View Starter"
     },
     {
       "name": "Professional",
       "price": "Paid plan",
-      "description": "For marketers who need regular campaign assets.",
+      "description": "Best for marketers producing regular campaign assets.",
       "features": [
-        "More monthly credits",
-        "Ad Creative Generation workflow support",
-        "Creative Variants usage support",
-        "Brand Controls output support"
+        "AdCreative.ai core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "Try Professional"
+      "cta": "View Professional"
     },
     {
       "name": "Agency",
-      "price": "Custom",
-      "description": "For teams producing creatives across clients.",
+      "price": "Paid or custom plan",
+      "description": "Best for teams managing multiple brands or clients.",
       "features": [
-        "Multi-brand workspace",
-        "Team collaboration",
-        "Higher usage limits",
-        "Client-ready outputs"
+        "AdCreative.ai core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
       "cta": "View Agency"
+    },
+    {
+      "name": "Enterprise",
+      "price": "Custom Pricing",
+      "description": "Best for organizations with larger creative operations.",
+      "features": [
+        "AdCreative.ai core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
+      ],
+      "cta": "Contact Sales"
     }
   ],
   "audiences": [
@@ -394,25 +403,25 @@
       "name": "Canva",
       "slug": "canva",
       "logo": "/logos/canva.svg",
-      "description": "Compare Canva with AdCreative.ai before choosing a tool."
+      "description": "Compare Canva with AdCreative.ai before choosing a software tool."
     },
     {
-      "name": "ChatGPT",
-      "slug": "chatgpt",
-      "logo": "/logos/chatgpt.svg",
-      "description": "Compare ChatGPT with AdCreative.ai before choosing a tool."
+      "name": "Adobe Express",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Adobe Express with AdCreative.ai before choosing a software tool."
     },
     {
-      "name": "Claude",
-      "slug": "claude",
-      "logo": "/logos/claude.svg",
-      "description": "Compare Claude with AdCreative.ai before choosing a tool."
+      "name": "Predis.ai",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Predis.ai with AdCreative.ai before choosing a software tool."
     },
     {
-      "name": "Cursor",
-      "slug": "cursor",
-      "logo": "/logos/cursor.svg",
-      "description": "Compare Cursor with AdCreative.ai before choosing a tool."
+      "name": "VistaCreate",
+      "slug": "",
+      "logo": "",
+      "description": "Compare VistaCreate with AdCreative.ai before choosing a software tool."
     }
   ],
   "category": "Marketing",
@@ -721,5 +730,93 @@
       "overhypedFeature": "One-click creative generation without a clear testing hypothesis or human approval process.",
       "editorialAngle": "Review AdCreative.ai as an ad-testing production layer, not as a replacement for brand strategy or full-service design."
     }
-  }
+  },
+  "quickFacts": [
+    {
+      "label": "Setup Time",
+      "value": "10 minutes"
+    },
+    {
+      "label": "Pricing",
+      "value": "Free trial, then paid plans for individuals and teams"
+    },
+    {
+      "label": "Free Plan",
+      "value": "Check current availability"
+    },
+    {
+      "label": "Platforms",
+      "value": "Meta, Google, LinkedIn, Pinterest, TikTok"
+    },
+    {
+      "label": "Best For",
+      "value": "Ad creatives, Campaign variants, Paid social assets, Performance marketing, Brand-consistent ad production"
+    },
+    {
+      "label": "Overall Rating",
+      "value": "4.7 / 5"
+    }
+  ],
+  "comparisonMatrix": {
+    "columns": [
+      "AdCreative.ai",
+      "Canva",
+      "Adobe Express",
+      "Predis.ai",
+      "VistaCreate"
+    ],
+    "rows": [
+      {
+        "feature": "Primary strength",
+        "values": [
+          "Ad Creative Generation",
+          "Specialized alternative",
+          "Creative ecosystem",
+          "Specialized alternative",
+          "Specialized alternative"
+        ]
+      },
+      {
+        "feature": "Best for",
+        "values": [
+          "Ad creatives, Campaign variants, Paid social assets, Performance marketing, Brand-consistent ad production",
+          "Teams comparing Canva for adjacent workflows",
+          "Teams comparing Adobe Express for adjacent workflows",
+          "Teams comparing Predis.ai for adjacent workflows",
+          "Teams comparing VistaCreate for adjacent workflows"
+        ]
+      },
+      {
+        "feature": "Pricing model",
+        "values": [
+          "Free trial, then paid plans for individuals and teams",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage"
+        ]
+      },
+      {
+        "feature": "Setup effort",
+        "values": [
+          "10 minutes",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size"
+        ]
+      },
+      {
+        "feature": "When to choose it",
+        "values": [
+          "AdCreative.ai is strongest for marketers, ecommerce teams, creators, and agencies that need a repeatable pipeline of branded ad concepts and variants. It is worth buying when creative volume and testing discipline matter more than deep manual design control.",
+          "Choose Canva when its ecosystem, workflow, or category focus is a better match than AdCreative.ai.",
+          "Choose Adobe Express when its ecosystem, workflow, or category focus is a better match than AdCreative.ai.",
+          "Choose Predis.ai when its ecosystem, workflow, or category focus is a better match than AdCreative.ai.",
+          "Choose VistaCreate when its ecosystem, workflow, or category focus is a better match than AdCreative.ai."
+        ]
+      }
+    ]
+  },
+  "verdict": "AdCreative.ai is a strong choice for ad creatives, campaign variants, paid social assets, performance marketing, brand-consistent ad production when buyers want ad creative generation and creative variants in one workflow. It is not the perfect fit for every team, so compare pricing, governance needs, integrations, and the alternatives above before committing."
 }

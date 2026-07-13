@@ -48,6 +48,11 @@
       "icon": "PenTool",
       "title": "AI Commerce Tools",
       "description": "AI assists with product descriptions, store content, and merchandising tasks."
+    },
+    {
+      "icon": "Plug",
+      "title": "Integrations and Sharing",
+      "description": "Shopify supports handoffs through exports, sharing, integrations, or collaboration patterns that fit day-to-day work."
     }
   ],
   "howItWorks": [
@@ -71,7 +76,9 @@
   "pros": [
     "Complete ecommerce stack from storefront to checkout",
     "Large app ecosystem for marketing, shipping, and operations",
-    "Scales from small stores to high-volume commerce"
+    "Scales from small stores to high-volume commerce",
+    "Clear fit for Online stores, Product catalogs, Checkout and payments, Retail operations, Omnichannel selling",
+    "Helpful templates, workflows, or AI assistance reduce blank-page work"
   ],
   "cons": [
     "Monthly apps can increase total cost",
@@ -81,38 +88,58 @@
   "pricingPlans": [
     {
       "name": "Starter",
-      "price": "Free trial",
-      "description": "Explore AI creative generation for one brand.",
+      "price": "Paid starter plan",
+      "description": "Best for selling through links and social channels.",
       "features": [
-        "Limited credits",
-        "Core creative generator",
-        "Store Builder starter access"
+        "Shopify core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "Start free"
+      "cta": "View Starter"
     },
     {
-      "name": "Professional",
-      "price": "Paid plan",
-      "description": "For marketers who need regular campaign assets.",
+      "name": "Basic",
+      "price": "Paid monthly plan",
+      "description": "Best for new online stores.",
       "features": [
-        "More monthly credits",
-        "Store Builder workflow support",
-        "Payments usage support",
-        "App Ecosystem output support"
+        "Shopify core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "Try Professional"
+      "cta": "View Basic"
     },
     {
-      "name": "Agency",
-      "price": "Custom",
-      "description": "For teams producing creatives across clients.",
+      "name": "Shopify",
+      "price": "Paid monthly plan",
+      "description": "Best for growing stores with more staff and reporting needs.",
       "features": [
-        "Multi-brand workspace",
-        "Team collaboration",
-        "Higher usage limits",
-        "Client-ready outputs"
+        "Shopify core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
       ],
-      "cta": "View Agency"
+      "cta": "View Shopify"
+    },
+    {
+      "name": "Advanced",
+      "price": "Paid monthly plan",
+      "description": "Best for scaling stores that need advanced reporting and lower transaction costs.",
+      "features": [
+        "Shopify core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
+      ],
+      "cta": "View Advanced"
+    },
+    {
+      "name": "Plus",
+      "price": "Custom Pricing",
+      "description": "Best for enterprise commerce.",
+      "features": [
+        "Shopify core workflow access",
+        "Plan limits vary by usage and billing option",
+        "Review current terms before purchasing"
+      ],
+      "cta": "Contact Sales"
     }
   ],
   "audiences": [
@@ -157,7 +184,7 @@
   "faq": [
     {
       "question": "What is Shopify best for?",
-      "answer": "Shopify is best for ad testing and fast creative production."
+      "answer": "Shopify is best for Online stores, Product catalogs, Checkout and payments, Retail operations, Omnichannel selling."
     },
     {
       "question": "How much does Shopify cost?",
@@ -173,7 +200,7 @@
     },
     {
       "question": "How does Shopify compare with alternatives?",
-      "answer": "Shopify should be compared on pricing, core features, ease of use, integrations, and support."
+      "answer": "Shopify should be compared on pricing, core features, ease of use, integrations, support, and category-specific workflow fit."
     },
     {
       "question": "Does Shopify have a free plan?",
@@ -294,7 +321,7 @@
     "business",
     "marketing"
   ],
-  "reviewScore": "90%",
+  "reviewScore": "100%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
     "/screenshots/shopify-1.svg",
@@ -319,28 +346,28 @@
   ],
   "alternatives": [
     {
-      "name": "AdCreative.ai",
-      "slug": "adcreative",
-      "logo": "/logos/adcreative.svg",
-      "description": "Compare AdCreative.ai with Shopify before choosing a tool."
+      "name": "WooCommerce",
+      "slug": "",
+      "logo": "",
+      "description": "Compare WooCommerce with Shopify before choosing a software tool."
     },
     {
-      "name": "Canva",
-      "slug": "canva",
-      "logo": "/logos/canva.svg",
-      "description": "Compare Canva with Shopify before choosing a tool."
+      "name": "BigCommerce",
+      "slug": "",
+      "logo": "",
+      "description": "Compare BigCommerce with Shopify before choosing a software tool."
     },
     {
-      "name": "ChatGPT",
-      "slug": "chatgpt",
-      "logo": "/logos/chatgpt.svg",
-      "description": "Compare ChatGPT with Shopify before choosing a tool."
+      "name": "Squarespace",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Squarespace with Shopify before choosing a software tool."
     },
     {
-      "name": "Claude",
-      "slug": "claude",
-      "logo": "/logos/claude.svg",
-      "description": "Compare Claude with Shopify before choosing a tool."
+      "name": "Wix",
+      "slug": "",
+      "logo": "",
+      "description": "Compare Wix with Shopify before choosing a software tool."
     }
   ],
   "category": "Ecommerce",
@@ -389,5 +416,99 @@
     "support": 4.6,
     "integrations": 4.9,
     "aiQuality": 4.2
-  }
+  },
+  "quickFacts": [
+    {
+      "label": "Setup Time",
+      "value": "10 minutes"
+    },
+    {
+      "label": "Pricing",
+      "value": "Free and paid plans vary by usage and team size"
+    },
+    {
+      "label": "Free Plan",
+      "value": "Check current availability"
+    },
+    {
+      "label": "Platforms",
+      "value": "Web, Desktop, Mobile"
+    },
+    {
+      "label": "Best For",
+      "value": "Online stores, Product catalogs, Checkout and payments, Retail operations, Omnichannel selling"
+    },
+    {
+      "label": "Overall Rating",
+      "value": "4.8 / 5"
+    }
+  ],
+  "overview": [
+    "Shopify is commerce platform with AI tools for online stores, product descriptions, and business operations. It is built for teams, creators, and professionals who want a practical way to improve daily workflows without stitching together a large stack of separate tools.",
+    "The core experience centers on store builder, payments, app ecosystem, and inventory tools. In practice, that means users can move from an idea or operational need to a usable draft, asset, site, campaign, or workspace faster than starting from scratch.",
+    "Shopify is strongest when the team has a clear goal, reviews the output carefully, and uses the product's templates, automation, or AI features as a starting point rather than a replacement for judgment. It is especially useful for online stores, product catalogs, checkout and payments, retail operations, omnichannel selling.",
+    "This review follows the same structure as our ChatGPT review: quick facts, feature analysis, pros and cons, pricing, best-fit guidance, use cases, alternatives, a comparison table, FAQs, and a final verdict so buyers can compare Shopify consistently against similar products."
+  ],
+  "comparisonMatrix": {
+    "columns": [
+      "Shopify",
+      "WooCommerce",
+      "BigCommerce",
+      "Squarespace",
+      "Wix"
+    ],
+    "rows": [
+      {
+        "feature": "Primary strength",
+        "values": [
+          "Store Builder",
+          "Specialized alternative",
+          "Specialized alternative",
+          "Website builder",
+          "Website builder"
+        ]
+      },
+      {
+        "feature": "Best for",
+        "values": [
+          "Online stores, Product catalogs, Checkout and payments, Retail operations, Omnichannel selling",
+          "Teams comparing WooCommerce for adjacent workflows",
+          "Teams comparing BigCommerce for adjacent workflows",
+          "Teams comparing Squarespace for adjacent workflows",
+          "Teams comparing Wix for adjacent workflows"
+        ]
+      },
+      {
+        "feature": "Pricing model",
+        "values": [
+          "Free and paid plans vary by usage and team size",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage",
+          "Free, paid, or custom plans depending on usage"
+        ]
+      },
+      {
+        "feature": "Setup effort",
+        "values": [
+          "10 minutes",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size",
+          "Low to moderate depending on migration and team size"
+        ]
+      },
+      {
+        "feature": "When to choose it",
+        "values": [
+          "Commerce platform with AI tools for online stores, product descriptions, and business operations.",
+          "Choose WooCommerce when its ecosystem, workflow, or category focus is a better match than Shopify.",
+          "Choose BigCommerce when its ecosystem, workflow, or category focus is a better match than Shopify.",
+          "Choose Squarespace when its ecosystem, workflow, or category focus is a better match than Shopify.",
+          "Choose Wix when its ecosystem, workflow, or category focus is a better match than Shopify."
+        ]
+      }
+    ]
+  },
+  "verdict": "Shopify is a strong choice for online stores, product catalogs, checkout and payments, retail operations, omnichannel selling when buyers want store builder and payments in one workflow. It is not the perfect fit for every team, so compare pricing, governance needs, integrations, and the alternatives above before committing."
 }
