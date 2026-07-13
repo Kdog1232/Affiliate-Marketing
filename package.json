@@ -12,7 +12,9 @@
     "generate:buying-guides": "node scripts/content-cli.js generate:buying-guides",
     "generate:tutorials": "node scripts/content-cli.js generate:tutorials",
     "generate:alternatives": "node scripts/content-cli.js generate:alternatives",
-    "generate:all": "node scripts/content-cli.js generate:all"
+    "generate:all": "node scripts/content-cli.js generate:all",
+    "screenshots": "node scripts/generate-screenshots.js",
+    "publish": "npm run generate:all-reviews && (npm run screenshots || echo \"Screenshots failed; continuing publish build.\") && npm run build"
   },
   "dependencies": {
     "next": "15.3.6",
@@ -21,6 +23,7 @@
     "lucide-react": "^0.468.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.0",
     "@types/node": "^22.10.2",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
