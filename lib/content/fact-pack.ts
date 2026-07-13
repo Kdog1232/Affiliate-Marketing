@@ -34,7 +34,7 @@ export async function buildProductFactPack(product: Product) {
   };
 }
 
-function normalizeProductKnowledgeGraph(product: Product, alternatives: { name: string; slug: string; description: string }[]): NormalizedProductKnowledgeGraph {
+function normalizeProductKnowledgeGraph(product: Product, alternatives: { name: string; slug?: string; description: string }[]): NormalizedProductKnowledgeGraph {
   const explicit = product.knowledgeGraph;
   const facts = explicit?.facts ?? {};
   const bestFor = asStringArray(product.bestFor);

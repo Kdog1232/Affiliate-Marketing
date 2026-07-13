@@ -123,7 +123,7 @@ export type Product = {
   quickFacts?: { label: string; value: string }[];
   overview?: string[];
   useCases?: string[];
-  alternatives?: { name: string; slug: string; logo: string; description: string }[];
+  alternatives?: { name: string; slug?: string; logo?: string; description: string }[];
   comparisonMatrix?: { columns: string[]; rows: { feature: string; values: string[] }[] };
   canonicalUrl?: string;
   features: { icon: string; title: string; description: string; whatItDoes?: string; whyItMatters?: string; example?: string; whoBenefits?: string | string[]; tradeoff?: string; recommendedWorkflow?: string }[];
