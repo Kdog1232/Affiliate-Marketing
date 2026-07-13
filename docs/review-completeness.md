@@ -1,6 +1,6 @@
 # Review Completeness
 
-Generated: 2026-07-13T16:47:40.414Z
+Generated: 2026-07-13T17:01:42.648Z
 
 | Product | Score | Status | Missing checks | Quality warnings |
 |---|---:|---|---|---|

@@ -551,12 +551,10 @@
     "facts": {
       "features": [
         {
-          "icon": "Sparkles",
-          "title": "Ad Creative Generation",
-          "description": "Produces campaign-ready ad concepts from product, audience, brand, and offer inputs.",
+          "name": "Ad Creative Generation",
           "whatItDoes": "AdCreative.ai turns campaign details into static ad concepts with layouts, images, headlines, and calls to action designed for paid media environments. Instead of assembling every layout from scratch, marketers can generate multiple directions around a product launch, discount, lead magnet, app install offer, or retargeting message.",
           "whyItMatters": "Creative production is often the slowest part of paid acquisition. Faster first drafts let teams test more angles, refresh fatigued campaigns sooner, and give media buyers more options than a single designer-approved concept.",
-          "whoBenefits": [
+          "bestFor": [
             "Performance marketers who need weekly creative refreshes",
             "Ecommerce teams launching offers across several audiences",
             "Agencies that must present multiple concepts to clients quickly"
@@ -566,12 +564,10 @@
           "recommendedWorkflow": "Start with one campaign hypothesis, upload or define brand assets, generate 10–20 concepts, remove anything off-brand or legally risky, then send the strongest few into a controlled ad test."
         },
         {
-          "icon": "Layers",
-          "title": "Creative Variants",
-          "description": "Generates multiple messages, layouts, sizes, and visual approaches for structured testing.",
+          "name": "Creative Variants",
           "whatItDoes": "The variant workflow helps teams produce alternative versions of an ad concept for different placements, audiences, hooks, and formats. A single promotion can become several headline treatments, image crops, CTA styles, and channel-ready dimensions.",
           "whyItMatters": "Paid media performance usually improves through iteration, not one perfect asset. Variants make it easier to isolate whether a hook, visual, offer framing, or audience angle is driving results.",
-          "whoBenefits": [
+          "bestFor": [
             "Media buyers running A/B tests",
             "Small teams without enough design capacity",
             "Client teams that need options before approving a campaign"
@@ -581,12 +577,10 @@
           "recommendedWorkflow": "Group variants by hypothesis: test three headline angles with the same visual, then three visuals with the winning headline, and document results before generating the next batch."
         },
         {
-          "icon": "Zap",
-          "title": "Brand Controls",
-          "description": "Uses logos, colors, and brand details to make generated ads feel closer to an existing identity.",
+          "name": "Brand Controls",
           "whatItDoes": "Brand controls help keep creative output aligned with supplied logos, color palettes, and basic visual preferences. This is especially useful when several people are generating assets for the same company or agency client.",
           "whyItMatters": "Fast creative loses value if every export looks disconnected from the brand. Consistent logos, colors, and visual patterns reduce cleanup time and make ads more recognizable across campaigns.",
-          "whoBenefits": [
+          "bestFor": [
             "Agencies managing multiple client brands",
             "Franchise or multi-location marketers",
             "Founders who need consistent ads without a full-time designer"
@@ -596,12 +590,10 @@
           "recommendedWorkflow": "Build the brand kit before generating ads, save examples of approved output, and require one brand-owner review before exporting a large campaign set."
         },
         {
-          "icon": "Image",
-          "title": "Copy Assistance",
-          "description": "Drafts headlines, primary text, hooks, and calls to action for campaign concepts.",
+          "name": "Copy Assistance",
           "whatItDoes": "AdCreative.ai can generate supporting ad copy around the same offer and visual direction, giving marketers headline options, short body copy, and CTA language that can be paired with generated creatives.",
           "whyItMatters": "Visuals and copy need to work together. A strong product image can underperform if the headline is vague, and a clear offer can be weakened by a generic CTA. Copy assistance speeds up the process of matching message to asset.",
-          "whoBenefits": [
+          "bestFor": [
             "Solo creators who do not have a copywriter",
             "Growth teams testing positioning angles",
             "Agencies preparing first-round client concepts"
@@ -611,12 +603,10 @@
           "recommendedWorkflow": "Write the offer and proof points yourself, generate copy options, cut exaggerated claims, then adapt the best lines to each platform’s character limits and ad policies."
         },
         {
-          "icon": "ChartBar",
-          "title": "Performance Focus",
-          "description": "Frames creative production around conversion goals, testing volume, and paid media decision-making.",
+          "name": "Performance Focus",
           "whatItDoes": "The platform organizes its value around ads that can be launched, tested, and iterated rather than generic graphic design. Its workflows encourage teams to think in terms of campaign objective, audience, conversion angle, and creative score.",
           "whyItMatters": "A pretty ad is not necessarily a profitable ad. Performance-focused workflows help marketers connect creative output to business outcomes such as clicks, leads, purchases, and lower creative-production cost.",
-          "whoBenefits": [
+          "bestFor": [
             "Paid social specialists responsible for ROAS or CAC",
             "Ecommerce brands refreshing product ads",
             "Agencies judged on campaign velocity and client results"
@@ -626,12 +616,10 @@
           "recommendedWorkflow": "Define the metric before generating assets, launch variants with clean naming conventions, review results after enough spend, and use performance data to brief the next creative batch."
         },
         {
-          "icon": "Plug",
-          "title": "Channel-Ready Campaign Assets",
-          "description": "Adapts creative concepts for the placement, format, and review needs of paid social and performance campaigns.",
+          "name": "Channel-Ready Campaign Assets",
           "whatItDoes": "AdCreative.ai helps translate an approved campaign direction into assets that are easier to prepare for different ad channels, placements, and audience segments. The practical value is not only generating one image; it is creating a campaign set that can be reviewed, exported, named, and handed to the person launching ads.",
           "whyItMatters": "Campaign teams lose time when each platform variation has to be rebuilt manually. Channel-ready assets shorten the path from concept approval to launch and reduce the chance that a promising idea stalls before testing.",
-          "whoBenefits": [
+          "bestFor": [
             "Paid media coordinators preparing launch batches",
             "Agencies handing assets to client media teams",
             "Ecommerce operators managing several promotions at once"
@@ -643,45 +631,50 @@
       ],
       "pros": [
         {
-          "claim": "Built specifically for ad creative velocity, so teams can move from campaign brief to testable concepts without building every layout manually.",
+          "title": "Built specifically for ad creative velocity, so teams can move from campaign brief to testable concepts without building every layout manually.",
           "evidence": "Supported by the review focus on ad creative generation, variants, brand controls, copy assistance, and performance-oriented workflows."
         },
         {
-          "claim": "Useful for structured creative testing because it produces enough variations to compare hooks, offers, visuals, and calls to action in a real media plan.",
+          "title": "Useful for structured creative testing because it produces enough variations to compare hooks, offers, visuals, and calls to action in a real media plan.",
           "evidence": "Supported by the review focus on ad creative generation, variants, brand controls, copy assistance, and performance-oriented workflows."
         },
         {
-          "claim": "Brand controls reduce the chaos of AI output by keeping logos, colors, and recurring visual patterns closer to an approved identity.",
+          "title": "Brand controls reduce the chaos of AI output by keeping logos, colors, and recurring visual patterns closer to an approved identity.",
           "evidence": "Supported by the review focus on ad creative generation, variants, brand controls, copy assistance, and performance-oriented workflows."
         },
         {
-          "claim": "Copy and visual generation live in the same workflow, which helps lean teams align headlines, CTAs, and layouts before launch.",
+          "title": "Copy and visual generation live in the same workflow, which helps lean teams align headlines, CTAs, and layouts before launch.",
           "evidence": "Supported by the review focus on ad creative generation, variants, brand controls, copy assistance, and performance-oriented workflows."
         },
         {
-          "claim": "Agency-friendly for early concepting because account teams can show clients several directions before investing design time in final polish.",
+          "title": "Agency-friendly for early concepting because account teams can show clients several directions before investing design time in final polish.",
           "evidence": "Supported by the review focus on ad creative generation, variants, brand controls, copy assistance, and performance-oriented workflows."
         }
       ],
       "cons": [
         {
-          "claim": "Not a replacement for senior design judgment when a campaign needs original art direction, complex layouts, or strict brand-system execution.",
+          "title": "Not a replacement for senior design judgment when a campaign needs original art direction, complex layouts, or strict brand-system execution.",
+          "evidence": "Reflected in the review limitations and not-for guidance.",
           "mitigation": "Use AdCreative.ai as a production and ideation accelerator, then keep human review, analytics, and design escalation in the workflow."
         },
         {
-          "claim": "Generated claims, product details, and compliance-sensitive wording still need human review before ads go live.",
+          "title": "Generated claims, product details, and compliance-sensitive wording still need human review before ads go live.",
+          "evidence": "Reflected in the review limitations and not-for guidance.",
           "mitigation": "Use AdCreative.ai as a production and ideation accelerator, then keep human review, analytics, and design escalation in the workflow."
         },
         {
-          "claim": "Best ROI depends on actually testing creative; teams without media spend, organic distribution, or a measurement process may underuse it.",
+          "title": "Best ROI depends on actually testing creative; teams without media spend, organic distribution, or a measurement process may underuse it.",
+          "evidence": "Reflected in the review limitations and not-for guidance.",
           "mitigation": "Use AdCreative.ai as a production and ideation accelerator, then keep human review, analytics, and design escalation in the workflow."
         },
         {
-          "claim": "It is not a complete marketing automation platform, so buyers still need separate tools for campaign management, analytics, landing pages, and CRM follow-up.",
+          "title": "It is not a complete marketing automation platform, so buyers still need separate tools for campaign management, analytics, landing pages, and CRM follow-up.",
+          "evidence": "Reflected in the review limitations and not-for guidance.",
           "mitigation": "Use AdCreative.ai as a production and ideation accelerator, then keep human review, analytics, and design escalation in the workflow."
         },
         {
-          "claim": "High creative volume can create noise unless the team names, groups, and analyzes variants with a clear testing framework.",
+          "title": "High creative volume can create noise unless the team names, groups, and analyzes variants with a clear testing framework.",
+          "evidence": "Reflected in the review limitations and not-for guidance.",
           "mitigation": "Use AdCreative.ai as a production and ideation accelerator, then keep human review, analytics, and design escalation in the workflow."
         }
       ],
@@ -714,6 +707,19 @@
         "roi": "ROI is highest when AdCreative.ai shortens the time between performance insight and the next creative test."
       },
       "finalVerdict": "AdCreative.ai is a practical shortlist tool for paid media teams whose bottleneck is creative throughput. It should be judged less like a design toy and more like an ad-testing production layer: valuable when connected to hypotheses, approvals, and performance data; less valuable when used casually without a campaign process."
+    },
+    "version": 2,
+    "interpretation": {
+      "biggestPurchaseReason": "AdCreative.ai is most compelling when creative throughput is the bottleneck in a paid media testing process.",
+      "biggestDisappointment": "Buyers expecting a full design suite, automated media buying, or analytics platform may find the scope too narrow.",
+      "competitiveAdvantage": "The tool is focused on fast, branded ad creative production rather than general-purpose graphic design.",
+      "biggestWeakness": "Human review is still required for brand nuance, platform policy, and compliance-sensitive claims.",
+      "learningCurve": "Low for first drafts, moderate for teams that want a disciplined testing and reporting workflow.",
+      "roi": "Highest when it shortens the time between performance insight and the next creative test.",
+      "bestIndustry": "Ecommerce, agencies, paid social teams, local services, and creator-led offers with recurring campaign needs.",
+      "mostUnderratedFeature": "Brand controls that keep high-volume creative output closer to an approved identity.",
+      "overhypedFeature": "One-click creative generation without a clear testing hypothesis or human approval process.",
+      "editorialAngle": "Review AdCreative.ai as an ad-testing production layer, not as a replacement for brand strategy or full-service design."
     }
   }
 }
