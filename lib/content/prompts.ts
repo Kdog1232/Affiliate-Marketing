@@ -1,7 +1,6 @@
-import type { Product } from '@/lib/products';
 import type { ReviewSectionKey } from './types';
 
-export const PROMPT_VERSION = 'kg-utilization-maximizer-v1';
+export const PROMPT_VERSION = 'cohesive-editorial-review-v2';
 export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
   { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases', 'knowledgeGraph'] },
@@ -29,15 +28,15 @@ const EDITORIAL_PIPELINE = [
   'Stage 1 — Build a Product Understanding object from the supplied facts with primaryAudience, primaryJobs, biggestStrengths, biggestWeaknesses, differentiators, idealWorkflows, likelyAlternatives, marketFit, and situationsWhereAnotherToolWouldBeBetter.',
   'Stage 2 — Write a complete editorial review article internally before filling any JSON fields. Target 2,500-4,000 words when source facts are sufficient. Write like an experienced software reviewer at PCMag, Tom\'s Guide, TechRadar, or Wirecutter. Focus on whether the reader should spend money on the product, not SEO or page sections.',
   'Stage 3 — Improve that internal article for readability: remove repetition, combine overlapping ideas, vary sentence length, replace generic wording, add transitions, and increase specificity while keeping facts unchanged.',
-  'Stage 4 — Populate the requested JSON by extracting and condensing from the enhanced article. Do not independently regenerate the overview, feature highlights, pros, cons, pricingSummary, faq, verdict, useCases, buyingGuide, alternatives, comparison, tutorial, seo, quality, or missingContent fields.',
-  'Stage 5 — Validate the extracted JSON. Rewrite any field that contains generic marketing language, repeated sentence structures, unsupported claims, feature lists without explanation, identical use-case wording, empty buying guidance, or copied-sounding phrasing.',
+  'Stage 4 — Populate the requested JSON only by extracting and condensing from the enhanced article. Do not independently regenerate or template the overview, feature highlights, pros, cons, pricingSummary, whoShouldBuy, whoShouldAvoid, faq, verdict, useCases, buyingGuide, alternatives, comparison, tutorial, seo, quality, or missingContent fields.',
+  'Stage 5 — Validate the extracted JSON. Rewrite any field that contains generic marketing language, repeated sentence structures, unsupported claims, feature lists without explanation, identical use-case wording, empty buying guidance, copied-sounding phrasing, or low information gain against earlier sections.',
 ];
 
 const EDITORIAL_STYLE_RULES = [
-  'Every major feature discussed must answer: what it does, why it matters, and who benefits most.',
-  'Never merely list features. Explain what the feature changes in a real workflow and when that change matters.',
+  'Every major feature discussed must answer all available knowledge graph fields: what it does, why it matters, who benefits most, real-world example, tradeoff or limitation, and recommended workflow.',
+  'Never merely list features. Explain what the feature changes in a real workflow, when that change matters, and what limitation keeps the advice balanced.',
   'Use concrete workflow examples, such as a team reviewing vendor agreements, a marketer preparing campaign variants, or a founder comparing launch tools, but only when the product facts support the scenario.',
-  'Add buying guidance throughout: who should buy, who should skip, when a cheaper option is enough, when a premium plan is justified, and what user gets the most value.',
+  'Add buying guidance throughout: who should buy, why they should buy, who should skip and why, when a cheaper option is enough, when a premium plan is justified, and which competitor to evaluate first if the fit is wrong.',
   'Balance positives with tradeoffs. Praise must include context about limitations or competitors where supplied facts support that contrast.',
   'Avoid hype, filler, and marketing language. Banned phrases include: "Move from blank page to structured first draft", "Great for", "Useful for", "Powerful AI assistant", "Robust solution", "Streamline your workflow", and "Leverage AI".',
   'Vary structure and wording. Use natural, specific sentences rather than repeated openings or template-like phrasing.',
@@ -56,7 +55,7 @@ export function systemPrompt() {
 export function fullReviewPrompt(input: unknown) {
   return {
     instructions: [
-      'Generate the review content in two explicit steps using only the supplied factPack.',
+      'Generate the review content as one cohesive editorial article first, then extract every section from that article using only the supplied factPack.',
       ...FACT_BOUND_RULES,
       'Step 1: First write an internal 2,500-word expert product review from the product facts. This draft is scratch work only: do not output it, do not format it as JSON, do not use a reusable template, and write it naturally with editorial judgment.',
       'Step 1 review requirements: cover overview, pros, cons, features, pricing, use cases, alternatives, buyer advice, FAQs, and verdict in connected expert prose; include product-specific context; avoid generic filler; keep every claim grounded in the supplied facts.',
@@ -67,25 +66,21 @@ export function fullReviewPrompt(input: unknown) {
       'Workflow Expansion: if a workflow exists, describe it, show who uses it, explain why it saves time, and mention the outcome; do not reduce workflows to one sentence.',
       'Buying Advice: answer buying questions throughout the article: should I buy it, who gets the most value, who should avoid it, when should I upgrade, and when should I choose a competitor.',
       'Experience-Based Insights: include supplied commonMistakes, hiddenStrengths, and bestFirstTask naturally so the review feels based on practical product understanding.',
-      'Step 2: Extract Overview, Pros, Cons, Features, Pricing, Use Cases, FAQs, and Verdict from that internal review into the expected JSON fields for storage.',
-      'Map Features to review.featureHighlights, Pricing to review.pricingSummary, FAQs to review.faq, and Verdict to review.verdict.',
+      'Step 2: Extract Overview, Pros, Cons, Features, Pricing, Best Fit, Not a Fit, Use Cases, FAQs, and Verdict from that internal review into the expected JSON fields for storage. No section may be written independently or filled with fallback/template copy.',
+      'Map Features to review.featureHighlights, Pricing to review.pricingSummary, Best Fit to review.whoShouldBuy, Not a Fit to review.whoShouldAvoid, FAQs to review.faq, and Verdict to review.verdict.',
       'Overview must summarize what the product is, who it serves, primary strengths, and primary use cases without copied wording.',
-      'Features and use cases must be derived from actual product features and useCases; generate 5-10 workflows when enough facts exist.',
-      'Pros must come from supplied strengths, reviews, ratings, or feature facts; cons must be realistic tradeoffs from supplied cons, notFor, or missing capabilities.',
+      'Features must cover every available knowledge graph field naturally. Use cases must read as mini case studies with scenario, problem, product workflow, and expected outcome; generate 5-10 distinct workflows when enough facts exist.',
+      'Pros must come from supplied strengths, reviews, ratings, or feature facts; cons must be realistic tradeoffs from supplied cons, notFor, or missing capabilities. Best Fit and Not a Fit must provide buying advice, not database-style audience labels.',
       'Pricing must mention free plans, paid plans, and enterprise availability only when supplied in pricing or pricingPlans.',
       'FAQ questions must be product-specific and should not be identical across products.',
       'Set quality.overall to 95+ only when the draft is factually grounded, specific, unique, SEO complete, product relevant, and free of unsupported claims.',
       'Subtract quality points for generic wording, hallucinated features, copied sections, repeated FAQs, repeated pros/cons, and unsupported claims.',
-      'Produce a utilizationReport that counts used / total facts for Features, Pros, Cons, Reviewer Intelligence, Workflows, Alternatives, Pricing Guidance, Buyer Advice, Strengths, Weaknesses, Pricing Tradeoffs, and Examples.',
+      'Produce a utilizationReport that counts used / total facts for Features, Pros, Cons, Reviewer Intelligence, Workflows, Alternatives, Pricing Guidance, Buyer Advice, Strengths, Weaknesses, Pricing Tradeoffs, and Examples. Also produce informationGain for every review section, scoring new facts introduced and listing repeated ideas, repeated sentences, repeated examples, and repeated workflows; every section must pass or be rewritten.',
       'If utilizationReport.overallCoverage would be below 90, revise the internal review before extraction until it reaches at least 90 without forcing awkward prose or inventing facts.',
       'List any missing or unsupported source needs in missingContent instead of guessing.',
     ].join(' '),
-    expectedJson: { review: { overview: ['string'], pros: ['string'], cons: ['string'], whoShouldBuy: ['string'], whoShouldAvoid: ['string'], pricingSummary: 'string', featureHighlights: ['string'], verdict: 'string', faq: [{ question: 'string', answer: 'string' }] }, buyingGuide: [{ category: 'string', whyMadeTheList: 'string', bestUseCase: 'string', whoShouldSkip: 'string', topCompetitor: 'string', quickSummary: 'string' }], alternatives: [{ slug: 'string', name: 'string', bestFor: 'string', biggestStrength: 'string', biggestWeakness: 'string', whySomeoneWouldSwitch: 'string' }], comparison: [{ competitorSlug: 'string', competitorName: 'string', mainDifference: 'string', whenProductWins: 'string', whenCompetitorWins: 'string', recommendation: 'string' }], tutorial: { title: 'string', steps: ['string'], summary: 'string' }, seo: { title: 'string', metaDescription: 'string', openGraphDescription: 'string', twitterDescription: 'string', searchSnippet: 'string', shortSummary: 'string', longSummary: 'string', scores: { uniqueness: 0, keywordCoverage: 0, contentCompleteness: 0 } }, quality: { specificity: 0, readability: 0, productRelevance: 0, seoCoverage: 0, contentDepth: 0, internalLinking: 0, factualAccuracy: 0, uniqueness: 0, unsupportedClaims: 0, overall: 0, recommendations: ['string'] }, missingContent: { missing: ['string'], recommendations: ['string'] } },
+    expectedJson: { review: { overview: ['string'], pros: ['string'], cons: ['string'], whoShouldBuy: ['string'], whoShouldAvoid: ['string'], pricingSummary: 'string', featureHighlights: ['string'], verdict: 'string', faq: [{ question: 'string', answer: 'string' }] }, buyingGuide: [{ category: 'string', whyMadeTheList: 'string', bestUseCase: 'string', whoShouldSkip: 'string', topCompetitor: 'string', quickSummary: 'string' }], alternatives: [{ slug: 'string', name: 'string', bestFor: 'string', biggestStrength: 'string', biggestWeakness: 'string', whySomeoneWouldSwitch: 'string' }], comparison: [{ competitorSlug: 'string', competitorName: 'string', mainDifference: 'string', whenProductWins: 'string', whenCompetitorWins: 'string', recommendation: 'string' }], tutorial: { title: 'string', steps: ['string'], summary: 'string' }, seo: { title: 'string', metaDescription: 'string', openGraphDescription: 'string', twitterDescription: 'string', searchSnippet: 'string', shortSummary: 'string', longSummary: 'string', scores: { uniqueness: 0, keywordCoverage: 0, contentCompleteness: 0 } }, quality: { specificity: 0, readability: 0, productRelevance: 0, seoCoverage: 0, contentDepth: 0, internalLinking: 0, factualAccuracy: 0, uniqueness: 0, unsupportedClaims: 0, overall: 0, recommendations: ['string'] }, missingContent: { missing: ['string'], recommendations: ['string'] }, informationGain: [{ section: 'overview', newFactsIntroduced: 0, repeatedIdeas: ['string'], repeatedSentences: ['string'], repeatedExamples: ['string'], repeatedWorkflows: ['string'], passed: true, notes: 'string' }] },
     factPack: input,
     promptVersion: PROMPT_VERSION,
   };
 }
-
-export function sectionPrompt(product: Product, section: ReviewSectionKey) { const spec = REVIEW_SECTIONS.find((item) => item.key === section); if (!spec) throw new Error(`Unknown section: ${section}`); return { instructions: [`Generate only the ${spec.title} section from an internal natural expert review pass.`, ...FACT_BOUND_RULES, 'First draft the relevant review passage naturally as scratch work, without JSON or templates, then extract only the requested section into the expected JSON shape.', 'Keep it publication-ready and fact-bound.', 'If the provided fields are insufficient, return the closest supported content rather than guessing.'].join(' '), expectedJson: expectedShape(section), productJson: JSON.stringify(pick(product, spec.sourceFields), null, 2) }; }
-function expectedShape(section: ReviewSectionKey) { if (section === 'faq') return '{ "content": [{ "question": "...", "answer": "..." }] }'; if (['overview','pros','cons','whoShouldBuy','whoShouldAvoid','useCases', 'knowledgeGraph'].includes(section)) return '{ "content": ["..."] }'; return '{ "content": "..." }'; }
-function pick(product: Product, fields: string[]) { return Object.fromEntries(fields.map((field) => [field, (product as unknown as Record<string, unknown>)[field]])); }
