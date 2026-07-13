@@ -6,7 +6,7 @@
   "logo": "/logos/cursor.svg",
   "heroImage": "/screenshots/cursor-hero.svg",
   "affiliateLink": "https://cursor.com/",
-  "rating": 4.9,
+  "rating": 4.8,
   "users": "Teams, creators, and professionals",
   "platforms": [
     "Web",
@@ -204,7 +204,7 @@
       "answer": "Use the review button or official website to try Cursor directly."
     }
   ],
-  "reviewCount": 1287,
+  "reviewCount": 1742,
   "setupTime": "10 minutes",
   "bestFor": [
     "AI pair programming",

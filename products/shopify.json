@@ -6,7 +6,7 @@
   "logo": "/logos/shopify.svg",
   "heroImage": "/screenshots/shopify-hero.svg",
   "affiliateLink": "https://www.shopify.com/",
-  "rating": 4.9,
+  "rating": 4.8,
   "users": "Teams, creators, and professionals",
   "platforms": [
     "Web",
@@ -204,7 +204,7 @@
       "answer": "Use the review button or official website to try Shopify directly."
     }
   ],
-  "reviewCount": 1287,
+  "reviewCount": 3948,
   "setupTime": "10 minutes",
   "bestFor": [
     "Online stores",
