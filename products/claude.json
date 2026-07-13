@@ -6,7 +6,7 @@
   "logo": "/logos/claude.svg",
   "heroImage": "/screenshots/claude-hero.png",
   "affiliateLink": "https://claude.ai/",
-  "rating": 4.9,
+  "rating": 4.8,
   "users": "Teams, creators, and professionals",
   "platforms": [
     "Web",
@@ -213,7 +213,7 @@
       "answer": "Confirm model access, message limits, document limits, data policies, collaboration features, and whether the plan supports your workflow."
     }
   ],
-  "reviewCount": 1287,
+  "reviewCount": 2397,
   "setupTime": "10 minutes",
   "bestFor": [
     "Long document analysis",
