@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run screenshots && next build",
     "start": "next start",
     "lint": "eslint .",
     "verify:logos": "node scripts/verify-logos.js",
@@ -12,7 +12,8 @@
     "generate:buying-guides": "node scripts/content-cli.js generate:buying-guides",
     "generate:tutorials": "node scripts/content-cli.js generate:tutorials",
     "generate:alternatives": "node scripts/content-cli.js generate:alternatives",
-    "generate:all": "node scripts/content-cli.js generate:all"
+    "generate:all": "node scripts/content-cli.js generate:all",
+    "screenshots": "node scripts/generate-screenshots.js"
   },
   "dependencies": {
     "next": "15.3.6",
@@ -29,6 +30,8 @@
     "eslint-config-next": "15.3.6",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "playwright": "^1.54.1",
+    "sharp": "^0.33.5"
   }
 }

@@ -4,7 +4,7 @@
   "tagline": "Create Better Ads With AI",
   "description": "Generate conversion-focused ad creatives, headlines, product photos, and social posts in minutes with an AI workflow designed for marketers.",
   "logo": "/logos/adcreative.svg",
-  "heroImage": "/screenshots/adcreative-hero.svg",
+  "heroImage": "/screenshots/adcreative-1.webp",
   "affiliateLink": "https://www.adcreative.ai/",
   "rating": 4.9,
   "users": "3M+ marketers and teams",
@@ -300,10 +300,7 @@
   "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/adcreative-1.svg",
-    "/screenshots/adcreative-2.svg",
-    "/screenshots/adcreative-3.svg",
-    "/screenshots/adcreative-4.svg"
+    "/screenshots/adcreative-1.webp"
   ],
   "seoTitle": "AdCreative.ai Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [

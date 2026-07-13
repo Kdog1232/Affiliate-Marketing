@@ -4,7 +4,7 @@
   "tagline": "Design platform with AI tools for presentations, social graphics, videos, and brand assets",
   "description": "Design platform with AI tools for presentations, social graphics, videos, and brand assets.",
   "logo": "/logos/canva.svg",
-  "heroImage": "/screenshots/canva-hero.svg",
+  "heroImage": "/screenshots/canva-1.webp",
   "affiliateLink": "https://www.canva.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
@@ -298,10 +298,7 @@
   "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/canva-1.svg",
-    "/screenshots/canva-2.svg",
-    "/screenshots/canva-3.svg",
-    "/screenshots/canva-4.svg"
+    "/screenshots/canva-1.webp"
   ],
   "seoTitle": "Canva Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [

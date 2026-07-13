@@ -5,7 +5,7 @@
   "tagline": "A leading AI assistant for writing, coding, research, analysis, brainstorming, and everyday productivity",
   "description": "ChatGPT is an AI assistant from OpenAI for writing, coding, research, document analysis, image understanding, voice conversations, and business productivity.",
   "logo": "/logos/chatgpt.svg",
-  "heroImage": "/screenshots/chatgpt-hero.svg",
+  "heroImage": "/screenshots/chatgpt-1.webp",
   "affiliateLink": "https://chatgpt.com/",
   "rating": 4.9,
   "users": "Creators, students, developers, educators, researchers, and teams",
@@ -416,10 +416,7 @@
   "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/chatgpt-1.svg",
-    "/screenshots/chatgpt-2.svg",
-    "/screenshots/chatgpt-3.svg",
-    "/screenshots/chatgpt-4.svg"
+    "/screenshots/chatgpt-1.webp"
   ],
   "category": "AI Assistant",
   "summary": "ChatGPT is a general-purpose AI assistant for writing, brainstorming, analysis, coding help, research workflows, and multimodal productivity.",

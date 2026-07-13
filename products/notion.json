@@ -4,7 +4,7 @@
   "tagline": "Connected workspace with AI for notes, docs, project planning, and team knowledge bases",
   "description": "Connected workspace with AI for notes, docs, project planning, and team knowledge bases.",
   "logo": "/logos/notion.svg",
-  "heroImage": "/screenshots/notion-hero.svg",
+  "heroImage": "/screenshots/notion-1.webp",
   "affiliateLink": "https://www.notion.com/product/ai",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
@@ -297,10 +297,7 @@
   "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/notion-1.svg",
-    "/screenshots/notion-2.svg",
-    "/screenshots/notion-3.svg",
-    "/screenshots/notion-4.svg"
+    "/screenshots/notion-1.webp"
   ],
   "seoTitle": "Notion AI Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [

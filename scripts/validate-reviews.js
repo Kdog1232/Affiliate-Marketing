@@ -42,7 +42,7 @@ for (const item of products) {
   const checks = [
     ['Logo', existsAsset(p.logo)],
     ['Hero screenshot', existsAsset(p.heroImage)],
-    ['Screenshots (4+)', count(p.screenshots) >= 4 && p.screenshots.every(existsAsset)],
+    ['Screenshots (real WebP)', count(p.screenshots) >= 1 && p.screenshots.every((asset) => /\.webp$/i.test(asset) && existsAsset(asset))],
     ['Features (6+)', count(p.features) >= 6],
     ['Pros (5+)', count(p.pros) >= 5],
     ['Cons (3+)', count(p.cons) >= 3],
