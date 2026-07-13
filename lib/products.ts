@@ -10,6 +10,7 @@ export type KnowledgeGraphFeature = {
   example?: string;
   evidence?: string;
   tradeoff?: string;
+  recommendedWorkflow?: string;
 };
 
 export type KnowledgeGraphPro = {
@@ -99,7 +100,7 @@ export type Product = {
   idealUsers?: string[];
   strengths?: string[];
   weaknesses?: string[];
-  keyFeatures?: { title: string; description: string; whatItDoes?: string; whyItMatters?: string; example?: string; whoBenefits?: string; tradeoff?: string }[];
+  keyFeatures?: { title: string; description: string; whatItDoes?: string; whyItMatters?: string; example?: string; whoBenefits?: string | string[]; tradeoff?: string; recommendedWorkflow?: string }[];
   reviewerIntelligence?: Record<string, string>;
   workflows?: { title: string; description: string; whoUses?: string; whyItSavesTime?: string; outcome?: string }[];
   pricingRecommendations?: string[];
@@ -125,7 +126,7 @@ export type Product = {
   alternatives?: { name: string; slug: string; logo: string; description: string }[];
   comparisonMatrix?: { columns: string[]; rows: { feature: string; values: string[] }[] };
   canonicalUrl?: string;
-  features: { icon: string; title: string; description: string; whatItDoes?: string; whyItMatters?: string; example?: string; whoBenefits?: string; tradeoff?: string }[];
+  features: { icon: string; title: string; description: string; whatItDoes?: string; whyItMatters?: string; example?: string; whoBenefits?: string | string[]; tradeoff?: string; recommendedWorkflow?: string }[];
   howItWorks: { title: string; description: string }[];
   pros: string[];
   cons: string[];

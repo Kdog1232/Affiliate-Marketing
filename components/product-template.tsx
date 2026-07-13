@@ -32,7 +32,7 @@ function editorialFeatures(product: Product): ExpandedFeature[] {
       whoBenefits: graphFeature?.bestFor ?? feature.whoBenefits,
       example,
       tradeoff: graphFeature?.tradeoff ?? feature.tradeoff,
-      recommendedWorkflow: example ? `Start with a real work packet, ask ${product.name} for a first-pass read, then verify the output before it becomes client, legal, financial, or production material.` : undefined,
+      recommendedWorkflow: graphFeature?.recommendedWorkflow ?? feature.recommendedWorkflow ?? (example ? `Start with a real work packet, ask ${product.name} for a first-pass read, then verify the output before it becomes client, legal, financial, or production material.` : undefined),
     };
   });
 }
