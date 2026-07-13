@@ -4,7 +4,7 @@
   "tagline": "Commerce platform with AI tools for online stores, product descriptions, and business operations",
   "description": "Commerce platform with AI tools for online stores, product descriptions, and business operations.",
   "logo": "/logos/shopify.svg",
-  "heroImage": "/screenshots/shopify-hero.svg",
+  "heroImage": "/screenshots/shopify-1.webp",
   "affiliateLink": "https://www.shopify.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
@@ -297,10 +297,7 @@
   "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/shopify-1.svg",
-    "/screenshots/shopify-2.svg",
-    "/screenshots/shopify-3.svg",
-    "/screenshots/shopify-4.svg"
+    "/screenshots/shopify-1.webp"
   ],
   "seoTitle": "Shopify Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [

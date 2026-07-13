@@ -4,7 +4,7 @@
   "tagline": "Website hosting and AI website builder for entrepreneurs, creators, and small businesses",
   "description": "Website hosting and AI website builder for entrepreneurs, creators, and small businesses.",
   "logo": "/logos/hostinger.svg",
-  "heroImage": "/screenshots/hostinger-hero.svg",
+  "heroImage": "/screenshots/hostinger-1.webp",
   "affiliateLink": "https://www.hostinger.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
@@ -298,10 +298,7 @@
   "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/hostinger-1.svg",
-    "/screenshots/hostinger-2.svg",
-    "/screenshots/hostinger-3.svg",
-    "/screenshots/hostinger-4.svg"
+    "/screenshots/hostinger-1.webp"
   ],
   "seoTitle": "Hostinger Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [

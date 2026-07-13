@@ -4,7 +4,7 @@
   "tagline": "AI assistant for long-form writing, document analysis, coding help, and business workflows",
   "description": "AI assistant for long-form writing, document analysis, coding help, and business workflows.",
   "logo": "/logos/claude.svg",
-  "heroImage": "/screenshots/claude-hero.svg",
+  "heroImage": "/screenshots/claude-1.webp",
   "affiliateLink": "https://claude.ai/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
@@ -307,10 +307,7 @@
   "reviewScore": "90%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/claude-1.svg",
-    "/screenshots/claude-2.svg",
-    "/screenshots/claude-3.svg",
-    "/screenshots/claude-4.svg"
+    "/screenshots/claude-1.webp"
   ],
   "seoTitle": "Claude Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [

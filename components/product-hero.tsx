@@ -36,7 +36,7 @@ export function ProductHero({ product }: { product: Product }) {
         </div>
       </div>
       <div className="glass relative rounded-[2rem] p-3">
-        <Image priority src={product.heroImage} alt={`${product.name} replaceable dashboard screenshot placeholder`} width={1600} height={1000} sizes="(min-width: 1024px) 46vw, 100vw" className="rounded-[1.5rem]" />
+        <Image priority src={product.heroImage} alt={`${product.name} product review screenshot`} width={1600} height={1000} sizes="(min-width: 1024px) 46vw, 100vw" className="rounded-[1.5rem]" />
       </div>
     </section>
   );
