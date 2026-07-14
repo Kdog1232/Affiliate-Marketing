@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowRight, ChevronRight, Star, Table2 } from 'lucide-react';
 import { CategoryNav } from '@/components/category-nav';
 import { ProductLogo } from '@/components/ProductLogo';
-import { CATEGORIES, getCategoryByPathSlug, getCategoryHref, getCategoryPathSlug, getProductsByCategory, sortProducts, type Product } from '@/lib/products';
+import { CATEGORIES, getCategoryByPathSlug, getCategoryHref, getCategoryPathSlug, getProductHref, getProductsByCategory, sortProducts, type Product } from '@/lib/products';
 import { getPricingText, listBestFor } from '@/lib/comparisons';
 
 type Props = { params: Promise<{ category: string }>; searchParams?: Promise<{ sort?: string }> };
@@ -96,7 +96,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[760px] text-left text-sm">
             <thead className="text-blue-200"><tr><th className="py-3 pr-4">Tool</th><th className="py-3 pr-4">Rating</th><th className="py-3 pr-4">Reviews</th><th className="py-3 pr-4">Best for</th><th className="py-3 pr-4">Pricing</th><th className="py-3 pr-4">Review</th></tr></thead>
-            <tbody className="divide-y divide-white/10 text-slate-300">{products.map((product) => <tr key={product.slug}><td className="py-4 pr-4 font-semibold text-white">{product.name}</td><td className="py-4 pr-4">{product.rating}/5</td><td className="py-4 pr-4">{product.reviewCount.toLocaleString()}</td><td className="py-4 pr-4">{listBestFor(product).join(', ')}</td><td className="py-4 pr-4">{getPricingText(product)}</td><td className="py-4 pr-4"><Link href={`/${product.slug}`} className="font-semibold text-blue-200 hover:text-white">Read review</Link></td></tr>)}</tbody>
+            <tbody className="divide-y divide-white/10 text-slate-300">{products.map((product) => <tr key={product.slug}><td className="py-4 pr-4 font-semibold text-white">{product.name}</td><td className="py-4 pr-4">{product.rating}/5</td><td className="py-4 pr-4">{product.reviewCount.toLocaleString()}</td><td className="py-4 pr-4">{listBestFor(product).join(', ')}</td><td className="py-4 pr-4">{getPricingText(product)}</td><td className="py-4 pr-4"><Link href={getProductHref(product)} className="font-semibold text-blue-200 hover:text-white">Read review</Link></td></tr>)}</tbody>
           </table>
         </div>
       </section>
@@ -110,7 +110,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 }
 
 function ProductCard({ product }: { product: Product }) {
-  return <Link href={`/${product.slug}`} className="glass group flex h-full flex-col rounded-3xl p-6 transition hover:-translate-y-1 hover:border-blue-300/60"><div className="flex items-center gap-4"><ProductLogo logo={product.logo} name={product.name} size={56} className="rounded-2xl" /><div><h3 className="text-2xl font-semibold text-white">{product.name}</h3><p className="mt-1 flex items-center gap-2 text-sm text-blue-200"><Star className="h-4 w-4 fill-current" />{product.rating}/5 · {product.reviewCount.toLocaleString()} reviews</p></div></div><p className="mt-5 flex-1 text-slate-300">{product.description}</p><p className="mt-5 text-sm text-slate-300"><strong className="text-white">Best for:</strong> {product.bestFor}</p><span className="mt-6 inline-flex items-center font-semibold text-blue-200 group-hover:text-white">Read full review <ArrowRight className="ml-2 h-4 w-4" /></span></Link>;
+  return <Link href={getProductHref(product)} className="glass group flex h-full flex-col rounded-3xl p-6 transition hover:-translate-y-1 hover:border-blue-300/60"><div className="flex items-center gap-4"><ProductLogo logo={product.logo} name={product.name} size={56} className="rounded-2xl" /><div><h3 className="text-2xl font-semibold text-white">{product.name}</h3><p className="mt-1 flex items-center gap-2 text-sm text-blue-200"><Star className="h-4 w-4 fill-current" />{product.rating}/5 · {product.reviewCount.toLocaleString()} reviews</p></div></div><p className="mt-5 flex-1 text-slate-300">{product.description}</p><p className="mt-5 text-sm text-slate-300"><strong className="text-white">Best for:</strong> {product.bestFor}</p><span className="mt-6 inline-flex items-center font-semibold text-blue-200 group-hover:text-white">Read full review <ArrowRight className="ml-2 h-4 w-4" /></span></Link>;
 }
 
 function Info({ title, items }: { title: string; items: string[] }) {
@@ -125,6 +125,6 @@ function buildSchema(categoryName: string, href: string, products: Product[]) {
     name: `Best ${categoryName} Tools`,
     url: `${siteUrl}${href}`,
     breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }, { '@type': 'ListItem', position: 2, name: 'Categories', item: `${siteUrl}/#categories` }, { '@type': 'ListItem', position: 3, name: categoryName, item: `${siteUrl}${href}` }] },
-    mainEntity: { '@type': 'ItemList', numberOfItems: products.length, itemListElement: products.map((product, index) => ({ '@type': 'ListItem', position: index + 1, url: `${siteUrl}/${product.slug}`, name: product.name })) },
+    mainEntity: { '@type': 'ItemList', numberOfItems: products.length, itemListElement: products.map((product, index) => ({ '@type': 'ListItem', position: index + 1, url: `${siteUrl}${getProductHref(product)}`, name: product.name })) },
   };
 }

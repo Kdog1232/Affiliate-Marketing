@@ -77,4 +77,4 @@ import { trackEvent } from '@/lib/analytics';
 trackEvent('category_view', { category: 'AI Writing' });
 ```
 
-Affiliate redirect clicks are tracked automatically for internal `/go/...` links such as `/go/chatgpt`, `/go/claude`, `/go/copybase-ai`, `/go/ai-media-machine`, `/go/elevenlabs`, and `/go/canva`. Add `data-tool-name` and `data-category` to links when you want friendlier event parameters; otherwise the tool name is inferred from the redirect slug.
+Affiliate redirect clicks are tracked automatically for internal `/go/...` links such as `/go/chatgpt`, `/go/claude`, `/go/copybase-ai`, `/go/bluefx`, `/go/elevenlabs`, and `/go/canva`. Add `data-tool-name` and `data-category` to links when you want friendlier event parameters; otherwise the tool name is inferred from the redirect slug.
