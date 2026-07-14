@@ -4,7 +4,7 @@
   "tagline": "AI-powered code editor for developers who want faster autocomplete, refactoring, and chat-driven programming",
   "description": "AI-powered code editor for developers who want faster autocomplete, refactoring, and chat-driven programming.",
   "logo": "/logos/cursor.svg",
-  "heroImage": "/screenshots/cursor-hero.svg",
+  "heroImage": "/screenshots/cursor-hero.png",
   "affiliateLink": "https://cursor.com/",
   "rating": 4.8,
   "users": "Teams, creators, and professionals",
@@ -313,10 +313,10 @@
   "reviewScore": "100%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/cursor-1.svg",
-    "/screenshots/cursor-2.svg",
-    "/screenshots/cursor-3.svg",
-    "/screenshots/cursor-4.svg"
+    "/screenshots/cursor-1.png",
+    "/screenshots/cursor-2.png",
+    "/screenshots/cursor-3.png",
+    "/screenshots/cursor-4.png"
   ],
   "seoTitle": "Cursor Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [
