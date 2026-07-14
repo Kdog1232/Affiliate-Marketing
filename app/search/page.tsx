@@ -20,8 +20,9 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
   const { q = '' } = await searchParams;
   const products = await getProducts();
   const query = q.trim();
-  const results = searchProducts(products, query);
-  const suggestions = products.sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name)).slice(0, 4);
+  const searchableProducts = products.map((product) => ({ ...product, href: getProductHref(product) }));
+  const results = searchProducts(searchableProducts, query);
+  const suggestions = searchableProducts.sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name)).slice(0, 4);
 
   return (
     <main className="min-h-screen bg-radial-blue text-white">

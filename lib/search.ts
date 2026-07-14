@@ -1,8 +1,29 @@
-import { getProductCategorySlugs, getProductHref, type Product } from './products';
+export type SearchFeature = {
+  title: string;
+  description?: string;
+  whatItDoes?: string;
+  whyItMatters?: string;
+};
 
-export type SearchableProduct = Pick<Product, 'slug' | 'name' | 'description' | 'summary' | 'category' | 'categoryBadge' | 'primaryCategory' | 'secondaryCategories' | 'categories' | 'tags' | 'features' | 'keyFeatures' | 'logo' | 'rating'> & { href: string };
+export type SearchableProduct = {
+  slug: string;
+  name: string;
+  description: string;
+  summary?: string;
+  category?: string;
+  categoryBadge?: string;
+  primaryCategory?: string;
+  secondaryCategories?: string[];
+  categories?: string[];
+  tags?: string[];
+  features?: SearchFeature[];
+  keyFeatures?: SearchFeature[];
+  logo: string;
+  rating: number;
+  href: string;
+};
 
-export function toSearchableProduct(product: Product): SearchableProduct {
+export function toSearchableProduct<T extends SearchableProduct>(product: T): SearchableProduct {
   return {
     slug: product.slug,
     name: product.name,
@@ -18,7 +39,7 @@ export function toSearchableProduct(product: Product): SearchableProduct {
     keyFeatures: product.keyFeatures,
     logo: product.logo,
     rating: product.rating,
-    href: getProductHref(product),
+    href: product.href,
   };
 }
 
@@ -26,15 +47,20 @@ export function normalizeSearchQuery(query: string) {
   return query.trim().toLowerCase();
 }
 
-export function productSearchText(product: SearchableProduct | Product) {
+function productCategoryTerms(product: SearchableProduct) {
   return [
-    product.name,
     product.category,
     product.categoryBadge,
     product.primaryCategory,
     ...(product.secondaryCategories ?? []),
     ...(product.categories ?? []),
-    ...getProductCategorySlugs(product as Product),
+  ];
+}
+
+export function productSearchText(product: SearchableProduct) {
+  return [
+    product.name,
+    ...productCategoryTerms(product),
     product.description,
     product.summary,
     ...(product.tags ?? []),
@@ -46,13 +72,13 @@ export function productSearchText(product: SearchableProduct | Product) {
     .toLowerCase();
 }
 
-export function findExactProductMatch<T extends SearchableProduct | Product>(products: T[], query: string) {
+export function findExactProductMatch<T extends SearchableProduct>(products: T[], query: string) {
   const normalized = normalizeSearchQuery(query);
   if (!normalized) return null;
   return products.find((product) => product.name.toLowerCase() === normalized || product.slug.toLowerCase() === normalized) ?? null;
 }
 
-export function searchProducts<T extends SearchableProduct | Product>(products: T[], query: string) {
+export function searchProducts<T extends SearchableProduct>(products: T[], query: string) {
   const normalized = normalizeSearchQuery(query);
   if (!normalized) return [];
 

@@ -16,7 +16,7 @@ export default async function Home() {
   const newest = [...products].sort((a, b) => Date.parse(b.review.datePublished) - Date.parse(a.review.datePublished)).slice(0, 6);
   const popular = [...products].sort((a, b) => b.reviewCount - a.reviewCount).slice(0, 6);
   const featured = products.slice(0, 6);
-  const searchableProducts = products.map(toSearchableProduct);
+  const searchableProducts = products.map((product) => toSearchableProduct({ ...product, href: getProductHref(product) }));
 
   return <main className="min-h-screen bg-radial-blue">
     <SiteNav />
