@@ -680,5 +680,9 @@
       "bestIndustry": "Affiliate marketing, creator education, small business marketing, and agency ideation.",
       "editorialAngle": "A practical AI marketing suite, not a substitute for strategy or compliance review."
     }
-  }
+  },
+  "heroImageAlt": "BlueFX homepage dashboard screenshot",
+  "screenshotAliases": [
+    "bluefx"
+  ]
 }

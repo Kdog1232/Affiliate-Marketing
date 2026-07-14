@@ -598,5 +598,10 @@
     }
   ],
   "reviewScore": "100%",
-  "reviewStatus": "Ready to Publish"
+  "reviewStatus": "Ready to Publish",
+  "heroImageAlt": "CopyBase AI homepage screenshot",
+  "screenshotAliases": [
+    "copybase.io",
+    "copybase"
+  ]
 }

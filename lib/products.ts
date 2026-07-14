@@ -87,6 +87,8 @@ export type Product = {
   summary?: string;
   logo: string;
   heroImage: string;
+  heroImageAlt?: string;
+  screenshotAliases?: string[];
   screenshots?: string[];
   gallery?: boolean;
   imageDisplayMode?: 'gallery' | 'hero';
@@ -148,16 +150,53 @@ export type Product = {
 };
 
 const productsDirectory = path.join(process.cwd(), 'products');
+const screenshotsDirectory = path.join(process.cwd(), 'public', 'screenshots');
+const imageExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif', '.svg']);
 
 export async function getProductSlugs() {
   const files = await fs.readdir(productsDirectory);
   return files.filter((file) => file.endsWith('.json')).map((file) => file.replace(/\.json$/, ''));
 }
 
+function normalizeImageToken(value: string) {
+  return value.toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+async function discoverHeroImage(product: Product) {
+  const terms = Array.from(new Set([
+    product.slug,
+    product.name,
+    ...(product.screenshotAliases ?? []),
+  ].map(normalizeImageToken).filter(Boolean)));
+
+  try {
+    const files = await fs.readdir(screenshotsDirectory);
+    const candidates = files
+      .filter((file) => imageExtensions.has(path.extname(file).toLowerCase()))
+      .map((file) => ({ file, extension: path.extname(file).toLowerCase(), token: normalizeImageToken(path.basename(file, path.extname(file))) }))
+      .filter(({ token }) => token.includes('hero') && terms.some((term) => token === `${term}-hero` || token === `${term}-homepage-hero` || token === `${term}-home-hero` || token === `${term}-dashboard-hero` || token === `${term}-hero-screenshot` || token === `${term}-screenshot-hero` || token.startsWith(`${term}-hero`) || token.endsWith(`${term}-hero`)));
+
+    candidates.sort((a, b) => Number(a.extension === '.svg') - Number(b.extension === '.svg') || a.token.length - b.token.length || a.file.localeCompare(b.file));
+    return candidates[0] ? `/screenshots/${candidates[0].file}` : product.heroImage;
+  } catch {
+    return product.heroImage;
+  }
+}
+
+async function applyDiscoveredImages(product: Product) {
+  const heroImage = await discoverHeroImage(product);
+  const screenshots = product.screenshots ?? [];
+  return {
+    ...product,
+    heroImage,
+    screenshots: screenshots.includes(heroImage) ? screenshots : [heroImage, ...screenshots],
+  };
+}
+
 export async function getProduct(slug: string): Promise<Product | null> {
   try {
     const file = await fs.readFile(path.join(productsDirectory, `${slug}.json`), 'utf8');
-    const product = JSON.parse(file) as Product;
+    const product = await applyDiscoveredImages(JSON.parse(file) as Product);
     const publishedFile = path.join(process.cwd(), 'content', 'published', 'reviews', `${slug}.json`);
     try {
       const { applyPublishedReview } = await import('./published-content');
