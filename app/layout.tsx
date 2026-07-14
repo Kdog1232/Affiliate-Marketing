@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { GoogleAnalytics } from '@/components/analytics';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-geist-sans', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com'),
@@ -13,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <body>{children}<GoogleAnalytics /></body>
     </html>
   );
