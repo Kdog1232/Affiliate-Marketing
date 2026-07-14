@@ -220,6 +220,10 @@ export function getProductCategorySlugs(product: Product) {
   ].filter(Boolean) as string[]));
 }
 
+export function getProductHref(product: Product) {
+  return product.canonicalUrl ?? `/reviews/${product.slug}`;
+}
+
 export async function getProductsByCategory(categorySlug: string) {
   const products = await getProducts();
   return products.filter((product) => getProductCategorySlugs(product).includes(categorySlug));
