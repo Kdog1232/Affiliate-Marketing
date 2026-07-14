@@ -72,6 +72,7 @@ export function ProductTemplate({ product, relatedProducts }: { product: Product
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <Navbar product={product} />
     <Hero product={product} />
+    <AffiliateDisclosure />
     <Section id="quick-facts" eyebrow="Quick facts" title={`${product.name} at a glance`}><FactGrid items={quickFacts} /></Section>
     <Section id="overview" eyebrow="Overview" title={`What is ${product.name}?`}><div className="grid gap-8 lg:grid-cols-[1fr_360px]"><div className="space-y-5 text-lg leading-8 text-slate-300">{(product.overview ?? [product.description]).map((p) => <p key={p}>{p}</p>)}</div><VerdictMini product={product} /></div></Section>
     <ScreenshotGallery product={product} />
@@ -114,4 +115,5 @@ function RatingBreakdown({ product }: { product: Product }) { const ratings = [{
 function Verdict({ product }: { product: Product }) { return <div className="glass rounded-[2rem] p-8 lg:p-10"><div className="grid gap-8 lg:grid-cols-[280px_1fr]"><div><p className="text-sm uppercase tracking-[.3em] text-blue-300">Overall Rating</p><p className="mt-3 text-6xl font-bold text-white">{product.rating}</p><p className="text-slate-300">out of 5</p></div><div><h3 className="text-3xl font-bold text-white">Our recommendation</h3><p className="mt-4 text-lg leading-8 text-slate-300">{product.verdict ?? product.review.summary}</p><p className="mt-4 text-slate-200"><strong>Best for:</strong> {bestForText(product)}.</p><div className="mt-8"><AffiliateButton href={product.affiliateLink}>Try {product.name} →</AffiliateButton></div></div></div></div>; }
 function SparkLabel({ children }: { children: React.ReactNode }) { return <h3 className="text-xl font-semibold text-white">{children}</h3>; }
 function CenterCta({ href, children }: { href: string; children: React.ReactNode }) { return <div className="mt-8 text-center"><AffiliateButton href={href}>{children}</AffiliateButton></div>; }
+function AffiliateDisclosure() { return <section className="mx-auto max-w-7xl px-6 lg:px-8"><div className="glass rounded-3xl border border-blue-300/20 p-5 text-sm leading-6 text-slate-300"><strong className="text-white">Affiliate Disclosure</strong><p className="mt-2">If you purchase through links on this page, AIToolBet may earn a commission at no extra cost to you. Our reviews are based on product research and, whenever possible, hands-on testing.</p></div></section>; }
 function Footer({ product }: { product: Product }) { return <footer className="border-t border-white/10 px-6 py-10 text-center text-sm text-slate-400">© {new Date().getFullYear()} {product.name} review. Affiliate disclosure: links may be sponsored.</footer>; }

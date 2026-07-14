@@ -9,6 +9,7 @@ Generated: 2026-07-14T16:11:26.981Z
 | Canva | 100% | Ready to Publish | None | None |
 | ChatGPT | 100% | Ready to Publish | None | None |
 | Claude | 100% | Ready to Publish | None | None |
+| CopyBase AI | 100% | Ready to Publish | None | Contains references to ChatGPT (required comparison coverage) |
 | Cursor | 100% | Ready to Publish | None | None |
 | Hostinger | 100% | Ready to Publish | None | None |
 | Lessons Ready | 100% | Ready to Publish | None | None |
