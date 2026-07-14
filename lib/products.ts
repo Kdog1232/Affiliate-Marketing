@@ -87,6 +87,7 @@ export type Product = {
   summary?: string;
   logo: string;
   heroImage: string;
+  heroImageAlt?: string;
   screenshots?: string[];
   gallery?: boolean;
   imageDisplayMode?: 'gallery' | 'hero';
@@ -157,7 +158,7 @@ export async function getProductSlugs() {
 export async function getProduct(slug: string): Promise<Product | null> {
   try {
     const file = await fs.readFile(path.join(productsDirectory, `${slug}.json`), 'utf8');
-    const product = JSON.parse(file) as Product;
+    const product = await resolveProductImages(JSON.parse(file) as Product);
     const publishedFile = path.join(process.cwd(), 'content', 'published', 'reviews', `${slug}.json`);
     try {
       const { applyPublishedReview } = await import('./published-content');
@@ -169,6 +170,34 @@ export async function getProduct(slug: string): Promise<Product | null> {
   } catch {
     return null;
   }
+}
+
+const heroImageExtensions = ['webp', 'png', 'jpg', 'jpeg', 'svg'];
+const screenshotsDirectory = path.join(process.cwd(), 'public', 'screenshots');
+
+async function resolveProductImages(product: Product): Promise<Product> {
+  const discoveredHeroImage = await findReviewHeroImage(product.slug);
+  if (!discoveredHeroImage) return product;
+
+  return {
+    ...product,
+    heroImage: discoveredHeroImage,
+    screenshots: [discoveredHeroImage, ...(product.screenshots ?? []).filter((screenshot) => screenshot !== discoveredHeroImage)],
+  };
+}
+
+async function findReviewHeroImage(slug: string) {
+  for (const extension of heroImageExtensions) {
+    const filename = `${slug}-hero.${extension}`;
+    try {
+      await fs.access(path.join(screenshotsDirectory, filename));
+      return `/screenshots/${filename}`;
+    } catch {
+      // Keep checking the remaining supported image formats.
+    }
+  }
+
+  return null;
 }
 
 export async function getProducts() {

@@ -6,6 +6,7 @@
   "summary": "BlueFX combines AI video generation, ad research, content repurposing, avatars, thumbnails, scripts, and marketing utilities for creators and affiliate marketers who want a guided production workflow.",
   "logo": "/logos/bluefx.svg",
   "heroImage": "/screenshots/bluefx-hero.svg",
+  "heroImageAlt": "BlueFX homepage dashboard screenshot",
   "affiliateLink": "/go/bluefx",
   "rating": 4.7,
   "reviewCount": 384,

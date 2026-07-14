@@ -8,6 +8,7 @@
   "summary": "A focused copywriting assistant for marketing drafts, ad variants, and campaign copy workflows.",
   "logo": "/logos/copybase-ai.svg",
   "heroImage": "/screenshots/copybase-ai-hero.svg",
+  "heroImageAlt": "CopyBase AI homepage screenshot",
   "screenshots": [
     "/screenshots/copybase-ai-dashboard.svg",
     "/screenshots/copybase-ai-editor.svg",
