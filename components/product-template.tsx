@@ -8,13 +8,11 @@ import { ProductLogo } from './ProductLogo';
 import { ScreenshotImage } from './ScreenshotImage';
 
 const icons = { MessageCircle, Code, FileText, Image: ImageIcon, Mic, Search, Bot, Upload, ChartBar, Plug, Brain, FolderKanban };
-const flagshipGallerySlugs = new Set(['chatgpt', 'claude', 'canva', 'cursor', 'github-copilot', 'perplexity', 'midjourney', 'elevenlabs', 'notion-ai', 'notion', 'lessons-ready']);
+const galleryEnabledSlugs = new Set(['chatgpt', 'claude', 'canva', 'cursor', 'adcreative']);
+const minimumGalleryScreenshots = 4;
 
 function shouldShowScreenshotGallery(product: Product) {
-  if (product.slug === 'lessons-ready') return true;
-  if (typeof product.gallery === 'boolean') return product.gallery;
-  if (product.imageDisplayMode) return product.imageDisplayMode === 'gallery';
-  return flagshipGallerySlugs.has(product.slug);
+  return galleryEnabledSlugs.has(product.slug) && (product.screenshots?.length ?? 0) >= minimumGalleryScreenshots;
 }
 
 type NamedItem = { title: string; description: string };
