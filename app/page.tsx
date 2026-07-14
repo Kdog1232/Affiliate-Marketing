@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Search, Star, TrendingUp } from 'lucide-react';
+import { ArrowRight, Star, TrendingUp } from 'lucide-react';
 import { CATEGORIES, getCategoryHref, getProductHref, getProducts, type Product } from '@/lib/products';
 import { ProductLogo } from '@/components/ProductLogo';
+import { HomepageSearch } from '@/components/homepage-search';
+import { toSearchableProduct } from '@/lib/search';
 
 export const metadata: Metadata = {
   title: 'Discover the Best AI Tools',
@@ -14,6 +16,7 @@ export default async function Home() {
   const newest = [...products].sort((a, b) => Date.parse(b.review.datePublished) - Date.parse(a.review.datePublished)).slice(0, 6);
   const popular = [...products].sort((a, b) => b.reviewCount - a.reviewCount).slice(0, 6);
   const featured = products.slice(0, 6);
+  const searchableProducts = products.map(toSearchableProduct);
 
   return <main className="min-h-screen bg-radial-blue">
     <SiteNav />
@@ -21,11 +24,7 @@ export default async function Home() {
       <p className="text-sm font-semibold uppercase tracking-[.35em] text-blue-300">AI software directory</p>
       <h1 className="mx-auto mt-5 max-w-5xl text-5xl font-bold tracking-tight text-white sm:text-7xl">Discover the Best AI Tools</h1>
       <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">Find the right AI software for teachers, businesses, creators, developers, marketers, and entrepreneurs.</p>
-      <div className="mx-auto mt-10 flex max-w-2xl items-center gap-3 rounded-2xl border border-white/10 bg-white/[.08] p-3 text-left shadow-2xl shadow-black/20">
-        <Search className="h-6 w-6 shrink-0 text-blue-300" aria-hidden="true" />
-        <span className="flex-1 text-slate-300">Search AI Tools</span>
-        <a href="#featured" className="rounded-xl bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-400">Search</a>
-      </div>
+      <HomepageSearch products={searchableProducts} />
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         {['Browse Categories','Featured Tools','Newest Reviews','Most Popular','AI for Teachers','AI for Business','AI Coding','AI Marketing','AI Productivity'].map((item) => <a key={item} href={item === 'Browse Categories' ? '#categories' : '#featured'} className="rounded-full border border-white/10 bg-white/[.06] px-4 py-2 text-sm text-slate-200 hover:border-blue-300/60 hover:text-white">{item}</a>)}
       </div>
@@ -43,7 +42,7 @@ export default async function Home() {
   </main>;
 }
 
-function SiteNav() { return <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl"><div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"><Link href="/" className="text-lg font-bold text-white">AI Tool Hub</Link><div className="hidden gap-6 text-sm text-slate-300 md:flex"><a href="#featured">Featured Tools</a><a href="#newest">Newest Reviews</a><a href="#popular">Most Popular</a><a href="#categories">Categories</a></div></div></nav>; }
+function SiteNav() { return <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl"><div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"><Link href="/" className="text-lg font-bold text-white">AI Tool Hub</Link><div className="hidden gap-6 text-sm text-slate-300 md:flex"><Link href="/">Home</Link><a href="#featured">Featured Tools</a><a href="#newest">Newest Reviews</a><a href="#popular">Most Popular</a><a href="#categories">Categories</a></div></div></nav>; }
 
 function ProductSection({ id, eyebrow, title, products }: { id: string; eyebrow: string; title: string; products: Product[] }) { return <section id={id} className="mx-auto max-w-7xl px-6 py-16 lg:px-8"><div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-sm font-semibold uppercase tracking-[.3em] text-blue-300">{eyebrow}</p><h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">{title}</h2></div><Link href="#categories" className="text-sm font-semibold text-blue-200 hover:text-white">Browse Categories →</Link></div><div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{products.map((product) => <ProductCard key={product.slug} product={product} />)}</div></section>; }
 
