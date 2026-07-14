@@ -118,7 +118,7 @@ function Info({ title, items }: { title: string; items: string[] }) {
 }
 
 function buildSchema(categoryName: string, href: string, products: Product[]) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aitoolbet.com';
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',

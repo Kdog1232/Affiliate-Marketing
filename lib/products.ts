@@ -252,7 +252,14 @@ export function getProductCategorySlugs(product: Product) {
 }
 
 export function getProductHref(product: Product) {
-  return product.canonicalUrl ?? `/reviews/${product.slug}`;
+  if (!product.canonicalUrl) return `/reviews/${product.slug}`;
+
+  try {
+    const url = new URL(product.canonicalUrl);
+    return `${url.pathname}${url.search}${url.hash}`;
+  } catch {
+    return product.canonicalUrl;
+  }
 }
 
 export async function getProductsByCategory(categorySlug: string) {
