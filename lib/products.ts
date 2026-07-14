@@ -88,6 +88,8 @@ export type Product = {
   logo: string;
   heroImage: string;
   screenshots?: string[];
+  gallery?: boolean;
+  imageDisplayMode?: 'gallery' | 'hero';
   affiliateLink: string;
   rating: number;
   reviewCount: number;

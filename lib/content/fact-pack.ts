@@ -23,7 +23,7 @@ export async function buildProductFactPack(product: Product) {
       categories: product.categories, primaryCategory: product.primaryCategory, secondaryCategories: product.secondaryCategories, tags: product.tags,
       pricing: product.pricing, pricingPlans: product.pricingPlans, platforms: product.platforms, setupTime: product.setupTime, bestFor: product.bestFor, users: product.users,
       features: product.features, keyFeatures: product.keyFeatures, pros: product.pros, cons: product.cons, strengths: product.strengths, weaknesses: product.weaknesses, audiences: product.audiences, idealUsers: product.idealUsers, notFor: product.notFor, useCases: product.useCases, workflows: product.workflows ?? product.howItWorks, reviewerIntelligence: product.reviewerIntelligence, pricingRecommendations: product.pricingRecommendations, buyerGuidance: product.buyerGuidance, pricingTradeoffs: product.pricingTradeoffs, examples: product.examples, commonMistakes: product.commonMistakes, hiddenStrengths: product.hiddenStrengths, bestFirstTask: product.bestFirstTask, faq: product.faq,
-      screenshots: product.screenshots, heroImage: product.heroImage, seoTitle: product.seoTitle, metaDescription: product.metaDescription, seoKeywords: product.seoKeywords ?? product.keywords,
+      screenshots: product.screenshots, heroImage: product.heroImage, gallery: product.gallery ?? false, imageDisplayMode: product.imageDisplayMode ?? 'hero', seoTitle: product.seoTitle, metaDescription: product.metaDescription, seoKeywords: product.seoKeywords ?? product.keywords,
       knowledgeGraph,
     },
     knowledgeGraph,
