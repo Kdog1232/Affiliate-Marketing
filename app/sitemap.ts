@@ -3,7 +3,7 @@ import { CATEGORIES, getCategoryHref, getProductHref, getProducts } from '@/lib/
 import { getComparisonPairs } from '@/lib/comparisons';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aitoolbet.com';
   const products = await getProducts();
   const comparisons = getComparisonPairs(products);
   return [
