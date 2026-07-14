@@ -4,7 +4,7 @@
   "tagline": "AI instructional planning for classroom-ready K–12 lessons",
   "description": "AI lesson planner for K–12 educators that creates standards-aligned lessons, classroom resources, presentations, accommodations, and Live Mode instruction.",
   "logo": "/logos/lessons-ready.svg",
-  "heroImage": "/screenshots/lessons-ready-hero.svg",
+  "heroImage": "/screenshots/lessons-ready-hero.png",
   "affiliateLink": "https://www.lessonsready.com/",
   "rating": 4.9,
   "users": "Teams, creators, and professionals",
@@ -333,10 +333,10 @@
   "reviewScore": "100%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/lessons-ready-1.svg",
-    "/screenshots/lessons-ready-2.svg",
-    "/screenshots/lessons-ready-3.svg",
-    "/screenshots/lessons-ready-4.svg"
+    "/screenshots/lessons-ready-1.png",
+    "/screenshots/lessons-ready-2.png",
+    "/screenshots/lessons-ready-3.png",
+    "/screenshots/lessons-ready-4.png"
   ],
   "seoTitle": "Lessons Ready Review (2026): Features, Pricing, Pros, Cons & Alternatives",
   "seoKeywords": [
