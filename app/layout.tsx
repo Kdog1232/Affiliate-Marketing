@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="impact-site-verification" {...{ value: '4f9fb31e-98aa-4776-be88-89f59b79fab4' }} />
+      </head>
       <body>{children}<GoogleAnalytics /></body>
     </html>
   );
