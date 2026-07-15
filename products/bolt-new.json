@@ -5,7 +5,7 @@
   "tagline": "Browser-based AI app builder for generating, editing, and running full-stack projects from natural language prompts",
   "description": "Browser-based AI app builder for generating, editing, and running full-stack projects from natural language prompts.",
   "logo": "/logos/bolt-new.svg",
-  "heroImage": "/logos/bolt-new.svg",
+  "heroImage": "/screenshots/Bolt.new.hero.png",
   "affiliateLink": "https://www.google.com/search?q=Bolt.new",
   "rating": 4.5,
   "users": "Rapid prototypes, Web apps, Full-stack demos, MVPs",

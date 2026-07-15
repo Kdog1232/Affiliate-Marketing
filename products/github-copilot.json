@@ -5,7 +5,7 @@
   "tagline": "AI pair programmer built into popular editors for code completion, chat, tests, and pull request assistance",
   "description": "AI pair programmer built into popular editors for code completion, chat, tests, and pull request assistance.",
   "logo": "/logos/github-copilot.svg",
-  "heroImage": "/logos/github-copilot.svg",
+  "heroImage": "/screenshots/GitHubCopilot-hero.png",
   "affiliateLink": "https://www.google.com/search?q=GitHub+Copilot",
   "rating": 4.5,
   "users": "Developers, Engineering teams, Code completion, Tests",
