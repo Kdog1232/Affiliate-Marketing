@@ -176,14 +176,26 @@ const heroImageExtensions = ['webp', 'png', 'jpg', 'jpeg', 'svg'];
 const screenshotsDirectory = path.join(process.cwd(), 'public', 'screenshots');
 
 async function resolveProductImages(product: Product): Promise<Product> {
-  const discoveredHeroImage = await findReviewHeroImage(product.slug);
-  if (!discoveredHeroImage) return product;
+  const explicitHeroImage = await existingPublicImagePath(product.heroImage);
+  const heroImage = explicitHeroImage ?? (await findReviewHeroImage(product.slug));
+  if (!heroImage) return product;
 
   return {
     ...product,
-    heroImage: discoveredHeroImage,
-    screenshots: [discoveredHeroImage, ...(product.screenshots ?? []).filter((screenshot) => screenshot !== discoveredHeroImage)],
+    heroImage,
+    screenshots: [heroImage, ...(product.screenshots ?? []).filter((screenshot) => screenshot !== heroImage)],
   };
+}
+
+async function existingPublicImagePath(imagePath: string) {
+  if (!imagePath.startsWith('/')) return null;
+
+  try {
+    await fs.access(path.join(process.cwd(), 'public', imagePath));
+    return imagePath;
+  } catch {
+    return null;
+  }
 }
 
 async function findReviewHeroImage(slug: string) {
