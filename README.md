@@ -4,7 +4,7 @@ This Next.js 15 App Router template creates one production-ready SaaS-style affi
 
 ## Create a new affiliate page in under two minutes
 
-1. Duplicate `products/adcreative.json` and rename it to your URL slug, for example `products/cursor.json` creates `/cursor` automatically.
+1. Duplicate an existing JSON file in `products/` and rename it to your URL slug, for example `products/cursor.json` creates `/cursor` automatically.
 2. Replace `slug`, `name`, `tagline`, `description`, `pricing`, `setupTime`, `bestFor`, and `rating` with the new product details.
 3. Replace `affiliateLink` with your affiliate URL. Every CTA automatically opens it in a new tab with `rel="noopener noreferrer sponsored"`.
 4. Replace `logo` and `heroImage` with optimized product screenshots or placeholder URLs. Add any new remote image domain to `next.config.ts`.

@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       { source: '/ai-media-machine', destination: '/reviews/bluefx', permanent: true },
       { source: '/bluefx', destination: '/reviews/bluefx', permanent: true },
       { source: '/go/ai-media-machine', destination: '/go/bluefx', permanent: true },
+      { source: '/reviews/adcreative', destination: '/categories/marketing', permanent: true },
+      { source: '/adcreative', destination: '/categories/marketing', permanent: true },
+      { source: '/go/adcreative', destination: '/categories/marketing', permanent: true },
     ];
   },
 };
