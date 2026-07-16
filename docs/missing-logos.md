@@ -2,10 +2,6 @@
 
 Generated from product JSON logo paths in `products/`.
 
-## AdCreative.ai
-Missing: Yes
-Logo: /logos/adcreative.svg
-
 ## Canva
 Missing: Yes
 Logo: /logos/canva.svg
@@ -53,4 +49,3 @@ Logo: /logos/notion-ai.svg
 ## Shopify
 Missing: Yes
 Logo: /logos/shopify.svg
-

@@ -9,7 +9,7 @@ import { ProductLogo } from './ProductLogo';
 import { ScreenshotImage } from './ScreenshotImage';
 
 const icons = { MessageCircle, Code, FileText, Image: ImageIcon, Mic, Search, Bot, Upload, ChartBar, Plug, Brain, FolderKanban };
-const galleryEnabledSlugs = new Set(['chatgpt', 'claude', 'canva', 'cursor', 'adcreative']);
+const galleryEnabledSlugs = new Set(['chatgpt', 'claude', 'canva', 'cursor']);
 const minimumGalleryScreenshots = 4;
 
 function shouldShowScreenshotGallery(product: Product) {

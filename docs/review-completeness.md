@@ -1,10 +1,9 @@
 # Review Completeness
 
-Generated: 2026-07-15T16:17:50.053Z
+Generated: 2026-07-16T17:04:47.206Z
 
 | Product | Score | Status | Missing checks | Quality warnings |
 |---|---:|---|---|---|
-| AdCreative.ai | 100% | Ready to Publish | None | None |
 | BlueFX | 100% | Ready to Publish | None | None |
 | Bolt.new | 100% | Ready to Publish | None | None |
 | Brevo | 100% | Ready to Publish | None | None |
