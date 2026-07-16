@@ -6,6 +6,7 @@ import { ProductLogo } from '@/components/ProductLogo';
 import { AffiliateButton } from '@/components/affiliate-button';
 import { getProducts, type Product } from '@/lib/products';
 import { findComparisonPair, getComparisonPairs, getFeatureRows, getPrimaryCategoryHref, getProductSummary, getRecommendationButtons, getRelatedComparisonProducts, getScoreRows, getWinner, getWinnerCards, listBestFor } from '@/lib/comparisons';
+import { canonicalUrl } from '@/lib/structured-data';
 
 type Props = { params: Promise<{ comparison: string }> };
 
@@ -16,7 +17,7 @@ export default async function ComparisonPage({ params }: Props) {
   const { comparison } = await params; const products = await getProducts(); const pair = findComparisonPair(products, comparison); if (!pair) notFound();
   const { toolA, toolB } = pair; const winner = getWinner(toolA, toolB); const related = getRelatedComparisonProducts(toolA, products, 6).filter((product) => product.slug !== toolB.slug).slice(0, 4); const recommendations = getRecommendationButtons(toolA, toolB);
   const verdict = `${toolA.name} is the stronger choice when your priority is ${listBestFor(toolA).slice(0, 2).join(' or ').toLowerCase()}. ${toolB.name} is better when you need ${listBestFor(toolB).slice(0, 2).join(' or ').toLowerCase()}. If you want the safest overall pick for this matchup, ${winner.name} has the edge, but the right decision depends on which workflow matters most.`;
-  const jsonLd = { '@context': 'https://schema.org', '@type': 'Article', headline: `${toolA.name} vs ${toolB.name} (2026)`, description: verdict, mainEntityOfPage: `/compare/${pair.slug}`, about: [toolA.name, toolB.name] };
+  const jsonLd = { '@context': 'https://schema.org', '@type': 'Article', headline: `${toolA.name} vs ${toolB.name} (2026)`, description: verdict, mainEntityOfPage: canonicalUrl(`/compare/${pair.slug}`), about: [toolA.name, toolB.name] };
   return <main className="min-h-screen bg-radial-blue pb-20 text-white">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <section className="mx-auto max-w-7xl px-6 pb-16 pt-24 lg:px-8 lg:pt-32"><div className="grid gap-8 lg:grid-cols-[1fr_auto_1fr] lg:items-center"><HeroTool product={toolA} /><div className="text-center text-4xl font-black text-blue-200">VS</div><HeroTool product={toolB} /></div><div className="glass mt-10 rounded-[2rem] p-8 text-center"><p className="text-sm font-semibold uppercase tracking-[.3em] text-blue-300">Expert recommendation</p><h1 className="mt-4 text-4xl font-bold sm:text-6xl">{toolA.name} vs {toolB.name} (2026)</h1><p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-300">{verdict}</p><div className="mt-8 grid gap-4 md:grid-cols-3"><Mini title="Quick winner" value={winner.name} /><MiniList title={`${toolA.name} best for`} items={listBestFor(toolA)} /><MiniList title={`${toolB.name} best for`} items={listBestFor(toolB)} /></div></div></section>
