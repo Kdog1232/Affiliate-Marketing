@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { AlertTriangle, Bot, Brain, ChartBar, Check, ChevronDown, Code, FileText, FolderKanban, Image as ImageIcon, MessageCircle, Mic, Plug, Search, Star, Upload, XCircle } from 'lucide-react';
 import { getProductHref, type Product } from '@/lib/products';
 import { getComparisonSlug, getPricingText } from '@/lib/comparisons';
+import { buildProductReviewJsonLd } from '@/lib/structured-data';
 import { AffiliateButton } from './affiliate-button';
 import { FloatingCta } from './floating-cta';
 import { ProductLogo } from './ProductLogo';
@@ -64,20 +65,12 @@ export function ProductTemplate({ product, relatedProducts }: { product: Product
     { label: 'Best For', value: bestForText(product) },
     { label: 'Overall Rating', value: `${product.rating} / 5` },
   ];
-  const productSchema = { '@context': 'https://schema.org', '@type': 'Product', name: product.name, description: product.description, image: product.heroImage, brand: { '@type': 'Brand', name: product.name }, aggregateRating: { '@type': 'AggregateRating', ratingValue: product.rating, bestRating: 5, reviewCount: product.reviewCount }, review: { '@type': 'Review', author: { '@type': 'Organization', name: product.review.author }, datePublished: product.review.datePublished, name: product.review.title, reviewBody: product.review.summary, reviewRating: { '@type': 'Rating', ratingValue: product.rating, bestRating: 5 } }, offers: { '@type': 'Offer', url: product.affiliateLink, price: getPricingText(product), availability: 'https://schema.org/InStock' } };
-  const reviewSchema = { '@context': 'https://schema.org', '@type': 'Review', itemReviewed: { '@type': 'Product', name: product.name, image: product.heroImage, description: product.description }, author: { '@type': 'Organization', name: product.review.author }, datePublished: product.review.datePublished, name: product.review.title, reviewBody: product.review.summary, reviewRating: { '@type': 'Rating', ratingValue: product.rating, bestRating: 5 } };
-  const softwareApplicationSchema = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: product.name, applicationCategory: product.categoryBadge ?? product.primaryCategory ?? 'BusinessApplication', operatingSystem: product.platforms.join(', '), description: product.description, offers: { '@type': 'Offer', url: product.affiliateLink, price: getPricingText(product) }, aggregateRating: { '@type': 'AggregateRating', ratingValue: product.rating, bestRating: 5, reviewCount: product.reviewCount } };
-  const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: product.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) };
-  const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: '/' }, { '@type': 'ListItem', position: 2, name: product.name, item: getProductHref(product) }] };
+  const jsonLdSchemas = buildProductReviewJsonLd(product);
 
   const showScreenshotGallery = shouldShowScreenshotGallery(product);
 
   return <main className="min-h-screen overflow-hidden bg-radial-blue pb-20 md:pb-0">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    {jsonLdSchemas.map((schema) => <script key={String(schema['@type'])} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />)}
     <Navbar product={product} />
     <Hero product={product} showHeaderImage={showScreenshotGallery} />
     {!showScreenshotGallery && <ReviewHeroImage product={product} />}

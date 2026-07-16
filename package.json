@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run validate:structured-data && next build",
     "start": "next start",
     "lint": "eslint .",
     "verify:logos": "node scripts/verify-logos.js",
@@ -14,7 +14,8 @@
     "generate:alternatives": "node scripts/content-cli.js generate:alternatives",
     "generate:all": "node scripts/content-cli.js generate:all",
     "screenshots": "node scripts/generate-screenshots.js",
-    "publish": "npm run generate:all-reviews && (npm run screenshots || echo \"Screenshots failed; continuing publish build.\") && npm run build"
+    "publish": "npm run generate:all-reviews && (npm run screenshots || echo \"Screenshots failed; continuing publish build.\") && npm run build",
+    "validate:structured-data": "node scripts/validate-structured-data.js"
   },
   "dependencies": {
     "next": "15.3.6",

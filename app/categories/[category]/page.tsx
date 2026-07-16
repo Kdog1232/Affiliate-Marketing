@@ -5,6 +5,7 @@ import { ArrowRight, ChevronRight, Star, Table2 } from 'lucide-react';
 import { CategoryNav } from '@/components/category-nav';
 import { ProductLogo } from '@/components/ProductLogo';
 import { CATEGORIES, getCategoryByPathSlug, getCategoryHref, getCategoryPathSlug, getProductHref, getProductsByCategory, sortProducts, type Product } from '@/lib/products';
+import { breadcrumbItem, canonicalUrl } from '@/lib/structured-data';
 import { getPricingText, listBestFor } from '@/lib/comparisons';
 
 type Props = { params: Promise<{ category: string }>; searchParams?: Promise<{ sort?: string }> };
@@ -118,13 +119,12 @@ function Info({ title, items }: { title: string; items: string[] }) {
 }
 
 function buildSchema(categoryName: string, href: string, products: Product[]) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aitoolbet.com';
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `Best ${categoryName} Tools`,
-    url: `${siteUrl}${href}`,
-    breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }, { '@type': 'ListItem', position: 2, name: 'Categories', item: `${siteUrl}/#categories` }, { '@type': 'ListItem', position: 3, name: categoryName, item: `${siteUrl}${href}` }] },
-    mainEntity: { '@type': 'ItemList', numberOfItems: products.length, itemListElement: products.map((product, index) => ({ '@type': 'ListItem', position: index + 1, url: `${siteUrl}${getProductHref(product)}`, name: product.name })) },
+    url: canonicalUrl(href),
+    breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [breadcrumbItem(1, 'Home', '/'), breadcrumbItem(2, 'Categories', '/#categories'), breadcrumbItem(3, categoryName, href)] },
+    mainEntity: { '@type': 'ItemList', numberOfItems: products.length, itemListElement: products.map((product, index) => ({ '@type': 'ListItem', position: index + 1, url: canonicalUrl(getProductHref(product)), name: product.name })) },
   };
 }
