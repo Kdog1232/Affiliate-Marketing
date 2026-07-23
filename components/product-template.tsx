@@ -59,6 +59,9 @@ type Alternative = { name: string; slug?: string; logo?: string; description: st
 type ComparisonMatrix = { columns: string[]; rows: { feature: string; values: string[] }[] };
 type SideHustleIdea = { title: string; who: string; what: string; helps: string; cost: string; difficulty: 'Beginner' | 'Beginner to Intermediate' | 'Intermediate'; income: string; steps: string[] };
 type SideHustleProfile = { intro: string; ideas: SideHustleIdea[]; snapshot: { beginner: string; cost: string; time: string; scalability: string; bestFor: string }; relatedIntro: string };
+type ReviewCategory = 'AI Writing' | 'AI Image Generation' | 'AI Video' | 'AI Voice' | 'AI Coding' | 'AI Developer Tool' | 'AI Education' | 'AI Productivity' | 'AI Marketing' | 'AI Email Marketing' | 'AI SEO' | 'Ecommerce' | 'CRM' | 'Website Builder' | 'Analytics' | 'Automation' | 'Design' | 'Presentation' | 'Business Software' | 'Other';
+type EnhancementModule = 'businessIdeas' | 'teachingWorkflows' | 'projectsYouCanBuild' | 'marketingWorkflows' | 'contentCreationWorkflows' | 'productivityWorkflows' | 'businessUseCases' | 'worksBetterWith' | 'starterStack' | 'upgradePath' | 'bestFit';
+type WorkflowItem = { title: string; audience: string; workflow: string[]; why: string; outcome: string };
 
 function bestForText(product: Product) { return Array.isArray(product.bestFor) ? product.bestFor.join(', ') : product.bestFor; }
 function sentence(value: string) { return value.trim().replace(/[.!?]?$/, '.'); }
