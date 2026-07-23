@@ -59,6 +59,9 @@ type Alternative = { name: string; slug?: string; logo?: string; description: st
 type ComparisonMatrix = { columns: string[]; rows: { feature: string; values: string[] }[] };
 type SideHustleIdea = { title: string; who: string; what: string; helps: string; cost: string; difficulty: 'Beginner' | 'Beginner to Intermediate' | 'Intermediate'; income: string; steps: string[] };
 type SideHustleProfile = { intro: string; ideas: SideHustleIdea[]; snapshot: { beginner: string; cost: string; time: string; scalability: string; bestFor: string }; relatedIntro: string };
+type ReviewCategory = 'AI Writing' | 'AI Image Generation' | 'AI Video' | 'AI Voice' | 'AI Coding' | 'AI Developer Tool' | 'AI Education' | 'AI Productivity' | 'AI Marketing' | 'AI Email Marketing' | 'AI SEO' | 'Ecommerce' | 'CRM' | 'Website Builder' | 'Analytics' | 'Automation' | 'Design' | 'Presentation' | 'Business Software' | 'Other';
+type EnhancementModule = 'businessIdeas' | 'teachingWorkflows' | 'projectsYouCanBuild' | 'marketingWorkflows' | 'contentCreationWorkflows' | 'productivityWorkflows' | 'businessUseCases' | 'worksBetterWith' | 'starterStack' | 'upgradePath' | 'bestFit';
+type WorkflowItem = { title: string; audience: string; workflow: string[]; why: string; outcome: string };
 
 function bestForText(product: Product) { return Array.isArray(product.bestFor) ? product.bestFor.join(', ') : product.bestFor; }
 function sentence(value: string) { return value.trim().replace(/[.!?]?$/, '.'); }
@@ -153,15 +156,94 @@ function CardGrid({ items, warning }: { items: NamedItem[]; warning?: boolean })
 
 
 function BusinessBuilder({ product, relatedProducts }: { product: Product; relatedProducts: Product[] }) {
+  const modules = enhancementModules(product);
   return <>
-    <SideHustleIdeas product={product} relatedProducts={relatedProducts} />
-    <BusinessStacks product={product} relatedProducts={relatedProducts} />
-    <WorksBetterWith product={product} relatedProducts={relatedProducts} />
-    <BestBusinessFits product={product} />
-    <StarterStack product={product} relatedProducts={relatedProducts} />
-    <UpgradePath product={product} />
+    {modules.has('businessIdeas') && <SideHustleIdeas product={product} relatedProducts={relatedProducts} />}
+    {modules.has('teachingWorkflows') && <TeachingWorkflows product={product} />}
+    {modules.has('projectsYouCanBuild') && <ProjectsYouCanBuild product={product} />}
+    {modules.has('marketingWorkflows') && <MarketingWorkflows product={product} />}
+    {modules.has('contentCreationWorkflows') && <ContentCreationWorkflows product={product} />}
+    {modules.has('productivityWorkflows') && <ProductivityWorkflows product={product} />}
+    {modules.has('businessUseCases') && <BusinessUseCases product={product} />}
+    {modules.has('worksBetterWith') && <WorksBetterWith product={product} relatedProducts={relatedProducts} />}
+    {modules.has('bestFit') && <BestBusinessFits product={product} />}
+    {modules.has('starterStack') && <StarterStack product={product} relatedProducts={relatedProducts} />}
+    {modules.has('upgradePath') && <UpgradePath product={product} />}
   </>;
 }
+
+function productContext(product: Product) { return `${product.slug} ${product.name} ${product.primaryCategory ?? ''} ${product.secondaryCategories?.join(' ') ?? ''} ${product.categories?.join(' ') ?? ''} ${product.category ?? ''} ${product.categoryBadge ?? ''} ${product.tags?.join(' ') ?? ''} ${product.description} ${bestForText(product)} ${product.features.map((feature) => `${feature.title} ${feature.description}`).join(' ')}`.toLowerCase(); }
+function reviewCategories(product: Product): ReviewCategory[] {
+  const text = productContext(product);
+  const categories: ReviewCategory[] = [];
+  const add = (category: ReviewCategory, pattern: RegExp) => { if (pattern.test(text)) categories.push(category); };
+  add('AI Email Marketing', /mailerlite|brevo|convertkit|kit|email|newsletter/);
+  add('AI SEO', /seo|semrush|surfer|keyword|search engine/);
+  add('AI Marketing', /marketing|campaign|ads|copywriting|jasper|writesonic|copy\.ai|copy-ai|hubspot/);
+  add('Ecommerce', /shopify|ecommerce|commerce|store|checkout|product catalog|inventory|retail/);
+  add('AI Education', /lesson|teacher|classroom|student|education|school|ell|iep/);
+  add('AI Coding', /cursor|replit|github copilot|bolt|lovable|code|coding|developer|app builder/);
+  add('AI Developer Tool', /developer|github|api|replit|cursor|bolt|lovable|code/);
+  add('Website Builder', /website|webflow|hostinger|site builder|landing page/);
+  add('AI Video', /video|heygen|synthesia|runway|descript|pictory|capcut/);
+  add('AI Voice', /voice|audio|elevenlabs|tts|speech|podcast/);
+  add('AI Image Generation', /image generation|midjourney|leonardo|image|art|avatar/);
+  add('Design', /design|canva|graphics|presentation|brand|visual/);
+  add('Presentation', /presentation|slides|deck/);
+  add('CRM', /crm|sales pipeline|customer relationship/);
+  add('Analytics', /analytics|reporting|dashboard|semrush|metrics/);
+  add('Automation', /automation|workflow|zap|integration/);
+  add('AI Productivity', /productivity|notion|grammarly|meeting|notes|documents|workspace|project management|monday/);
+  add('AI Writing', /writing|grammar|copy|content|chatgpt|claude|notion ai|grammarly/);
+  add('Business Software', /business|team|enterprise|operations|project management|crm|monday|hubspot/);
+  return categories.length ? Array.from(new Set(categories)) : ['Other'];
+}
+function enhancementModules(product: Product) {
+  const categories = reviewCategories(product);
+  const modules = new Set<EnhancementModule>(['worksBetterWith', 'bestFit']);
+  const has = (...items: ReviewCategory[]) => items.some((item) => categories.includes(item));
+  if (has('Ecommerce', 'AI Marketing', 'AI Email Marketing', 'AI SEO', 'Design', 'AI Image Generation', 'AI Video', 'AI Voice', 'Website Builder', 'AI Coding', 'AI Developer Tool', 'AI Writing')) modules.add('businessIdeas');
+  if (has('AI Education')) modules.add('teachingWorkflows');
+  if (has('AI Coding', 'AI Developer Tool', 'Website Builder')) modules.add('projectsYouCanBuild');
+  if (has('AI Marketing', 'AI Email Marketing', 'AI SEO', 'CRM')) modules.add('marketingWorkflows');
+  if (has('AI Video', 'AI Voice', 'AI Image Generation', 'Design')) modules.add('contentCreationWorkflows');
+  if (has('AI Productivity', 'Automation', 'Analytics', 'Business Software', 'AI Writing')) modules.add('productivityWorkflows');
+  if (has('Business Software', 'CRM', 'Analytics', 'Automation', 'Ecommerce')) modules.add('businessUseCases');
+  if (has('Ecommerce', 'AI Marketing', 'AI Email Marketing', 'AI SEO', 'Website Builder', 'AI Coding', 'AI Developer Tool', 'Design', 'AI Video', 'AI Voice')) modules.add('starterStack');
+  if (has('Ecommerce', 'AI Marketing', 'AI Email Marketing', 'AI SEO', 'Website Builder', 'AI Coding', 'AI Developer Tool', 'Business Software', 'Automation', 'Analytics')) modules.add('upgradePath');
+  return modules;
+}
+
+
+function WorkflowSection({ id, eyebrow, title, intro, items }: { id: string; eyebrow: string; title: string; intro: string; items: WorkflowItem[] }) {
+  return <Section id={id} eyebrow={eyebrow} title={title}><p className="max-w-4xl text-lg leading-8 text-slate-300">{intro}</p><div className="mt-10 grid gap-5 lg:grid-cols-2">{items.map((item) => <Card key={item.title}><h3 className="text-2xl font-semibold text-white">{item.title}</h3><UseCaseDetail label="Who it serves" value={item.audience} /><div className="mt-4"><p className="text-sm font-semibold text-blue-200">Workflow</p><ol className="mt-2 list-decimal space-y-2 pl-5 text-slate-300">{item.workflow.map((step) => <li key={step}>{step}</li>)}</ol></div><UseCaseDetail label="Why this tool fits" value={item.why} /><UseCaseDetail label="Practical outcome" value={item.outcome} /></Card>)}</div></Section>;
+}
+function TeachingWorkflows({ product }: { product: Product }) { const items: WorkflowItem[] = [
+  { title: 'Bell ringer and exit ticket loop', audience: 'Teachers who need fast formative checks without rebuilding every prompt from scratch.', workflow: ['Paste the lesson objective and reading level.', 'Generate a five-minute bell ringer with one retrieval question and one application question.', 'Create a matching exit ticket and use student responses to plan the next day.'], why: `${product.name} is useful when it turns standards, topics, or teacher notes into classroom-ready prompts that still match the teacher’s judgment.`, outcome: 'A quicker daily routine for checking understanding before and after instruction.' },
+  { title: 'Differentiated small-group station', audience: 'Mixed-readiness classrooms, intervention groups, ELL students, and students needing extra scaffolds.', workflow: ['Start with the same core objective for the whole class.', 'Create three station versions: scaffolded, on-level, and extension.', 'Add vocabulary supports, sentence frames, or challenge tasks where appropriate.'], why: `${product.name} can help produce variations around one lesson goal so differentiation does not become three separate planning jobs.`, outcome: 'More targeted station work while keeping the class anchored to one objective.' },
+  { title: 'Homework and assessment refresh', audience: 'Teachers who want independent practice aligned to classwork, not generic worksheets.', workflow: ['Provide the topic, misconception, and desired difficulty.', 'Generate practice questions and a short answer key.', 'Review for accuracy, remove any unsuitable items, and assign the final version.'], why: `${product.name} saves prep time, but the teacher still verifies answer quality and alignment.`, outcome: 'Reusable homework or quick-check assessments that reflect the actual lesson.' }
+]; return <WorkflowSection id="classroom-workflows" eyebrow="Teaching workflows" title={`🎓 Classroom & Teaching Workflows for ${product.name}`} intro={`${product.name} should support instruction rather than replace teacher decisions. These workflows focus on lesson planning, differentiation, intervention, and assessment.`} items={items} />; }
+function ProjectsYouCanBuild({ product }: { product: Product }) { const items: WorkflowItem[] = [
+  { title: 'Micro-SaaS prototype', audience: 'Developers, founders, and freelancers validating a narrow workflow problem.', workflow: ['Define one user, one painful task, and one paid outcome.', `Use ${product.name} to scaffold the app, data model, or core logic.`, 'Ship a private demo, collect feedback, then harden authentication, billing, and error states manually.'], why: `${product.name} is strongest when it accelerates early implementation while you keep product scope and code review under control.`, outcome: 'A testable prototype without pretending the first AI-generated version is production-ready.' },
+  { title: 'Internal dashboard', audience: 'Small teams that need visibility into sales, support, content, or operations data.', workflow: ['List the metrics and decisions the dashboard should support.', 'Generate the UI, charts, filters, and basic data connections.', 'Add permissions, validation, and documentation before team rollout.'], why: `${product.name} can reduce the blank-page work of building admin tools and business software.`, outcome: 'A practical internal tool that saves manual spreadsheet reporting time.' },
+  { title: 'Client automation or Chrome extension', audience: 'Freelancers serving local businesses, marketers, recruiters, or operations teams.', workflow: ['Pick one repetitive browser or back-office workflow.', 'Build a small extension, script, or automation with clear inputs and outputs.', 'Test against real edge cases and package setup instructions for the client.'], why: `${product.name} helps turn a workflow specification into working code faster, especially for repeatable client problems.`, outcome: 'A portfolio-ready project or fixed-scope client deliverable.' }
+]; return <WorkflowSection id="developer-projects" eyebrow="Build ideas" title={`🚀 Projects You Can Build With ${product.name}`} intro={`For developer tools, the highest-value use case is not just writing code faster. It is turning a clearly scoped problem into a working prototype, internal tool, or client deliverable.`} items={items} />; }
+function MarketingWorkflows({ product }: { product: Product }) { const items: WorkflowItem[] = [
+  { title: 'Lead magnet to nurture sequence', audience: 'Small businesses and creators building an owned audience.', workflow: ['Create one useful lead magnet tied to a real buyer problem.', `Use ${product.name} for signup, segmentation, copy, SEO research, or campaign execution depending on its strengths.`, 'Send a short education sequence, then review clicks, replies, and conversions.'], why: `${product.name} fits when the marketing workflow needs repeatable content, targeting, follow-up, or performance review.`, outcome: 'A simple acquisition system that can be improved from real audience data.' },
+  { title: 'Launch campaign checklist', audience: 'Marketing teams, agencies, ecommerce brands, and course creators.', workflow: ['Map the offer, audience, proof points, objections, and launch dates.', 'Build landing page copy, email/social assets, or keyword plan around that offer.', 'Track results and keep only the messages that earn engagement.'], why: `${product.name} helps organize campaign production without replacing offer strategy or human QA.`, outcome: 'A more coherent launch with fewer disconnected assets.' }
+]; return <WorkflowSection id="marketing-workflows" eyebrow="Marketing systems" title={`📈 Marketing Workflows for ${product.name}`} intro={`These workflows show how ${product.name} can fit into a complete marketing system instead of being used for isolated one-off tasks.`} items={items} />; }
+function ContentCreationWorkflows({ product }: { product: Product }) { const items: WorkflowItem[] = [
+  { title: 'Short-form content batch', audience: 'Creators, agencies, and brands publishing to TikTok, Instagram, YouTube Shorts, or Pinterest.', workflow: ['Start with one topic cluster or campaign angle.', `Use ${product.name} to create the core visual, video, voice, design, or editing asset.`, 'Export several variants, write captions, and schedule tests around one measurable goal.'], why: `${product.name} is useful when it speeds up production while the creator still controls story, taste, and brand safety.`, outcome: 'A repeatable asset batch instead of a single random post.' },
+  { title: 'Course or explainer asset workflow', audience: 'Educators, coaches, SaaS teams, and client-service providers.', workflow: ['Outline the learning objective and script.', 'Create visuals, narration, clips, or edits in manageable sections.', 'Review for clarity, accessibility, and factual accuracy before publishing.'], why: `${product.name} can reduce production friction for educational and promotional media.`, outcome: 'Clearer training or explainer content without hiring a full production team for every update.' }
+]; return <WorkflowSection id="content-creation-workflows" eyebrow="Creator workflows" title={`🎥 Content Creation Workflows for ${product.name}`} intro={`${product.name} works best in content production when it is connected to a channel, audience, review step, and publishing cadence.`} items={items} />; }
+function ProductivityWorkflows({ product }: { product: Product }) { const items: WorkflowItem[] = [
+  { title: 'Weekly planning and review', audience: 'Busy professionals, founders, teams, students, and freelancers managing scattered work.', workflow: ['Capture open tasks, notes, meetings, and deadlines.', `Use ${product.name} to summarize, prioritize, draft, organize, or check the work.`, 'Turn the output into a small weekly plan with owners and due dates.'], why: `${product.name} is helpful when it reduces administrative friction but still leaves decisions with the user.`, outcome: 'Less time spent reorganizing work and more clarity about the next action.' },
+  { title: 'Client or team handoff workflow', audience: 'Agencies, consultants, managers, and operators who need cleaner deliverables.', workflow: ['Collect the source material and success criteria.', 'Create a concise draft, checklist, report, or project workspace.', 'Review for accuracy, tone, and missing context before sending.'], why: `${product.name} can standardize recurring communication and documentation.`, outcome: 'Faster handoffs with fewer gaps and follow-up questions.' }
+]; return <WorkflowSection id="productivity-workflows" eyebrow="Productivity workflows" title={`⚡ Productivity Workflows for ${product.name}`} intro={`These workflows focus on saving time in real work without turning ${product.name} into a generic replacement for professional judgment.`} items={items} />; }
+function BusinessUseCases({ product }: { product: Product }) { const items: WorkflowItem[] = [
+  { title: 'Operations standardization', audience: 'Small businesses and growing teams that need repeatable processes.', workflow: ['Document the current process and where errors happen.', `Use ${product.name} to centralize, automate, analyze, or manage the workflow.`, 'Assign ownership, review results, and update the process monthly.'], why: `${product.name} is valuable when it turns inconsistent manual work into a clearer business system.`, outcome: 'More predictable execution across sales, fulfillment, marketing, or internal operations.' },
+  { title: 'Team reporting and decision support', audience: 'Managers and teams that need clearer status, performance, or customer information.', workflow: ['Choose the few metrics that affect decisions.', 'Create a dashboard, report, campaign view, store view, or workspace around those metrics.', 'Use the report in a recurring review meeting and remove anything nobody acts on.'], why: `${product.name} should make information easier to act on, not just create more dashboards.`, outcome: 'A practical management rhythm with better visibility and fewer manual updates.' }
+]; return <WorkflowSection id="business-use-cases" eyebrow="Business use cases" title={`🏢 Business Use Cases for ${product.name}`} intro={`For business software, the review should explain where the tool fits inside day-to-day operations, not just list features.`} items={items} />; }
 
 type Stack = { name: string; goal: string; tools: { name: string; slug?: string; contribution: string }[]; builder: string; buyers: string; complexity: string; ongoing: string };
 function stackTools(product: Product, relatedProducts: Product[]) {
