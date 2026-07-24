@@ -20,12 +20,15 @@ const FACT_BOUND_RULES = [
   'Do not borrow features from other products. Product Visuals, Brand Kits, Conversion Scores, IDE agents, image generation, Projects, or any other capability may appear only when current facts support them.',
   'Pricing must use only provided plan names and prices. Never create Starter, Professional, Agency, Team, or Enterprise plans unless those exact plans are supplied.',
   'Alternatives and comparisons must come from the supplied alternatives, comparisons, or existingComparisonRows lists.',
-  'Every recommendation must be grounded in the supplied pros, cons, audiences, notFor, features, use cases, pricing, or comparison data.',
+  'Every recommendation must be grounded in the supplied pros, cons, audiences, notFor, features, use cases, pricing, comparison data, or capabilities registry.',
+  'Before generating any workflow or stack, read the capabilities registry in the factPack, determine each software product’s primaryRole, assign exactly one responsibility to each tool, and never duplicate responsibilities across tools in the same workflow.',
+  'Every software recommendation must describe the primary job that software actually performs. Ask privately: Would a real software engineer agree this is what this product actually does? If no, rewrite it.',
+  'No recommendation may use interchangeable wording such as extends workflow, supports production, helps planning, creates deliverables, robust solution, or streamlines workflow. Explain what actually happens in that product.',
 ];
 
 const EDITORIAL_PIPELINE = [
   'Run this private workflow before producing the JSON. Do not expose the workflow, productUnderstanding, draftArticle, enhancement notes, validation notes, or any chain-of-thought.',
-  'Stage 1 — Build a Product Understanding object from the supplied facts with primaryAudience, primaryJobs, biggestStrengths, biggestWeaknesses, differentiators, idealWorkflows, likelyAlternatives, marketFit, and situationsWhereAnotherToolWouldBeBetter.',
+  'Stage 1 — Build a Product Understanding object from the supplied facts and capabilities registry with primaryAudience, primaryRole, oneResponsibility, primaryJobs, biggestStrengths, biggestWeaknesses, differentiators, idealWorkflows, likelyAlternatives, marketFit, and situationsWhereAnotherToolWouldBeBetter.',
   'Stage 2 — Write a complete editorial review article internally before filling any JSON fields. Target 2,500-4,000 words when source facts are sufficient. Write like an experienced software reviewer at PCMag, Tom\'s Guide, TechRadar, or Wirecutter. Focus on whether the reader should spend money on the product, not SEO or page sections.',
   'Stage 3 — Improve that internal article for readability: remove repetition, combine overlapping ideas, vary sentence length, replace generic wording, add transitions, and increase specificity while keeping facts unchanged.',
   'Stage 4 — Populate the requested JSON only by extracting and condensing from the enhanced article. Do not independently regenerate or template the overview, feature highlights, pros, cons, pricingSummary, whoShouldBuy, whoShouldAvoid, faq, verdict, useCases, buyingGuide, alternatives, comparison, tutorial, seo, quality, or missingContent fields.',
@@ -63,7 +66,7 @@ export function fullReviewPrompt(input: unknown) {
       'Editorial Expansion: whenever a feature or knowledge graph item contains whatItDoes, whyItMatters, example, whoBenefits, or tradeoff, discuss all available fields naturally; never mention only the feature name.',
       'Why This Matters: for every feature, explain why the reader should care, who benefits, and the practical outcome rather than simply summarizing the feature list.',
       'Reviewer Intelligence: every supplied insight such as Biggest Strength, Most Overrated Feature, Most Underrated Feature, Best Industry, Typical ROI, Learning Curve, Switching Cost, Best Upgrade Path, Ideal Buyer, and Not Ideal Buyer must appear naturally somewhere in the review, even if there is no dedicated page section.',
-      'Workflow Expansion: if a workflow exists, describe it, show who uses it, explain why it saves time, and mention the outcome; do not reduce workflows to one sentence.',
+      'Workflow Expansion: before describing any workflow, use the capabilities registry to decide what gets built first, refined next, published, marketed, and automated. Each tool must appear only where it naturally belongs and must own one non-duplicated responsibility.',
       'Buying Advice: answer buying questions throughout the article: should I buy it, who gets the most value, who should avoid it, when should I upgrade, and when should I choose a competitor.',
       'Experience-Based Insights: include supplied commonMistakes, hiddenStrengths, and bestFirstTask naturally so the review feels based on practical product understanding.',
       'Step 2: Extract Overview, Pros, Cons, Features, Pricing, Best Fit, Not a Fit, Use Cases, FAQs, and Verdict from that internal review into the expected JSON fields for storage. No section may be written independently or filled with fallback/template copy.',

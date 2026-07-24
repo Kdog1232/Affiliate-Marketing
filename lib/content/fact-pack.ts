@@ -1,5 +1,6 @@
 import { getProducts, getRelatedProducts, type Product, type ProductKnowledgeGraph } from '@/lib/products';
 import { getComparisonSlug, getRelatedComparisonProducts } from '@/lib/comparisons';
+import { capabilityFor } from '@/lib/toolCapabilities';
 
 export type NormalizedProductKnowledgeGraph = ProductKnowledgeGraph & {
   completeness: {
@@ -25,10 +26,15 @@ export async function buildProductFactPack(product: Product) {
       features: product.features, keyFeatures: product.keyFeatures, pros: product.pros, cons: product.cons, strengths: product.strengths, weaknesses: product.weaknesses, audiences: product.audiences, idealUsers: product.idealUsers, notFor: product.notFor, useCases: product.useCases, workflows: product.workflows ?? product.howItWorks, reviewerIntelligence: product.reviewerIntelligence, pricingRecommendations: product.pricingRecommendations, buyerGuidance: product.buyerGuidance, pricingTradeoffs: product.pricingTradeoffs, examples: product.examples, commonMistakes: product.commonMistakes, hiddenStrengths: product.hiddenStrengths, bestFirstTask: product.bestFirstTask, faq: product.faq,
       screenshots: product.screenshots, heroImage: product.heroImage, gallery: product.gallery ?? false, imageDisplayMode: product.imageDisplayMode ?? 'hero', seoTitle: product.seoTitle, metaDescription: product.metaDescription, seoKeywords: product.seoKeywords ?? product.keywords,
       knowledgeGraph,
+      capabilityRegistry: capabilityFor(product.slug),
     },
     knowledgeGraph,
     reviewerIntelligence: knowledgeGraph.interpretation,
     alternatives,
+    capabilitiesRegistry: {
+      primary: capabilityFor(product.slug),
+      alternatives: alternatives.map((alternative) => ({ name: alternative.name, slug: alternative.slug, capability: capabilityFor(alternative.slug ?? '') })),
+    },
     comparisons: comparisonProducts.map((candidate) => ({ slug: getComparisonSlug(product, candidate), competitorSlug: candidate.slug, competitorName: candidate.name, competitorCategory: candidate.primaryCategory, competitorPricing: candidate.pricing, competitorRating: candidate.rating, competitorBestFor: candidate.bestFor, competitorFeatures: candidate.features.map((feature) => feature.title) })),
     existingComparisonRows: product.comparison,
   };
