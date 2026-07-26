@@ -1,6 +1,6 @@
 import type { ReviewSectionKey } from './types';
 
-export const PROMPT_VERSION = 'cohesive-editorial-review-v2';
+export const PROMPT_VERSION = 'universal-editorial-intelligence-v3';
 export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
   { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases', 'knowledgeGraph'] },
@@ -45,6 +45,22 @@ const EDITORIAL_STYLE_RULES = [
   'Vary structure and wording. Use natural, specific sentences rather than repeated openings or template-like phrasing.',
 ];
 
+const UNIVERSAL_EDITORIAL_CHECKS = [
+  'Edit rather than regenerate: preserve the draft\'s facts, recommendations, enhancement choices, field structure, and useful detail. Rewrite only a field or list item that fails a check below.',
+  'Business reality: every proposed offer must be something a freelancer or small agency could explain in one sentence, sell on a marketplace such as Upwork, and deliver for a paying customer. Replace vague or implausible offers.',
+  'Business naming: a business title must naturally identify the customer, service, or deliverable. Rename forced labels such as Client Portal Business when a concrete name such as Portal Development Agency describes the actual work.',
+  'Tool accuracy: give each tool exactly one real primary responsibility supported by the capabilities registry. Do not blend products together, invent duties, or assign the same responsibility to two tools.',
+  'Workflow logic: arrange only the stages the work needs, in the order a practitioner would use them—for example research, planning, creation, editing, review, publishing, marketing, automation, then support.',
+  'Natural writing: replace supports workflows, extends workflows, covers remaining stages, helps planning, owns the core job, handles the workflow, and supports production with a concrete description of what the person does in the software.',
+  'Section uniqueness: Skills, First Steps, Startup Cost, Why This Tool Helps, Why This Stack Works, Deliverables, Requirements, and Difficulty must use product- and offer-specific language, not stock sentences. Use the product slug as a variation cue, never mention that cue, and do not alter facts merely to sound different.',
+  'Specificity: reject any sentence that could be pasted into many software reviews. Name the actual output, action, user, decision, limitation, or handoff.',
+  'Educational value: every paragraph must give the buyer practical knowledge. Replace promotion-only copy with instruction, decision criteria, a tradeoff, or an example.',
+  'Internal consistency: business title, audience, problem, deliverables, workflow, recommended tools, starter stack, growth roadmap, and Best Fit must describe the same offer and customer. Repair only the drifting field.',
+  'Category-aware tone: write with the judgment of the relevant practitioner—such as a teacher, designer, marketer, agency owner, developer, or small-business operator. Never default to developer language for a non-developer product.',
+  'Human experience: when the supplied facts allow it, include a useful mistake, frustration, limitation, review habit, or small productivity tip a regular user would recognize. Do not pretend to have personally tested the product or invent an anecdote.',
+  'Universal validation: an experienced user should agree, a professional review site could publish the copy, and a first-time buyer should learn something useful. Rewrite only the field that makes an answer no.',
+];
+
 export function systemPrompt() {
   return [
     'You are an experienced software review editor creating publication-quality, fact-bound buying advice.',
@@ -84,6 +100,27 @@ export function fullReviewPrompt(input: unknown) {
     ].join(' '),
     expectedJson: { review: { overview: ['string'], pros: ['string'], cons: ['string'], whoShouldBuy: ['string'], whoShouldAvoid: ['string'], pricingSummary: 'string', featureHighlights: ['string'], verdict: 'string', faq: [{ question: 'string', answer: 'string' }] }, buyingGuide: [{ category: 'string', whyMadeTheList: 'string', bestUseCase: 'string', whoShouldSkip: 'string', topCompetitor: 'string', quickSummary: 'string' }], alternatives: [{ slug: 'string', name: 'string', bestFor: 'string', biggestStrength: 'string', biggestWeakness: 'string', whySomeoneWouldSwitch: 'string' }], comparison: [{ competitorSlug: 'string', competitorName: 'string', mainDifference: 'string', whenProductWins: 'string', whenCompetitorWins: 'string', recommendation: 'string' }], tutorial: { title: 'string', steps: ['string'], summary: 'string' }, seo: { title: 'string', metaDescription: 'string', openGraphDescription: 'string', twitterDescription: 'string', searchSnippet: 'string', shortSummary: 'string', longSummary: 'string', scores: { uniqueness: 0, keywordCoverage: 0, contentCompleteness: 0 } }, quality: { specificity: 0, readability: 0, productRelevance: 0, seoCoverage: 0, contentDepth: 0, internalLinking: 0, factualAccuracy: 0, uniqueness: 0, unsupportedClaims: 0, overall: 0, recommendations: ['string'] }, missingContent: { missing: ['string'], recommendations: ['string'] }, informationGain: [{ section: 'overview', newFactsIntroduced: 0, repeatedIdeas: ['string'], repeatedSentences: ['string'], repeatedExamples: ['string'], repeatedWorkflows: ['string'], passed: true, notes: 'string' }] },
     factPack: input,
+    promptVersion: PROMPT_VERSION,
+  };
+}
+
+/** Final, non-generative quality pass. It receives the already selected draft and
+ * may repair weak copy, but cannot add capabilities or choose new enhancements. */
+export function editorialReviewPrompt(factPack: unknown, draft: unknown, productSlug: string) {
+  return {
+    task: 'Perform the final universal editorial review of this completed draft.',
+    instructions: [
+      ...UNIVERSAL_EDITORIAL_CHECKS,
+      ...EDITORIAL_STYLE_RULES,
+      ...FACT_BOUND_RULES,
+      'Keep the exact JSON shape and all required fields. Keep the number and identity of selected enhancements, alternatives, comparisons, tutorial steps, and recommendations unless an item is factually invalid; repair invalid wording in place rather than selecting a replacement.',
+      'Do not add new facts, tools, prices, capabilities, audiences, offers, or sections. Do not summarize or regenerate the article. Return the full payload, copying every field that already passes unchanged.',
+      'Treat the factPack and capabilities registry as the authority. The category and audience in those facts determine the professional voice.',
+    ].join(' '),
+    editorialVariationKey: productSlug,
+    factPack,
+    draft,
+    expectedJsonShape: 'Exactly the same shape as draft.',
     promptVersion: PROMPT_VERSION,
   };
 }
