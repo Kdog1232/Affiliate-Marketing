@@ -1,7 +1,7 @@
 import { createHash } from 'crypto';
 import type { Product } from '@/lib/products';
 import { getProduct, getProducts } from '@/lib/products';
-import { PROMPT_VERSION, PROVIDER_VERSION, REVIEW_SECTIONS, fullReviewPrompt, systemPrompt } from './prompts';
+import { PROMPT_VERSION, PROVIDER_VERSION, REVIEW_SECTIONS, editorialReviewPrompt, fullReviewPrompt, systemPrompt } from './prompts';
 import { getAiProvider } from './providers';
 import { readReviewDraft, writeReviewDraft } from './storage';
 import { buildProductFactPack } from './fact-pack';
@@ -19,7 +19,14 @@ export async function generateReview(slug: string, options: Options = {}) {
   if (existing && !options.force && !options.section && existing.metadata?.cacheHash === cacheHash) return { ...existing, metadata: { ...existing.metadata, cached: true } };
   const draft: ReviewDraft = existing ?? baseDraft(product, model, now);
 
-  const result = await generateUtilizedReview(provider, factPack, model);
+  const generatedResult = await generateUtilizedReview(provider, factPack, model);
+  // Enhancement selection and content generation are complete before this call.
+  // The final pass edits only copy that fails the universal editorial checks.
+  const result = await provider.generateJson<EngineResponse>({
+    system: systemPrompt(),
+    prompt: editorialReviewPrompt(factPack, generatedResult, product.slug),
+    model,
+  });
   if (options.section) {
     applySelectedSection(draft, product, result, model, options.section);
   } else {
