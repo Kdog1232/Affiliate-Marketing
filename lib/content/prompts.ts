@@ -1,6 +1,6 @@
 import type { ReviewSectionKey } from './types';
 
-export const PROMPT_VERSION = 'universal-editorial-intelligence-v3';
+export const PROMPT_VERSION = 'decision-first-expert-review-v4';
 export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
   { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases', 'knowledgeGraph'] },
@@ -45,6 +45,20 @@ const EDITORIAL_STYLE_RULES = [
   'Vary structure and wording. Use natural, specific sentences rather than repeated openings or template-like phrasing.',
 ];
 
+const EXPERT_REVIEW_REQUIREMENTS = [
+  'Open on the buyer\'s actual decision or frustration, then name the central tradeoff. Never begin with What is [product], a dictionary definition, or generic market context.',
+  'Write with the judgment of a reviewer who understands the category, but never imply hands-on access unless the factPack explicitly documents testing. When it does not, disclose once: "Based on the product documentation, public demonstrations, and feature comparisons..." Then distinguish observed facts from editorial inference.',
+  'Include distinct, product-specific observations covering what surprised the reviewer, what worked well, what caused friction, what should improve, what the reviewer would do differently, who should buy, who should avoid, and when another named tool is better. These may be woven into the available fields rather than forced under identical headings.',
+  'Never invent a click path, anecdote, benchmark, elapsed time, output result, customer quotation, test device, or usage claim. A realistic scenario must be labelled as a workflow example, not presented as something the reviewer personally did.',
+  'Address time-to-value, learning curve, migration or switching difficulty, long-term scalability, hidden limitations, unexpected strengths, likely outgrowth points, and common beginner mistakes whenever the supplied facts support a useful conclusion. Explicitly state when the evidence is insufficient.',
+  'Compare the product contextually with supplied competitors throughout the review, not only in comparison data. Explain the job on which each wins, the buyer for whom that difference matters, and the cost or workflow tradeoff. Never make an unsupported winner claim.',
+  'After each major topic, answer So what? with a concrete purchase, plan, workflow, or avoidance decision. A feature description without its decision consequence fails review.',
+  'Keep the article visually scannable in its eventual rendering. Roughly every 150-250 words, provide material suitable for a quick takeaway, warning, pro tip, common mistake, recommendation, short quote, checklist, or comparison table. Rotate callout types instead of repeating one formula.',
+  'CTAs must educate: tell the reader what current price, limit, policy, or workflow fit to verify. Never use Buy Now, Try Now, act fast, best-in-class, game-changing, or similar sales pressure.',
+  'End with a decision matrix whose recommendations clearly cover Buy it if, Skip it if, Choose this competitor if, and Wait if. Finish with one low-pressure CTA to verify the latest relevant details.',
+  'Continuously create information gain. Reject filler, predictable transitions, keyword stuffing, repeated conclusions, and any paragraph that could be pasted into a competing product review by changing the product name.',
+];
+
 const UNIVERSAL_EDITORIAL_CHECKS = [
   'Edit rather than regenerate: preserve the draft\'s facts, recommendations, enhancement choices, field structure, and useful detail. Rewrite only a field or list item that fails a check below.',
   'Business reality: every proposed offer must be something a freelancer or small agency could explain in one sentence, sell on a marketplace such as Upwork, and deliver for a paying customer. Replace vague or implausible offers.',
@@ -65,6 +79,7 @@ export function systemPrompt() {
   return [
     'You are an experienced software review editor creating publication-quality, fact-bound buying advice.',
     ...FACT_BOUND_RULES,
+    ...EXPERT_REVIEW_REQUIREMENTS,
     'Before returning the final extraction payload, self-audit every claim against the supplied facts and remove unsupported claims.',
     'Do not mention AI assistance, content generation, prompts, internal workflow, or the intermediate review drafting step.',
     'Return strict JSON matching the requested shape so the application can store the extracted sections.',
@@ -76,8 +91,10 @@ export function fullReviewPrompt(input: unknown) {
     instructions: [
       'Generate the review content as one cohesive editorial article first, then extract every section from that article using only the supplied factPack.',
       ...FACT_BOUND_RULES,
+      ...EXPERT_REVIEW_REQUIREMENTS,
       'Step 1: First write an internal 2,500-word expert product review from the product facts. This draft is scratch work only: do not output it, do not format it as JSON, do not use a reusable template, and write it naturally with editorial judgment.',
       'Step 1 review requirements: cover overview, pros, cons, features, pricing, use cases, alternatives, buyer advice, FAQs, and verdict in connected expert prose; include product-specific context; avoid generic filler; keep every claim grounded in the supplied facts.',
+      'Build the ending as a practical recommendation matrix: buy, skip, choose a named supplied competitor, or wait. The final line should invite the reader to verify current pricing or another decision-critical detail, not simply purchase.',
       'Knowledge Graph Utilization: naturally incorporate every major feature, workflow, pricing recommendation, reviewer intelligence insight, alternative comparison, buyer guidance point, strength, weakness, pricing tradeoff, and example present in the factPack.',
       'Editorial Expansion: whenever a feature or knowledge graph item contains whatItDoes, whyItMatters, example, whoBenefits, or tradeoff, discuss all available fields naturally; never mention only the feature name.',
       'Why This Matters: for every feature, explain why the reader should care, who benefits, and the practical outcome rather than simply summarizing the feature list.',
@@ -112,6 +129,7 @@ export function editorialReviewPrompt(factPack: unknown, draft: unknown, product
     instructions: [
       ...UNIVERSAL_EDITORIAL_CHECKS,
       ...EDITORIAL_STYLE_RULES,
+      ...EXPERT_REVIEW_REQUIREMENTS,
       ...FACT_BOUND_RULES,
       'Keep the exact JSON shape and all required fields. Keep the number and identity of selected enhancements, alternatives, comparisons, tutorial steps, and recommendations unless an item is factually invalid; repair invalid wording in place rather than selecting a replacement.',
       'Do not add new facts, tools, prices, capabilities, audiences, offers, or sections. Do not summarize or regenerate the article. Return the full payload, copying every field that already passes unchanged.',
