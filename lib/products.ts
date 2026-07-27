@@ -114,6 +114,10 @@ export type Product = {
   hiddenStrengths?: string[];
   bestFirstTask?: string;
   ratings?: { easeOfUse: number; features: number; value: number; support: number; integrations: number; aiQuality: number };
+  educationScorecard?: { classroomReadiness: number; teacherTimeSaved: number; studentEngagement: number; differentiationSupport: number; lessonPlanning: number; assessmentSupport: number; accessibility: number; administratorValue: number; parentValue: number; easeOfAdoption: number; learningCurve: number; valueForSchools: number; overallRating: number };
+  reviewerObservations?: string[];
+  practicalLimitations?: string[];
+  educationLinks?: { label: string; href: string; type: 'guide' | 'workflow' | 'article' | 'alternative' }[];
   bestForCards?: { title: string; description: string }[];
   users: string;
   platforms: string[];
@@ -229,7 +233,7 @@ export const CATEGORIES: readonly Category[] = [
   { slug: 'writing', name: 'AI Writing', pathSlug: 'ai-writing', intent: 'drafting, editing, brainstorming, and publishing content faster' },
   { slug: 'coding', name: 'AI Coding', pathSlug: 'ai-coding', intent: 'shipping software, debugging, and developer productivity' },
   { slug: 'research', name: 'AI Research', intent: 'summarizing sources, exploring questions, and speeding up analysis' },
-  { slug: 'education', name: 'Education' },
+  { slug: 'education', name: 'Educational AI', pathSlug: 'education-ai', intent: 'lesson planning, differentiation, assessment, classroom delivery, and school operations' },
   { slug: 'business', name: 'Business' },
   { slug: 'marketing', name: 'Marketing', intent: 'campaign planning, creative production, and growth workflows' },
   { slug: 'development', name: 'Development' },
