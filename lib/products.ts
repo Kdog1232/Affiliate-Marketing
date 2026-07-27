@@ -144,7 +144,7 @@ export type Product = {
   comparison: { feature: string; product: string; competitors: string; winner: string }[];
   whyTrust: { title: string; description: string }[];
   notFor: { title: string; description: string }[];
-  review: { author: string; title: string; summary: string; datePublished: string };
+  review: { author: string; title: string; summary: string; datePublished: string; dateModified?: string };
   verdict?: string;
   reviewScore?: string;
   reviewStatus?: 'Ready to Publish' | 'Needs Work';

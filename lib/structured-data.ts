@@ -76,7 +76,7 @@ export function buildProductReviewJsonLd(product: Product) {
       reviewRating: { '@type': 'Rating', ratingValue: String(product.rating), bestRating: '5' },
     },
     softwareApplication,
-    { '@context': 'https://schema.org', '@type': 'Article', headline: product.review.title, description: product.description, author: { '@type': 'Organization', name: product.review.author }, publisher: { '@type': 'Organization', name: 'AIToolBet', url: getSiteUrl() }, datePublished: product.review.datePublished, mainEntityOfPage: pageUrl, about: product.name },
+    { '@context': 'https://schema.org', '@type': 'Article', headline: product.review.title, description: product.description, image: canonicalUrl(product.heroImage), author: { '@type': 'Organization', name: product.review.author }, publisher: { '@type': 'Organization', name: 'AIToolBet', url: getSiteUrl() }, datePublished: product.review.datePublished, dateModified: product.review.dateModified ?? product.review.datePublished, mainEntityOfPage: pageUrl, about: { '@type': 'SoftwareApplication', name: product.name } },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: product.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [breadcrumbItem(1, 'Home', '/'), breadcrumbItem(2, product.name, pageUrl)] },
   ];
