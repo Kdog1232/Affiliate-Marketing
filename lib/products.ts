@@ -160,17 +160,24 @@ export async function getProductSlugs() {
 }
 
 export async function getProduct(slug: string): Promise<Product | null> {
+  const product = await getRawProduct(slug);
+  if (!product) return null;
+  const publishedFile = path.join(process.cwd(), 'content', 'published', 'reviews', `${slug}.json`);
+  try {
+    const { applyPublishedReview } = await import('./published-content');
+    const published = JSON.parse(await fs.readFile(publishedFile, 'utf8'));
+    return applyPublishedReview(product, published);
+  } catch {
+    return product;
+  }
+}
+
+/** Reads the canonical product record without generated review overlays.
+ * Generation must use this function so its input can never contain an older draft. */
+export async function getRawProduct(slug: string): Promise<Product | null> {
   try {
     const file = await fs.readFile(path.join(productsDirectory, `${slug}.json`), 'utf8');
-    const product = await resolveProductImages(JSON.parse(file) as Product);
-    const publishedFile = path.join(process.cwd(), 'content', 'published', 'reviews', `${slug}.json`);
-    try {
-      const { applyPublishedReview } = await import('./published-content');
-      const published = JSON.parse(await fs.readFile(publishedFile, 'utf8'));
-      return applyPublishedReview(product, published);
-    } catch {
-      return product;
-    }
+    return resolveProductImages(JSON.parse(file) as Product);
   } catch {
     return null;
   }
@@ -219,6 +226,11 @@ async function findReviewHeroImage(slug: string) {
 export async function getProducts() {
   const slugs = await getProductSlugs();
   return Promise.all(slugs.map(async (slug) => getProduct(slug))).then((items) => items.filter(Boolean) as Product[]);
+}
+
+export async function getRawProducts() {
+  const slugs = await getProductSlugs();
+  return Promise.all(slugs.map(getRawProduct)).then((items) => items.filter(Boolean) as Product[]);
 }
 
 export type Category = {

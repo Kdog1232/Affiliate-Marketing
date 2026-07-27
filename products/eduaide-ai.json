@@ -3,8 +3,8 @@
   "name": "Eduaide.AI",
   "tagline": "Instructional planning assistance",
   "description": "Eduaide.AI provides instructional planning assistance for educators. This review evaluates instructional fit, realistic adoption, privacy, accessibility, and teacher oversight.",
-  "logo": "/logos/lessons-ready.svg",
-  "heroImage": "/screenshots/lessons-ready-hero.png",
+  "logo": "/logos/eduaide-ai.svg",
+  "heroImage": "/screenshots/eduaide-ai-hero.svg",
   "affiliateLink": "https://aitoolbet.com/eduaide-ai",
   "rating": 4.3,
   "users": "Teachers, students, coaches, administrators, tutors, and families",
@@ -131,11 +131,11 @@
     },
     {
       "title": "Tutors and families",
-      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner’s actual goals."
+      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner\u2019s actual goals."
     },
     {
       "title": "Curriculum teams",
-      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner’s actual goals."
+      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner\u2019s actual goals."
     }
   ],
   "faq": [
@@ -260,18 +260,18 @@
   "reviewScore": "95%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/lessons-ready-1.png",
-    "/screenshots/lessons-ready-2.png",
-    "/screenshots/lessons-ready-3.png",
-    "/screenshots/lessons-ready-4.png"
+    "/screenshots/eduaide-ai-hero.svg",
+    "/screenshots/eduaide-ai-hero.svg",
+    "/screenshots/eduaide-ai-hero.svg",
+    "/screenshots/eduaide-ai-hero.svg"
   ],
   "seoTitle": "Eduaide.AI Review (2026): Classroom Fit, Limits & Alternatives",
   "seoKeywords": [
-    "Lessons Ready review",
-    "Lessons Ready pricing",
-    "Lessons Ready alternatives",
-    "Lessons Ready pros and cons",
-    "Lessons Ready features",
+    "Eduaide.AI review",
+    "Eduaide.AI pricing",
+    "Eduaide.AI alternatives",
+    "Eduaide.AI pros and cons",
+    "Eduaide.AI features",
     "AI lesson planner",
     "lesson planning software",
     "teacher AI assistant",
@@ -322,7 +322,7 @@
     }
   ],
   "category": "Educational AI",
-  "summary": "Lessons Ready helps K–12 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
+  "summary": "Lessons Ready helps K\u201312 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
   "idealUsers": [
     "Teachers with a defined recurring workflow",
     "Instructional coaches running bounded pilots",

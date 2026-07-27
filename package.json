@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "npm run validate:structured-data && next build",
+    "build": "npm run validate:reviews && npm run validate:structured-data && next build",
     "start": "next start",
     "lint": "eslint .",
     "verify:logos": "node scripts/verify-logos.js",

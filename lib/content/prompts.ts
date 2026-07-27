@@ -1,6 +1,6 @@
 import type { ReviewSectionKey } from './types';
 
-export const PROMPT_VERSION = 'decision-first-expert-review-v4';
+export const PROMPT_VERSION = 'decision-first-expert-review-v5-isolated';
 export const PROVIDER_VERSION = 'openai-responses-json-v1';
 export const REVIEW_SECTIONS: { key: ReviewSectionKey; title: string; sourceFields: string[] }[] = [
   { key: 'overview', title: 'Overview', sourceFields: ['name', 'tagline', 'description', 'features', 'categories', 'platforms', 'bestFor', 'useCases', 'knowledgeGraph'] },
@@ -18,6 +18,8 @@ const FACT_BOUND_RULES = [
   'Use only supplied structured facts. Do not invent prices, integrations, benchmarks, awards, compliance claims, platform support, or capabilities.',
   'If a capability or price is not supplied, omit it or explicitly say the supplied facts do not confirm it.',
   'Do not borrow features from other products. Product Visuals, Brand Kits, Conversion Scores, IDE agents, image generation, Projects, or any other capability may appear only when current facts support them.',
+  'The factPack.product is the only review subject. Never reuse a name, URL, logo, price, CTA, FAQ, verdict, or claim remembered from another review.',
+  'Competitor names may appear only when supplied in this factPack, and must retain their supplied name and slug. Recheck every JSON field against factPack.product.slug and factPack.product.name before returning it.',
   'Pricing must use only provided plan names and prices. Never create Starter, Professional, Agency, Team, or Enterprise plans unless those exact plans are supplied.',
   'Alternatives and comparisons must come from the supplied alternatives, comparisons, or existingComparisonRows lists.',
   'Every recommendation must be grounded in the supplied pros, cons, audiences, notFor, features, use cases, pricing, comparison data, or capabilities registry.',
