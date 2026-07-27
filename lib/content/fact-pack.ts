@@ -1,4 +1,4 @@
-import { getProducts, getRelatedProducts, type Product, type ProductKnowledgeGraph } from '@/lib/products';
+import { getRawProducts, getRelatedProducts, type Product, type ProductKnowledgeGraph } from '@/lib/products';
 import { getComparisonSlug, getRelatedComparisonProducts } from '@/lib/comparisons';
 import { capabilityFor } from '@/lib/toolCapabilities';
 
@@ -13,7 +13,8 @@ export type NormalizedProductKnowledgeGraph = ProductKnowledgeGraph & {
 };
 
 export async function buildProductFactPack(product: Product) {
-  const products = await getProducts();
+  // Never use getProducts() here: it overlays published generated copy.
+  const products = await getRawProducts();
   const alternatives = (product.alternatives ?? getRelatedProducts(product, products, 5).map((item) => ({ name: item.name, slug: item.slug, logo: item.logo, description: item.description })));
   const comparisonProducts = getRelatedComparisonProducts(product, products, 5);
   const knowledgeGraph = normalizeProductKnowledgeGraph(product, alternatives);

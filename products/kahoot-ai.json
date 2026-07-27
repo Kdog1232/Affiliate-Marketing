@@ -3,8 +3,8 @@
   "name": "Kahoot AI",
   "tagline": "AI-assisted interactive quiz creation",
   "description": "Kahoot AI supports interactive quiz creation; educators should verify current capabilities, privacy terms, accessibility, and student-use requirements.",
-  "logo": "/logos/lessons-ready.svg",
-  "heroImage": "/screenshots/lessons-ready-hero.png",
+  "logo": "/logos/kahoot-ai.svg",
+  "heroImage": "/screenshots/kahoot-ai-hero.svg",
   "affiliateLink": "https://aitoolbet.com/kahoot-ai",
   "rating": 4.4,
   "users": "Teachers, students, coaches, administrators, tutors, and families",
@@ -131,28 +131,28 @@
     },
     {
       "title": "Tutors and families",
-      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner’s actual goals."
+      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner\u2019s actual goals."
     },
     {
       "title": "Curriculum teams",
-      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner’s actual goals."
+      "description": "Evaluate age-appropriate use, transparency, accessibility, and fit with the learner\u2019s actual goals."
     }
   ],
   "faq": [
     {
-      "question": "What is Quizizz AI best for?",
+      "question": "What is Kahoot AI best for?",
       "answer": "It is best evaluated for formative assessment. Run a bounded pilot before broad adoption."
     },
     {
-      "question": "Was Quizizz AI classroom-tested for this review?",
+      "question": "Was Kahoot AI classroom-tested for this review?",
       "answer": "No classroom test is claimed. This review is based on product documentation, demonstrations, educator feedback, and feature analysis."
     },
     {
-      "question": "Is Quizizz AI safe for student data?",
+      "question": "Is Kahoot AI safe for student data?",
       "answer": "Schools must review current privacy, security, retention, age, consent, and contract terms before entering student information."
     },
     {
-      "question": "Is Quizizz AI worth the price?",
+      "question": "Is Kahoot AI worth the price?",
       "answer": "Value depends on verified time saved after review, adoption consistency, and full implementation cost. Confirm current pricing."
     },
     {
@@ -251,7 +251,7 @@
   "review": {
     "author": "AIToolBet Education Editorial Team",
     "title": "Kahoot AI Review: Classroom Quiz Fit and Limits",
-    "summary": "Quizizz AI merits a bounded pilot for formative assessment, followed by privacy, accessibility, curriculum, and implementation review.",
+    "summary": "Kahoot AI merits a bounded pilot for formative assessment, followed by privacy, accessibility, curriculum, and implementation review.",
     "datePublished": "2026-07-26"
   },
   "categories": [
@@ -260,18 +260,18 @@
   "reviewScore": "95%",
   "reviewStatus": "Ready to Publish",
   "screenshots": [
-    "/screenshots/lessons-ready-1.png",
-    "/screenshots/lessons-ready-2.png",
-    "/screenshots/lessons-ready-3.png",
-    "/screenshots/lessons-ready-4.png"
+    "/screenshots/kahoot-ai-hero.svg",
+    "/screenshots/kahoot-ai-hero.svg",
+    "/screenshots/kahoot-ai-hero.svg",
+    "/screenshots/kahoot-ai-hero.svg"
   ],
-  "seoTitle": "Quizizz AI Review (2026): Classroom Fit, Limits & Alternatives",
+  "seoTitle": "Kahoot AI Review (2026): Classroom Fit, Limits & Alternatives",
   "seoKeywords": [
-    "Lessons Ready review",
-    "Lessons Ready pricing",
-    "Lessons Ready alternatives",
-    "Lessons Ready pros and cons",
-    "Lessons Ready features",
+    "Kahoot AI review",
+    "Kahoot AI pricing",
+    "Kahoot AI alternatives",
+    "Kahoot AI pros and cons",
+    "Kahoot AI features",
     "AI lesson planner",
     "lesson planning software",
     "teacher AI assistant",
@@ -322,7 +322,7 @@
     }
   ],
   "category": "Educational AI",
-  "summary": "Lessons Ready helps K–12 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
+  "summary": "Lessons Ready helps K\u201312 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
   "idealUsers": [
     "Teachers with a defined recurring workflow",
     "Instructional coaches running bounded pilots",
@@ -381,13 +381,13 @@
     }
   ],
   "overview": [
-    "Quizizz AI provides AI-assisted quizzes and practice. The purchase decision is whether it improves formative assessment without creating a disconnected system or unacceptable review burden.",
+    "Kahoot AI provides AI-assisted quizzes and practice. The purchase decision is whether it improves formative assessment without creating a disconnected system or unacceptable review burden.",
     "Based on product documentation, demonstrations, educator feedback, and feature analysis, this review assesses likely classroom fit; it does not claim hands-on classroom testing. Educators must validate accuracy, age appropriateness, accessibility, bias, and curriculum alignment before use.",
     "A realistic teacher pilot starts with one recurring formative assessment task. A school rollout should add instructional ownership, privacy and security review, accessibility checks, professional development, a limited pilot, and evidence-based expansion."
   ],
   "comparisonMatrix": {
     "columns": [
-      "Quizizz AI",
+      "Kahoot AI",
       "MagicSchool AI",
       "Brisk Teaching",
       "Diffit"
@@ -413,7 +413,7 @@
       }
     ]
   },
-  "verdict": "Quizizz AI deserves consideration when formative assessment is a frequent, measurable pain point. Pilot one teacher-owned workflow and expand only if instructional quality and adoption improve. Confirm current price, privacy, accessibility, administrative controls, professional development, and student-use terms.",
+  "verdict": "Kahoot AI deserves consideration when formative assessment is a frequent, measurable pain point. Pilot one teacher-owned workflow and expand only if instructional quality and adoption improve. Confirm current price, privacy, accessibility, administrative controls, professional development, and student-use terms.",
   "categoryBadge": "Educational AI",
   "primaryCategory": "education",
   "secondaryCategories": [
@@ -425,10 +425,10 @@
     "schools",
     "classroom"
   ],
-  "metaDescription": "Independent Quizizz AI review covering classroom workflows, adoption, privacy, accessibility, alternatives, and an education scorecard.",
+  "metaDescription": "Independent Kahoot AI review covering classroom workflows, adoption, privacy, accessibility, alternatives, and an education scorecard.",
   "reviewerObservations": [
     "The purchase case is reducing friction around formative assessment, not simply adding AI.",
-    "Compare the current process with Quizizz AI on preparation time, revision time, quality, and teacher confidence.",
+    "Compare the current process with Kahoot AI on preparation time, revision time, quality, and teacher confidence.",
     "Administrator value requires usage guidance and support; parent value requires transparent, age-appropriate use."
   ],
   "practicalLimitations": [

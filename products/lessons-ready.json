@@ -1,8 +1,8 @@
 {
   "slug": "lessons-ready",
   "name": "Lessons Ready",
-  "tagline": "AI instructional planning for classroom-ready K–12 lessons",
-  "description": "AI lesson planner for K–12 educators that creates standards-aligned lessons, classroom resources, presentations, accommodations, and Live Mode instruction.",
+  "tagline": "AI instructional planning for classroom-ready K\u201312 lessons",
+  "description": "AI lesson planner for K\u201312 educators that creates standards-aligned lessons, classroom resources, presentations, accommodations, and Live Mode instruction.",
   "logo": "/logos/lessons-ready.svg",
   "heroImage": "/screenshots/lessons-ready-hero.png",
   "affiliateLink": "https://lessons-ready.com",
@@ -74,7 +74,7 @@
     }
   ],
   "pros": [
-    "Purpose-built for K–12 educators rather than generic AI writing",
+    "Purpose-built for K\u201312 educators rather than generic AI writing",
     "Saves significant lesson planning time while preserving teacher review and editing",
     "Live Mode supports real-time classroom delivery from teacher-created instructional content",
     "Creates bilingual classroom resources, including side-by-side English and Spanish support",
@@ -180,7 +180,7 @@
   "faq": [
     {
       "question": "What is Lessons Ready best for?",
-      "answer": "Lessons Ready is best for K–12 instructional planning: AI lesson plans, TEKS lesson plans, differentiated instruction, teacher presentation slides, printable classroom resources, Live Mode delivery, and accommodations for diverse learners."
+      "answer": "Lessons Ready is best for K\u201312 instructional planning: AI lesson plans, TEKS lesson plans, differentiated instruction, teacher presentation slides, printable classroom resources, Live Mode delivery, and accommodations for diverse learners."
     },
     {
       "question": "Does Lessons Ready support bilingual classrooms?",
@@ -323,7 +323,7 @@
   "review": {
     "author": "Affiliate Editorial Team",
     "title": "Lessons Ready Review",
-    "summary": "Lessons Ready helps K–12 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
+    "summary": "Lessons Ready helps K\u201312 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
     "datePublished": "2026-07-07"
   },
   "categories": [
@@ -391,10 +391,16 @@
       "slug": "",
       "logo": "",
       "description": "Compare Google Classroom with Lessons Ready before choosing a software tool."
+    },
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "logo": "/logos/chatgpt.svg",
+      "description": "Choose ChatGPT when a general-purpose conversational assistant is preferable to a lesson-specific teacher workflow."
     }
   ],
   "category": "Education",
-  "summary": "Lessons Ready helps K–12 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
+  "summary": "Lessons Ready helps K\u201312 educators turn standards, objectives, and student needs into classroom-ready lesson plans, differentiated practice, printable resources, teacher presentation slides, accommodations, and live instructional delivery.",
   "idealUsers": [
     "Elementary teachers",
     "Middle school teachers",
@@ -408,7 +414,7 @@
     "District instructional leaders"
   ],
   "strengths": [
-    "Purpose-built for K–12 educators rather than generic AI writing",
+    "Purpose-built for K\u201312 educators rather than generic AI writing",
     "Saves significant lesson planning time while preserving teacher review and editing",
     "Live Mode supports real-time classroom delivery from teacher-created instructional content",
     "Creates bilingual classroom resources, including side-by-side English and Spanish support",
@@ -485,9 +491,9 @@
     }
   ],
   "overview": [
-    "Lessons Ready is an AI lesson planner built specifically for K–12 instructional planning, not a general-purpose writing assistant with a few education prompts added on. After evaluating the workflow end to end, the clearest difference is that it thinks in classroom components: standards-aligned lesson plans, guided practice, independent practice, differentiated instruction, classroom activities, printable resources, assessment questions, teacher scripts, discussion prompts, exit tickets, and presentation slides all belong in the same planning flow.",
+    "Lessons Ready is an AI lesson planner built specifically for K\u201312 instructional planning, not a general-purpose writing assistant with a few education prompts added on. After evaluating the workflow end to end, the clearest difference is that it thinks in classroom components: standards-aligned lesson plans, guided practice, independent practice, differentiated instruction, classroom activities, printable resources, assessment questions, teacher scripts, discussion prompts, exit tickets, and presentation slides all belong in the same planning flow.",
     "The platform is much more than a lesson plan generator. A teacher can start with a grade level, subject, standard or learning objective, lesson duration, instructional purpose, and student needs, then produce a sequence that is usable before class starts. For example, a 5th-grade reading teacher who needs a TEKS-aligned lesson before first period can generate the objective, mini-lesson, comprehension questions, vocabulary support, independent practice, exit ticket, and teacher-facing prompts without assembling those pieces across multiple apps.",
-    "Lessons Ready appears designed around real classroom workflows by experienced educators: the output is organized around how teachers actually teach, check for understanding, scaffold, reteach, and extend learning. That matters because classroom resources need timing, pacing, student directions, teacher language, and usable practice—not just polished paragraphs about a topic.",
+    "Lessons Ready appears designed around real classroom workflows by experienced educators: the output is organized around how teachers actually teach, check for understanding, scaffold, reteach, and extend learning. That matters because classroom resources need timing, pacing, student directions, teacher language, and usable practice\u2014not just polished paragraphs about a topic.",
     "The strongest use case is teacher productivity without sacrificing instructional intent. Teachers, interventionists, instructional coaches, assistant principals, principals, curriculum coordinators, and district instructional leaders can use it to reduce planning time, increase consistency, and create materials that still leave room for professional judgment, local curriculum adjustments, and student-specific edits."
   ],
   "comparisonMatrix": {

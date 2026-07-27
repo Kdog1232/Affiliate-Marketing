@@ -1,6 +1,7 @@
 import { createHash } from 'crypto';
 import type { Product } from '@/lib/products';
-import { getProduct, getProducts } from '@/lib/products';
+import { getRawProduct, getRawProducts } from '@/lib/products';
+import { assertReviewConsistency } from './consistency';
 import { PROMPT_VERSION, PROVIDER_VERSION, REVIEW_SECTIONS, editorialReviewPrompt, fullReviewPrompt, systemPrompt } from './prompts';
 import { getAiProvider } from './providers';
 import { readReviewDraft, writeReviewDraft } from './storage';
@@ -12,12 +13,18 @@ type Options = { force?: boolean; section?: ReviewSectionKey };
 type EngineResponse = { review: { overview: string[]; pros: string[]; cons: string[]; whoShouldBuy: string[]; whoShouldAvoid: string[]; pricingSummary: string; featureHighlights: string[]; verdict: string; faq: { question: string; answer: string }[] }; buyingGuide?: BuyingGuideSnippet[]; alternatives?: AlternativeSummary[]; comparison?: ComparisonSummary[]; tutorial?: { title: string; steps: string[]; summary: string }; seo?: Partial<SeoAsset>; quality?: ReviewDraft['quality']; missingContent?: ReviewDraft['missingContent']; utilizationReport?: KnowledgeGraphUtilizationReport; informationGain?: SectionInformationGain[] };
 
 export async function generateReview(slug: string, options: Options = {}) {
-  const product = await getProduct(slug); if (!product) throw new Error(`Unknown product: ${slug}`);
+  const product = await getRawProduct(slug); if (!product) throw new Error(`Unknown product: ${slug}`);
+  const productCatalog = await getRawProducts();
   const existing = await readReviewDraft(slug, 'drafts');
   const provider = getAiProvider(); const model = process.env.OPENAI_MODEL ?? 'gpt-4.1-mini'; const now = new Date().toISOString();
   const factPack = await buildProductFactPack(product); const sourceHash = hashStable(factPack); const cacheHash = hashStable({ factPack, promptVersion: PROMPT_VERSION, providerVersion: PROVIDER_VERSION, model });
-  if (existing && !options.force && !options.section && existing.metadata?.cacheHash === cacheHash) return { ...existing, metadata: { ...existing.metadata, cached: true } };
-  const draft: ReviewDraft = existing ?? baseDraft(product, model, now);
+  if (existing && !options.force && !options.section && existing.metadata?.cacheHash === cacheHash) {
+    assertReviewConsistency(product, existing, productCatalog);
+    return { ...existing, metadata: { ...existing.metadata, cached: true } };
+  }
+  // A full generation starts with a clean object. Reusing an old draft is the
+  // principal cross-review contamination vector.
+  const draft: ReviewDraft = options.section && existing ? existing : baseDraft(product, model, now);
 
   const generatedResult = await generateUtilizedReview(provider, factPack, model);
   // Enhancement selection and content generation are complete before this call.
@@ -37,9 +44,11 @@ export async function generateReview(slug: string, options: Options = {}) {
   draft.missingContent = { ...detectMissingContent(product, draft.assets), ...(draft.missingContent ?? {}) };
   draft.quality = analyzeReviewQuality(product, draft);
   draft.metadata = { promptVersion: PROMPT_VERSION, generatedDate: new Date().toISOString(), model, provider: provider.name, providerVersion: PROVIDER_VERSION, cacheHash, sourceHash, cached: false };
-  draft.updatedAt = new Date().toISOString(); draft.status = 'needs_review'; await writeReviewDraft(draft); return draft;
+  draft.updatedAt = new Date().toISOString(); draft.status = 'needs_review';
+  assertReviewConsistency(product, draft, productCatalog);
+  await writeReviewDraft(draft); return draft;
 }
-export async function generateAllReviews(options: Options = {}) { const products = await getProducts(); for (const product of products) await generateReview(product.slug, options); }
+export async function generateAllReviews(options: Options = {}) { const products = await getRawProducts(); for (const product of products) await generateReview(product.slug, options); }
 async function generateUtilizedReview(provider: ReturnType<typeof getAiProvider>, factPack: Awaited<ReturnType<typeof buildProductFactPack>>, model: string) {
   const firstResult = await provider.generateJson<EngineResponse>({ system: systemPrompt(), prompt: fullReviewPrompt(factPack), model });
   if (!needsRegeneration(firstResult.utilizationReport)) return firstResult;
