@@ -309,7 +309,8 @@
   "categories": [
     "design",
     "marketing",
-    "creator-tools"
+    "creator-tools",
+    "education"
   ],
   "reviewScore": "100%",
   "reviewStatus": "Ready to Publish",
@@ -500,5 +501,8 @@
       }
     ]
   },
-  "verdict": "Canva is a strong choice for social media graphics, presentations, marketing assets, brand kits, small business design when buyers want presentation design and social graphics in one workflow. It is not the perfect fit for every team, so compare pricing, governance needs, integrations, and the alternatives above before committing."
+  "verdict": "Canva is a strong choice for social media graphics, presentations, marketing assets, brand kits, small business design when buyers want presentation design and social graphics in one workflow. It is not the perfect fit for every team, so compare pricing, governance needs, integrations, and the alternatives above before committing.",
+  "secondaryCategories": [
+    "education"
+  ]
 }
