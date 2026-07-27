@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "description": "Approved source metadata for the canonical product fact registry. Add fieldSources and official documentation URLs after verification; absent facts must not be generated.",
+  "products": {
+    "bluefx": {
+      "officialUrl": null,
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "bolt-new": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "brevo": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "brisk-teaching": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "canva-for-education-ai": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "canva": {
+      "officialUrl": "https://www.canva.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "chatgpt": {
+      "officialUrl": "https://chatgpt.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "claude": {
+      "officialUrl": "https://claude.ai/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "copy-ai": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "copybase-ai": {
+      "officialUrl": null,
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "curipod": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "cursor": {
+      "officialUrl": "https://cursor.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "descript": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "diffit": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "eduaide-ai": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "elevenlabs": {
+      "officialUrl": "https://try.elevenlabs.io/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "github-copilot": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "grammarly": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "heygen": {
+      "officialUrl": "https://www.heygen.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "hostinger": {
+      "officialUrl": "https://www.hostinger.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "jasper": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "kahoot-ai": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "khanmigo": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "kit": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "leonardo-ai": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "lessons-ready": {
+      "officialUrl": "https://lessons-ready.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "lovable": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "magicschool-ai": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "mailerlite": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "midjourney": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "monday": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "notebooklm": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "notion-ai": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "notion": {
+      "officialUrl": "https://www.notion.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "pictory": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "quizizz-ai": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "replit-ai": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "runway": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "schoolai": {
+      "officialUrl": "https://aitoolbet.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "semrush": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "shopify": {
+      "officialUrl": null,
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "surfer-seo": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "synthesia": {
+      "officialUrl": "https://www.synthesia.io/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "webflow": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    },
+    "writesonic": {
+      "officialUrl": "https://www.google.com/",
+      "lastVerifiedDate": "2026-07-27T00:00:00.000Z",
+      "sourceType": "approved_manual",
+      "officialDocumentation": []
+    }
+  }
+}

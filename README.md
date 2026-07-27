@@ -28,6 +28,29 @@ npm run dev
 npm run build
 ```
 
+## Factual accuracy gate
+
+Product JSON is normalized into the canonical fact model in `lib/facts/system.js`.
+`facts/sources.json` is the approved-source manifest: keep official URLs, documentation
+URLs, field-specific sources, and verification dates there. Missing fields stay absent
+from the Fact Registry and must be omitted from generated copy.
+
+Every stored review paragraph has a `factCitations` entry containing the registry fact
+IDs used by that paragraph. The validator atomizes paragraphs into claims, classifies
+them as verified, inferred, opinion, editorial, or unknown, and rejects publication for
+unknown, unsupported, partially supported, or conflicting factual claims. It also
+requires at least 98% factual accuracy.
+
+```bash
+npm run validate:facts          # production/CI publication gate
+npm run audit:facts             # refresh repository-wide Markdown audit
+npm run verify:official-sources # download and timestamp configured official sources
+```
+
+Official source responses are cached under `.cache/official-sources/` and should not be
+committed. Pricing, plans, features, integrations, and documentation older than 30 days
+appear as stale in `docs/fact-accuracy-audit.md`.
+
 `npm run build` only compiles the Next.js application for production. Screenshot generation is intentionally separate so Vercel deployments are not blocked by Playwright, browser downloads, or local server timing issues.
 
 Use `npm run screenshots` when you want to refresh generated screenshots locally. The command builds the app for local preview, starts Next.js on `127.0.0.1:3000`, waits for the site to respond, captures pages with Playwright, validates the generated files, and exits. Install the browser once with `npx playwright install chromium` before running it.
