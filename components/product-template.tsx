@@ -112,33 +112,52 @@ export function ProductTemplate({ product, relatedProducts }: { product: Product
 
   const showScreenshotGallery = shouldShowScreenshotGallery(product);
 
-  return <main className="min-h-screen overflow-hidden bg-radial-blue pb-20 md:pb-0">
+  return <main id="main-content" className="min-h-screen overflow-hidden bg-radial-blue pb-20 md:pb-0">
     {jsonLdSchemas.map((schema) => <script key={String(schema['@type'])} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />)}
     <Navbar product={product} />
     <Hero product={product} showHeaderImage={showScreenshotGallery} />
     {!showScreenshotGallery && <ReviewHeroImage product={product} />}
     <AffiliateDisclosure />
+    <ReviewMeta product={product} />
+    <ReviewNavigation product={product} />
     <Section id="quick-facts" eyebrow="Quick facts" title={`${product.name} at a glance`}><FactGrid items={quickFacts} /></Section>
     <Section id="overview" eyebrow="Overview" title={`What is ${product.name}?`}><div className="grid gap-8 lg:grid-cols-[1fr_360px]"><div className="space-y-5 text-lg leading-8 text-slate-300">{(product.overview ?? [product.description]).map((p) => <p key={p}>{p}</p>)}</div><VerdictMini product={product} /></div></Section>
     {showScreenshotGallery && <ScreenshotGallery product={product} />}
     <Section id="features" eyebrow="Features" title="How the key features work in practice"><div className="grid gap-5 lg:grid-cols-2">{editorialFeatures(product).map((feature) => { const Icon = icons[feature.icon as keyof typeof icons] ?? Bot; return <Card key={feature.title}><Icon className="mb-5 h-6 w-6 text-blue-300" /><h3 className="text-2xl font-semibold text-white">{feature.title}</h3><FeatureDetail label="What it does" value={feature.whatItDoes ?? feature.description} /><FeatureDetail label="Why it matters" value={feature.whyItMatters} /><FeatureDetail label="Who benefits most" value={asTextList(feature.whoBenefits)} /><FeatureDetail label="Real-world example" value={feature.example} /><FeatureDetail label="Tradeoff or limitation" value={feature.tradeoff} /><FeatureDetail label="Recommended workflow" value={feature.recommendedWorkflow} /></Card>; })}</div><CenterCta href={product.affiliateLink}>Try {product.name} after comparing features</CenterCta></Section>
-    <Section eyebrow="Pros & Cons" title={`A balanced ${product.name} review`}><div className="grid gap-6 lg:grid-cols-2"><ListCard title="Pros" items={product.pros} tone="pro" /><ListCard title="Cons" items={product.cons} tone="con" /></div></Section>
-    <Section eyebrow="Editorial rating" title={`${product.name} rating breakdown`}><RatingBreakdown product={product} /></Section>
+    <Section id="pros-cons" eyebrow="Pros & Cons" title={`A balanced ${product.name} review`}><div className="grid gap-6 lg:grid-cols-2"><ListCard title="Pros" items={product.pros} tone="pro" /><ListCard title="Cons" items={product.cons} tone="con" /></div></Section>
+    <Section id="rating" eyebrow="Editorial rating" title={`${product.name} rating breakdown`}><RatingBreakdown product={product} /></Section>
     {product.educationScorecard && <EducationEvaluation product={product} />}
     <Section id="pricing" eyebrow="Pricing" title={`${product.name} pricing plans`}><div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">{product.pricingPlans.map((plan) => <Card key={plan.name}><h3 className="text-2xl font-semibold">{plan.name}</h3><p className="mt-2 text-3xl font-bold text-white">{plan.price}</p><p className="mt-3 text-sm text-slate-300">{plan.description}</p><ul className="my-6 space-y-3">{plan.features.map((item) => <li key={item} className="flex gap-2 text-sm text-slate-200"><Check className="h-5 w-5 shrink-0 text-blue-300" />{item}</li>)}</ul><AffiliateButton href={product.affiliateLink}>{plan.cta}</AffiliateButton></Card>)}</div></Section>
-    <Section eyebrow="Best fit" title={`Who should use ${product.name}`}><CardGrid items={product.audiences} /></Section>
-    <Section eyebrow="Not a fit" title={`Who should skip ${product.name}`}><CardGrid items={product.notFor} warning /></Section>
-    <Section eyebrow="Use cases" title={`Real-world ways to use ${product.name}`}><div className="grid gap-5 lg:grid-cols-2">{editorialUseCases(product).map((item) => <Card key={item.title}><SparkLabel>{item.title}</SparkLabel><UseCaseDetail label="Scenario" value={item.scenario} /><UseCaseDetail label="Problem" value={item.problem} /><UseCaseDetail label={`How ${product.name} solves it`} value={item.solution} /><UseCaseDetail label="Expected outcome" value={item.outcome} /></Card>)}</div></Section>
+    <Section id="best-fit" eyebrow="Best fit" title={`Who should use ${product.name}`}><CardGrid items={product.audiences} /></Section>
+    <Section id="not-for" eyebrow="Not a fit" title={`Who should skip ${product.name}`}><CardGrid items={product.notFor} warning /></Section>
+    <Section id="use-cases" eyebrow="Use cases" title={`Real-world ways to use ${product.name}`}><div className="grid gap-5 lg:grid-cols-2">{editorialUseCases(product).map((item) => <Card key={item.title}><SparkLabel>{item.title}</SparkLabel><UseCaseDetail label="Scenario" value={item.scenario} /><UseCaseDetail label="Problem" value={item.problem} /><UseCaseDetail label={`How ${product.name} solves it`} value={item.solution} /><UseCaseDetail label="Expected outcome" value={item.outcome} /></Card>)}</div><ContextualCta product={product} /></Section>
     <Section id="alternatives" eyebrow="Alternatives" title={`${product.name} alternatives to compare`}><Alternatives items={product.alternatives ?? []} /></Section>
     <Section id="comparison" eyebrow="Comparison" title={`${product.name} comparison table`}><Comparison matrix={product.comparisonMatrix} productName={product.name} /></Section>
     <Section id="faq" eyebrow="FAQ" title="Frequently asked questions"><div className="mx-auto max-w-3xl space-y-3">{product.faq.map((item) => <details key={item.question} className="glass group rounded-2xl p-6"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-white">{item.question}<ChevronDown className="h-5 w-5 shrink-0 transition group-open:rotate-180" /></summary><p className="mt-4 text-slate-300">{item.answer}</p></details>)}</div></Section>
     <BusinessBuilder product={product} relatedProducts={relatedProducts ?? []} />
-    <Section eyebrow="Final verdict" title={`Should you use ${product.name} in 2026?`}><Verdict product={product} /></Section>
+    <Section id="verdict" eyebrow="Final verdict" title={`Should you use ${product.name} in 2026?`}><Verdict product={product} /></Section>
     <CompareWith product={product} relatedProducts={relatedProducts ?? []} />
     <RelatedReviews product={product} relatedProducts={relatedProducts ?? []} />
     <Footer product={product} />
     <FloatingCta href={product.affiliateLink} productName={product.name} />
   </main>;
+}
+
+const reviewLinks = [
+  ['overview', 'Review'], ['features', 'Features'], ['pros-cons', 'Pros & cons'], ['pricing', 'Pricing'],
+  ['best-fit', 'Who it is for'], ['alternatives', 'Alternatives'], ['comparison', 'Comparison'], ['faq', 'FAQ'], ['verdict', 'Verdict'],
+] as const;
+
+function ReviewMeta({ product }: { product: Product }) {
+  return <aside aria-label="Review methodology and freshness" className="mx-auto max-w-7xl px-6 pt-8 lg:px-8"><div className="glass grid gap-4 rounded-3xl p-6 text-sm leading-6 text-slate-300 md:grid-cols-3"><p><strong className="block text-white">Reviewed by</strong>{product.review.author}</p><p><strong className="block text-white">Published</strong><time dateTime={product.review.datePublished}>{new Date(product.review.datePublished).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p><p><strong className="block text-white">How we evaluate</strong>Features, pricing fit, limitations, use cases, and competing products are checked against documented product facts. Affiliate relationships do not change our ratings.</p></div></aside>;
+}
+
+function ReviewNavigation({ product }: { product: Product }) {
+  return <nav aria-label={`${product.name} review contents`} className="mx-auto max-w-7xl px-6 pt-8 lg:px-8"><div className="glass rounded-3xl p-6"><h2 className="text-lg font-semibold text-white">In this {product.name} review</h2><ul className="mt-4 flex flex-wrap gap-2">{reviewLinks.map(([id, label]) => <li key={id}><a href={`#${id}`} className="focus-ring inline-flex rounded-full border border-white/10 px-4 py-2 text-sm text-slate-200 transition hover:border-blue-300/50 hover:text-white">{label}</a></li>)}</ul></div></nav>;
+}
+
+function ContextualCta({ product }: { product: Product }) {
+  return <p className="mt-8 rounded-2xl border border-blue-300/20 bg-blue-400/10 p-5 leading-7 text-slate-200">If these workflows match work you do every week, <a href={product.affiliateLink} target="_blank" rel="nofollow sponsored noopener noreferrer" className="focus-ring font-semibold text-blue-200 underline decoration-blue-300/50 underline-offset-4 hover:text-white">check {product.name}&apos;s current plans and limits</a> before choosing a paid tier. Occasional users should start with the free option when available.</p>;
 }
 
 function EducationEvaluation({ product }: { product: Product }) {
@@ -150,7 +169,7 @@ function EducationEvaluation({ product }: { product: Product }) {
   </>;
 }
 
-function Navbar({ product }: { product: Product }) { return <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl"><div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"><Link href="/" className="flex items-center gap-3 font-semibold" aria-label="AI Tool Hub home"><ProductLogo logo={product.logo} name={product.name} size={32} className="rounded-lg" />{product.name}</Link><div className="hidden gap-6 text-sm text-slate-300 md:flex"><Link href="/">Home</Link><a href="#features">Features</a><a href="#comparison">Compare</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div><AffiliateButton href={product.affiliateLink}>Try Now</AffiliateButton></div></nav>; }
+function Navbar({ product }: { product: Product }) { return <><a href="#main-content" className="focus-ring fixed left-4 top-4 z-[60] -translate-y-24 rounded-md bg-white px-4 py-2 font-semibold text-slate-950 focus:translate-y-0">Skip to review</a><nav aria-label="Primary navigation" className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl"><div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"><Link href="/" className="flex items-center gap-3 font-semibold" aria-label="AI Tool Hub home"><ProductLogo logo={product.logo} name={product.name} size={32} className="rounded-lg" />{product.name}</Link><div className="hidden gap-6 text-sm text-slate-300 md:flex"><Link href="/">Home</Link><a href="#features">Features</a><a href="#comparison">Compare</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div><AffiliateButton href={product.affiliateLink}>Visit {product.name}</AffiliateButton></div></nav></>; }
 function productHeroAlt(product: Product) { return product.heroImageAlt ?? `${product.name} application screenshot`; }
 function Hero({ product, showHeaderImage }: { product: Product; showHeaderImage: boolean }) { return <section className={`mx-auto grid max-w-7xl items-center gap-12 px-6 pb-12 pt-32 lg:px-8 lg:pt-40 ${showHeaderImage ? 'lg:grid-cols-2' : ''}`}><div className={showHeaderImage ? '' : 'max-w-4xl'}><div className="mb-6 inline-flex items-center gap-3 rounded-full border border-blue-300/20 bg-blue-400/10 px-4 py-2 text-sm font-semibold text-blue-200"><ProductLogo logo={product.logo} name={product.name} size={24} className="rounded-md" />{product.categoryBadge ?? 'AI Assistant'}</div><h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">{product.review.title}</h1><p className="mt-6 max-w-2xl text-xl leading-8 text-slate-300">{product.tagline}.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><AffiliateButton href={product.affiliateLink}>Try {product.name}</AffiliateButton><a href="#overview" className="rounded-full border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:border-blue-300/50">Read Full Review</a></div></div>{showHeaderImage && <div className="glass rounded-[2rem] p-3 shadow-2xl shadow-blue-950/40"><ScreenshotImage src={product.heroImage} alt={productHeroAlt(product)} width={1600} height={1000} className="rounded-[1.5rem] border border-white/10" priority /></div>}</section>; }
 function ReviewHeroImage({ product }: { product: Product }) { return <section className="mx-auto max-w-7xl px-6 pb-12 lg:px-8"><div className="glass overflow-hidden rounded-[2rem] p-3 shadow-2xl shadow-blue-950/30"><ScreenshotImage src={product.heroImage} alt={productHeroAlt(product)} width={1600} height={1000} sizes="(min-width: 1280px) 1200px, 100vw" className="rounded-[1.5rem] border border-white/10" /></div></section>; }
