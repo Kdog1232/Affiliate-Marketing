@@ -67,6 +67,7 @@ export function HomepageSearch({ products }: Props) {
           onChange={(event) => { setQuery(event.target.value); setActiveIndex(-1); }}
           onKeyDown={onKeyDown}
           aria-label="Search published AI tool reviews"
+          role="combobox"
           aria-autocomplete="list"
           aria-controls={hasSuggestions ? listboxId : undefined}
           aria-expanded={hasSuggestions}

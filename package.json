@@ -1,9 +1,10 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "npm run validate:reviews && npm run validate:structured-data && next build",
+    "build": "npm run validate:facts && npm run validate:reviews && npm run validate:structured-data && next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "npm run test:facts",
     "verify:logos": "node scripts/verify-logos.js",
     "generate:logo-report": "node scripts/generate-logo-report.js",
     "validate:reviews": "node scripts/validate-reviews.js",
@@ -15,7 +16,12 @@
     "generate:all": "node scripts/content-cli.js generate:all",
     "screenshots": "node scripts/generate-screenshots.js",
     "publish": "npm run generate:all-reviews && (npm run screenshots || echo \"Screenshots failed; continuing publish build.\") && npm run build",
-    "validate:structured-data": "node scripts/validate-structured-data.js"
+    "validate:structured-data": "node scripts/validate-structured-data.js",
+    "validate:facts": "node scripts/validate-facts.js",
+    "audit:facts": "node scripts/audit-facts.js",
+    "verify:official-sources": "node scripts/verify-official-sources.js",
+    "test:facts": "node --test scripts/facts.test.js",
+    "validate:eslint-compatibility": "node scripts/validate-eslint-compatibility.js"
   },
   "dependencies": {
     "next": "15.3.6",
@@ -24,14 +30,16 @@
     "lucide-react": "^0.468.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "3.3.6",
     "@playwright/test": "^1.45.0",
     "@types/node": "^22.10.2",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.17.0",
+    "eslint": "9.39.5",
     "eslint-config-next": "15.3.6",
     "postcss": "^8.4.49",
+    "semver": "7.8.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
   }

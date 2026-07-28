@@ -8,6 +8,7 @@ import { readReviewDraft, writeReviewDraft } from './storage';
 import { buildProductFactPack } from './fact-pack';
 import { analyzeReviewQuality, detectMissingContent } from './quality';
 import type { AlternativeSummary, BuyingGuideSnippet, ComparisonSummary, GeneratedSection, KnowledgeGraphUtilizationReport, ReviewDraft, ReviewSectionKey, SectionInformationGain, SeoAsset } from './types';
+import { buildFactCitations, buildRegistry, canonicalProduct, validateReview } from '@/lib/facts';
 
 type Options = { force?: boolean; section?: ReviewSectionKey };
 type EngineResponse = { review: { overview: string[]; pros: string[]; cons: string[]; whoShouldBuy: string[]; whoShouldAvoid: string[]; pricingSummary: string; featureHighlights: string[]; verdict: string; faq: { question: string; answer: string }[] }; buyingGuide?: BuyingGuideSnippet[]; alternatives?: AlternativeSummary[]; comparison?: ComparisonSummary[]; tutorial?: { title: string; steps: string[]; summary: string }; seo?: Partial<SeoAsset>; quality?: ReviewDraft['quality']; missingContent?: ReviewDraft['missingContent']; utilizationReport?: KnowledgeGraphUtilizationReport; informationGain?: SectionInformationGain[] };
@@ -45,6 +46,10 @@ export async function generateReview(slug: string, options: Options = {}) {
   draft.quality = analyzeReviewQuality(product, draft);
   draft.metadata = { promptVersion: PROMPT_VERSION, generatedDate: new Date().toISOString(), model, provider: provider.name, providerVersion: PROVIDER_VERSION, cacheHash, sourceHash, cached: false };
   draft.updatedAt = new Date().toISOString(); draft.status = 'needs_review';
+  const registry = buildRegistry(canonicalProduct(product, { lastVerifiedDate: product.review.dateModified ?? product.review.datePublished }));
+  draft.factCitations = buildFactCitations(draft, registry);
+  const accuracy = validateReview(draft, registry, { minimumScore: 98 });
+  if (accuracy.publicationStatus !== 'APPROVED') throw new Error(`Fact validation rejected ${slug}: ${accuracy.unknownClaims.length} unknown, ${accuracy.unsupportedClaims.length} unsupported, ${accuracy.conflictingClaims.length} conflicting claims.`);
   assertReviewConsistency(product, draft, productCatalog);
   await writeReviewDraft(draft); return draft;
 }
