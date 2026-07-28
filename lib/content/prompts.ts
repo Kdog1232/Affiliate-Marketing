@@ -28,15 +28,6 @@ const FACT_BOUND_RULES = [
   'No recommendation may use interchangeable wording such as extends workflow, supports production, helps planning, creates deliverables, robust solution, or streamlines workflow. Explain what actually happens in that product.',
 ];
 
-const EDITORIAL_PIPELINE = [
-  'Run this private workflow before producing the JSON. Do not expose the workflow, productUnderstanding, draftArticle, enhancement notes, validation notes, or any chain-of-thought.',
-  'Stage 1 — Build a Product Understanding object from the supplied facts and capabilities registry with primaryAudience, primaryRole, oneResponsibility, primaryJobs, biggestStrengths, biggestWeaknesses, differentiators, idealWorkflows, likelyAlternatives, marketFit, and situationsWhereAnotherToolWouldBeBetter.',
-  'Stage 2 — Write a complete editorial review article internally before filling any JSON fields. Target 2,500-4,000 words when source facts are sufficient. Write like an experienced software reviewer at PCMag, Tom\'s Guide, TechRadar, or Wirecutter. Focus on whether the reader should spend money on the product, not SEO or page sections.',
-  'Stage 3 — Improve that internal article for readability: remove repetition, combine overlapping ideas, vary sentence length, replace generic wording, add transitions, and increase specificity while keeping facts unchanged.',
-  'Stage 4 — Populate the requested JSON only by extracting and condensing from the enhanced article. Do not independently regenerate or template the overview, feature highlights, pros, cons, pricingSummary, whoShouldBuy, whoShouldAvoid, faq, verdict, useCases, buyingGuide, alternatives, comparison, tutorial, seo, quality, or missingContent fields.',
-  'Stage 5 — Validate the extracted JSON. Rewrite any field that contains generic marketing language, repeated sentence structures, unsupported claims, feature lists without explanation, identical use-case wording, empty buying guidance, copied-sounding phrasing, or low information gain against earlier sections.',
-];
-
 const EDITORIAL_STYLE_RULES = [
   'Every major feature discussed must answer all available knowledge graph fields: what it does, why it matters, who benefits most, real-world example, tradeoff or limitation, and recommended workflow.',
   'Never merely list features. Explain what the feature changes in a real workflow, when that change matters, and what limitation keeps the advice balanced.',

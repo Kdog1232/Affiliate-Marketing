@@ -10,7 +10,6 @@ const model = process.env.OPENAI_MODEL || 'gpt-4.1-mini';
 const root = process.cwd();
 const promptVersion = 'editorial-review-pipeline-v5-isolated';
 const providerVersion = 'openai-responses-json-v1';
-const sections = [['overview','Overview'],['pros','Pros'],['cons','Cons'],['pricingSummary','Pricing Summary'],['whoShouldBuy','Who Should Buy'],['whoShouldAvoid','Who Should Avoid'],['useCases','Use Cases'],['faq','FAQ'],['verdict','Final Verdict']];
 async function readJson(file){ return JSON.parse(await fs.readFile(file,'utf8')); }
 async function exists(file){ try{ await fs.access(file); return true;}catch{return false;} }
 function stable(v){ if(Array.isArray(v)) return `[${v.map(stable).join(',')}]`; if(v && typeof v === 'object') return `{${Object.entries(v).sort(([a],[b])=>a.localeCompare(b)).map(([k,x])=>`${JSON.stringify(k)}:${stable(x)}`).join(',')}}`; return JSON.stringify(v); }
