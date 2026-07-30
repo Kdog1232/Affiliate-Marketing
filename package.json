@@ -21,7 +21,8 @@
     "audit:facts": "node scripts/audit-facts.js",
     "verify:official-sources": "node scripts/verify-official-sources.js",
     "test:facts": "node --test scripts/facts.test.js",
-    "validate:eslint-compatibility": "node scripts/validate-eslint-compatibility.js"
+    "validate:eslint-compatibility": "node scripts/validate-eslint-compatibility.js",
+    "validate:topical-map": "node scripts/validate-topical-map.js"
   },
   "dependencies": {
     "next": "15.3.6",
