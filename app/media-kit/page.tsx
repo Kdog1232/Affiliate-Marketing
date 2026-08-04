@@ -99,31 +99,31 @@ const faqs = [
 
 export default function MediaKitPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-radial-blue">
-      <div className="absolute inset-x-0 top-0 -z-0 h-[34rem] bg-gradient-to-b from-blue-500/25 via-cyan-400/10 to-transparent blur-3xl" />
+    <main className="min-h-screen overflow-hidden bg-radial-brand">
+      <div className="absolute inset-x-0 top-0 -z-0 h-[34rem] bg-gradient-to-b from-brand/25 via-accent/10 to-transparent blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6 py-10 lg:px-8">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-200 transition hover:text-white">
+        <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-content-primary">
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           Back to AIToolBet
         </Link>
 
         <section className="grid gap-10 py-16 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-24">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[.35em] text-blue-300">Media Kit</p>
-            <h1 className="mt-5 max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-7xl">Partner With AIToolBet</h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
+            <p className="text-sm font-semibold uppercase tracking-[.35em] text-brand-light">Media Kit</p>
+            <h1 className="mt-5 max-w-4xl text-5xl font-bold tracking-tight text-content-primary sm:text-7xl">Partner With AIToolBet</h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-content-secondary sm:text-xl">
               Helping educators, creators, entrepreneurs, developers, marketers, and small businesses discover the best AI software through trusted reviews, comparisons, tutorials, and buying guides.
             </p>
-            <a href="mailto:contact@aitoolbet.com" className="mt-10 inline-flex items-center justify-center gap-2 rounded-2xl bg-blue-500 px-6 py-4 text-sm font-bold text-white shadow-xl shadow-blue-950/40 transition hover:-translate-y-0.5 hover:bg-blue-400">
+            <a href="mailto:contact@aitoolbet.com" className="mt-10 inline-flex items-center justify-center gap-2 rounded-2xl bg-brand px-6 py-4 text-sm font-bold text-content-primary shadow-xl shadow-brand-dark/40 transition hover:-translate-y-0.5 hover:bg-brand-light">
               Contact for Partnerships
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
           <div className="glass rounded-[2rem] p-6 sm:p-8">
-            <div className="rounded-3xl bg-gradient-to-br from-blue-500/25 via-white/[.08] to-cyan-400/10 p-6 ring-1 ring-white/10">
-              <Sparkles className="h-10 w-10 text-blue-200" aria-hidden="true" />
-              <h2 className="mt-6 text-3xl font-bold text-white">AI software discovery for practical buyers</h2>
-              <p className="mt-4 leading-7 text-slate-300">
+            <div className="rounded-3xl bg-gradient-to-br from-brand/25 via-surface/[.08] to-accent/10 p-6 ring-1 ring-border/10">
+              <Sparkles className="h-10 w-10 text-brand" aria-hidden="true" />
+              <h2 className="mt-6 text-3xl font-bold text-content-primary">AI software discovery for practical buyers</h2>
+              <p className="mt-4 leading-7 text-content-secondary">
                 AIToolBet connects AI vendors with readers actively researching software that can improve productivity, education, business operations, creativity, and development workflows.
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function MediaKitPage() {
         </section>
 
         <InfoSection eyebrow="About" title="About AIToolBet">
-          <p className="max-w-4xl text-lg leading-8 text-slate-300">
+          <p className="max-w-4xl text-lg leading-8 text-content-secondary">
             AIToolBet is an AI software discovery platform focused on helping professionals find practical AI tools that improve productivity, education, business operations, creativity, and development workflows.
           </p>
         </InfoSection>
@@ -156,14 +156,14 @@ export default function MediaKitPage() {
 
         <section className="grid gap-6 py-16 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[.3em] text-blue-300">Benefits</p>
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">Why Partner With Us</h2>
+            <p className="text-sm font-semibold uppercase tracking-[.3em] text-brand-light">Benefits</p>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-content-primary sm:text-5xl">Why Partner With Us</h2>
           </div>
           <div className="glass rounded-3xl p-6 sm:p-8">
             <ul className="grid gap-4 sm:grid-cols-2">
               {reasons.map((reason) => (
-                <li key={reason} className="flex items-center gap-3 text-slate-200">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-blue-300" aria-hidden="true" />
+                <li key={reason} className="flex items-center gap-3 text-content-secondary">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-light" aria-hidden="true" />
                   {reason}
                 </li>
               ))}
@@ -173,21 +173,21 @@ export default function MediaKitPage() {
 
         <section className="grid gap-6 py-16 lg:grid-cols-2">
           <div className="glass rounded-3xl p-6 sm:p-8">
-            <Share2 className="h-8 w-8 text-blue-200" aria-hidden="true" />
-            <h2 className="mt-5 text-3xl font-bold text-white">Social Links</h2>
+            <Share2 className="h-8 w-8 text-brand" aria-hidden="true" />
+            <h2 className="mt-5 text-3xl font-bold text-content-primary">Social Links</h2>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} className="rounded-2xl border border-white/10 bg-white/[.05] px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-blue-300/50 hover:text-white">
+                <a key={link.label} href={link.href} className="rounded-2xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-content-secondary transition hover:border-brand-light/50 hover:text-content-primary">
                   {link.label}
                 </a>
               ))}
             </div>
           </div>
-          <div className="rounded-3xl border border-blue-300/20 bg-gradient-to-br from-blue-500/20 via-white/[.08] to-cyan-400/10 p-6 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-8">
-            <Mail className="h-8 w-8 text-blue-200" aria-hidden="true" />
-            <h2 className="mt-5 text-3xl font-bold text-white">Contact</h2>
-            <p className="mt-3 text-slate-300">For partnerships, review requests, sponsorships, and media inquiries, contact the AIToolBet team.</p>
-            <a href="mailto:contact@aitoolbet.com" className="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-blue-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-400">
+          <div className="rounded-3xl border border-brand-light/20 bg-gradient-to-br from-brand/20 via-surface/[.08] to-accent/10 p-6 shadow-2xl shadow-content-primary/20 backdrop-blur-xl sm:p-8">
+            <Mail className="h-8 w-8 text-brand" aria-hidden="true" />
+            <h2 className="mt-5 text-3xl font-bold text-content-primary">Contact</h2>
+            <p className="mt-3 text-content-secondary">For partnerships, review requests, sponsorships, and media inquiries, contact the AIToolBet team.</p>
+            <a href="mailto:contact@aitoolbet.com" className="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-brand px-5 py-3 text-sm font-bold text-content-primary transition hover:bg-brand-light">
               contact@aitoolbet.com
             </a>
           </div>
@@ -197,9 +197,9 @@ export default function MediaKitPage() {
           <div className="grid gap-5 lg:grid-cols-2">
             {faqs.map((faq) => (
               <article key={faq.question} className="glass rounded-3xl p-6">
-                <HelpCircle className="h-6 w-6 text-blue-200" aria-hidden="true" />
-                <h3 className="mt-4 text-xl font-bold text-white">{faq.question}</h3>
-                <p className="mt-3 leading-7 text-slate-300">{faq.answer}</p>
+                <HelpCircle className="h-6 w-6 text-brand" aria-hidden="true" />
+                <h3 className="mt-4 text-xl font-bold text-content-primary">{faq.question}</h3>
+                <p className="mt-3 leading-7 text-content-secondary">{faq.answer}</p>
               </article>
             ))}
           </div>
@@ -212,8 +212,8 @@ export default function MediaKitPage() {
 function InfoSection({ eyebrow, title, children }: { eyebrow: string; title: string; children: React.ReactNode }) {
   return (
     <section className="py-16">
-      <p className="text-sm font-semibold uppercase tracking-[.3em] text-blue-300">{eyebrow}</p>
-      <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">{title}</h2>
+      <p className="text-sm font-semibold uppercase tracking-[.3em] text-brand-light">{eyebrow}</p>
+      <h2 className="mt-4 text-4xl font-bold tracking-tight text-content-primary sm:text-5xl">{title}</h2>
       <div className="mt-10">{children}</div>
     </section>
   );
@@ -221,10 +221,10 @@ function InfoSection({ eyebrow, title, children }: { eyebrow: string; title: str
 
 function IconCard({ title, description, icon: Icon }: { title: string; description: string; icon: typeof Users }) {
   return (
-    <article className="glass rounded-3xl p-6 transition hover:-translate-y-1 hover:border-blue-300/60">
-      <Icon className="h-8 w-8 text-blue-200" aria-hidden="true" />
-      <h3 className="mt-5 text-2xl font-bold text-white">{title}</h3>
-      <p className="mt-3 leading-7 text-slate-300">{description}</p>
+    <article className="glass rounded-3xl p-6 transition hover:-translate-y-1 hover:border-brand-light/60">
+      <Icon className="h-8 w-8 text-brand" aria-hidden="true" />
+      <h3 className="mt-5 text-2xl font-bold text-content-primary">{title}</h3>
+      <p className="mt-3 leading-7 text-content-secondary">{description}</p>
     </article>
   );
 }
@@ -232,8 +232,8 @@ function IconCard({ title, description, icon: Icon }: { title: string; descripti
 function SimpleCard({ title, icon: Icon }: { title: string; icon: typeof Star }) {
   return (
     <article className="glass flex items-center gap-3 rounded-2xl p-5">
-      <Icon className="h-5 w-5 shrink-0 text-blue-300" aria-hidden="true" />
-      <h3 className="font-semibold text-white">{title}</h3>
+      <Icon className="h-5 w-5 shrink-0 text-brand-light" aria-hidden="true" />
+      <h3 className="font-semibold text-content-primary">{title}</h3>
     </article>
   );
 }

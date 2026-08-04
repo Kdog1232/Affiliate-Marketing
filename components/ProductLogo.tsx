@@ -22,7 +22,7 @@ export function ProductLogo({ logo = '', name, size = 56, className = '' }: Prod
   const [hasError, setHasError] = useState(false);
   const normalizedLogo = logo.trim();
   const shouldShowFallback = !normalizedLogo || !isSupportedLogo(normalizedLogo) || hasError;
-  const sharedClassName = `shrink-0 shadow-lg shadow-blue-950/30 transition duration-200 hover:scale-105 hover:shadow-xl hover:shadow-blue-900/40 ${className}`;
+  const sharedClassName = `shrink-0 shadow-lg shadow-brand-dark/30 transition duration-200 hover:scale-105 hover:shadow-xl hover:shadow-brand-dark/40 ${className}`;
 
   useEffect(() => {
     setHasError(false);
@@ -35,7 +35,7 @@ export function ProductLogo({ logo = '', name, size = 56, className = '' }: Prod
       <div
         aria-label={`${name} logo`}
         role="img"
-        className={`inline-flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 font-bold text-white ring-1 ring-white/15 hover:shadow-blue-400/30 ${sharedClassName}`}
+        className={`inline-flex items-center justify-center rounded-full bg-gradient-to-br from-brand via-brand-light to-brand-dark font-bold text-content-primary ring-1 ring-border/15 hover:shadow-brand-light/30 ${sharedClassName}`}
         style={{ width: fallbackSize, height: fallbackSize, fontSize: Math.max(12, Math.round(fallbackSize * 0.42)) }}
       >
         {getInitial(name)}
@@ -45,7 +45,7 @@ export function ProductLogo({ logo = '', name, size = 56, className = '' }: Prod
 
   return (
     <span
-      className={`inline-flex items-center justify-center overflow-hidden bg-white/95 p-2 ring-1 ring-white/10 ${sharedClassName}`}
+      className={`inline-flex items-center justify-center overflow-hidden bg-surface p-2 ring-1 ring-border/10 ${sharedClassName}`}
       style={{ width: size, height: size }}
     >
       <Image

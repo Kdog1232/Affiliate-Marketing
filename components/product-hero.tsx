@@ -16,21 +16,21 @@ export function ProductHero({ product }: { product: Product }) {
   return (
     <section className="mx-auto grid max-w-7xl gap-12 px-6 pb-14 pt-28 lg:grid-cols-[1fr_.9fr] lg:px-8 lg:pt-36">
       <div className="flex flex-col justify-center">
-        <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-4 py-2 text-sm text-blue-200">
+        <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-brand-light/20 bg-brand-light/10 px-4 py-2 text-sm text-brand">
           <Star className="h-4 w-4 fill-current" aria-hidden="true" /> Pinterest-friendly affiliate review
         </div>
-        <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-7xl">{product.tagline}</h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">{product.description}</p>
+        <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-content-primary sm:text-7xl">{product.tagline}</h1>
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-content-secondary">{product.description}</p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <AffiliateButton href={product.affiliateLink}>Try {product.name}</AffiliateButton>
-          <Link href="#review" className="focus-ring inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold hover:bg-white/10">Read Review</Link>
+          <Link href="#review" className="focus-ring inline-flex items-center justify-center rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold hover:bg-surface">Read Review</Link>
         </div>
         <div className="mt-8 grid gap-3 sm:grid-cols-2">
           {quickFacts.map(({ label, value, icon: Icon }) => (
             <div key={label} className="glass rounded-2xl p-4">
-              <Icon className="mb-3 h-5 w-5 text-blue-300" aria-hidden="true" />
-              <p className="text-xs uppercase tracking-[.2em] text-slate-400">{label}</p>
-              <p className="mt-1 font-semibold text-white">{value}</p>
+              <Icon className="mb-3 h-5 w-5 text-brand-light" aria-hidden="true" />
+              <p className="text-xs uppercase tracking-[.2em] text-content-muted">{label}</p>
+              <p className="mt-1 font-semibold text-content-primary">{value}</p>
             </div>
           ))}
         </div>
