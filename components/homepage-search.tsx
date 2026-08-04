@@ -59,8 +59,8 @@ export function HomepageSearch({ products }: Props) {
 
   return (
     <form onSubmit={onSubmit} className="relative mx-auto mt-10 max-w-2xl" role="search">
-      <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[.08] p-3 text-left shadow-2xl shadow-black/20">
-        <Search className="h-6 w-6 shrink-0 text-blue-300" aria-hidden="true" />
+      <div className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-3 text-left shadow-2xl shadow-content-primary/20">
+        <Search className="h-6 w-6 shrink-0 text-brand-light" aria-hidden="true" />
         <input
           id={inputId}
           value={query}
@@ -72,24 +72,24 @@ export function HomepageSearch({ products }: Props) {
           aria-controls={hasSuggestions ? listboxId : undefined}
           aria-expanded={hasSuggestions}
           aria-activedescendant={activeIndex >= 0 ? `${listboxId}-${suggestions[activeIndex].slug}` : undefined}
-          className="min-w-0 flex-1 bg-transparent text-white placeholder:text-slate-300 focus:outline-none"
+          className="min-w-0 flex-1 bg-transparent text-content-primary placeholder:text-content-muted focus:outline-none"
           placeholder="Search AI tools by name, category, features, or tags"
           type="search"
         />
-        <button type="submit" className="rounded-xl bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-400">Search</button>
+        <button type="submit" className="rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-content-primary transition hover:bg-brand-light">Search</button>
       </div>
       {hasSuggestions && (
-        <ul id={listboxId} role="listbox" className="absolute z-40 mt-3 w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-950/95 text-left shadow-2xl shadow-black/40 backdrop-blur-xl">
+        <ul id={listboxId} role="listbox" className="absolute z-40 mt-3 w-full overflow-hidden rounded-2xl border border-border bg-surface/95 text-left shadow-2xl shadow-content-primary/40 backdrop-blur-xl">
           {suggestions.map((product, index) => (
             <li key={product.slug} id={`${listboxId}-${product.slug}`} role="option" aria-selected={activeIndex === index}>
               <button
                 type="button"
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => openProduct(product)}
-                className={`flex w-full items-center gap-3 px-4 py-3 text-left transition ${activeIndex === index ? 'bg-blue-500/25' : 'hover:bg-white/10'}`}
+                className={`flex w-full items-center gap-3 px-4 py-3 text-left transition ${activeIndex === index ? 'bg-brand/25' : 'hover:bg-surface'}`}
               >
                 <ProductLogo logo={product.logo} name={product.name} size={36} className="rounded-lg" />
-                <span><span className="block font-semibold text-white">{product.name}</span><span className="block text-sm text-slate-300">{product.categoryBadge ?? product.primaryCategory ?? product.category ?? 'AI Tool'} · {product.rating}/5</span></span>
+                <span><span className="block font-semibold text-content-primary">{product.name}</span><span className="block text-sm text-content-secondary">{product.categoryBadge ?? product.primaryCategory ?? product.category ?? 'AI Tool'} · {product.rating}/5</span></span>
               </button>
             </li>
           ))}

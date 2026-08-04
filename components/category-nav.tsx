@@ -8,10 +8,10 @@ export function CategoryNav({ compact = false }: { compact?: boolean }) {
         <Link
           key={category.slug}
           href={getCategoryHref(category)}
-          className={compact ? 'rounded-full border border-white/10 bg-white/[.06] px-3 py-2 text-sm text-slate-200 hover:border-blue-300/60 hover:text-white' : 'glass rounded-3xl p-5 transition hover:-translate-y-1 hover:border-blue-300/60'}
+          className={compact ? 'rounded-full border border-border bg-surface px-3 py-2 text-sm text-content-secondary hover:border-brand-light/60 hover:text-content-primary' : 'glass rounded-3xl p-5 transition hover:-translate-y-1 hover:border-brand-light/60'}
         >
-          <span className={compact ? '' : 'text-lg font-semibold text-white'}>{category.name}</span>
-          {!compact && <span className="mt-2 block text-sm text-slate-300">Compare tools for {category.name.toLowerCase()} workflows.</span>}
+          <span className={compact ? '' : 'text-lg font-semibold text-content-primary'}>{category.name}</span>
+          {!compact && <span className="mt-2 block text-sm text-content-secondary">Compare tools for {category.name.toLowerCase()} workflows.</span>}
         </Link>
       ))}
     </nav>

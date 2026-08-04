@@ -2,8 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
+:root {
+  color-scheme: light;
+  --color-brand-dark: 76 29 149;
+  --color-brand: 91 33 182;
+  --color-brand-light: 109 40 217;
+  --color-brand-subtle: 245 243 255;
+  --color-accent: 249 115 22;
+  --color-canvas: 248 250 252;
+  --color-surface: 255 255 255;
+  --color-border: 226 232 240;
+  --color-text-primary: 31 41 55;
+  --color-text-secondary: 71 85 105;
+  --color-text-muted: 100 116 139;
+  --color-text-inverse: 255 255 255;
+  --color-success: 22 163 74;
+  --color-warning: 245 158 11;
+  --color-danger: 220 38 38;
+}
+
 html { scroll-behavior: smooth; }
-body { @apply bg-slate-950 text-slate-100 antialiased; }
-.glass { @apply border border-white/10 bg-white/[.06] shadow-2xl shadow-black/20 backdrop-blur-xl; }
-.focus-ring { @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950; }
+body { @apply bg-canvas text-content-primary antialiased; }
+.glass { @apply border border-border bg-surface shadow-xl shadow-content-primary/5; }
+.focus-ring { @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-canvas; }
